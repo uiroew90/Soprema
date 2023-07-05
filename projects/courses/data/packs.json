@@ -1,0 +1,25 @@
+[
+  {
+    "name": "Flüssigkunststoffe",
+    "items": [
+      { "category": 3, "item": 1 },
+      { "category": 3, "item": 2 },
+      { "category": 3, "item": 3 },
+      { "category": 3, "item": 4 }
+    ]
+  },
+  {
+    "name": "Bituminös",
+    "items": [
+      { "category": 1, "item": 1 },
+      { "category": 1, "item": 2 }
+    ]
+  },
+  {
+    "name": "Höhensicherungssysteme",
+    "items": [
+      { "category": 5, "item": 1 },
+      { "category": 5, "item": 2 }
+    ]
+  }
+]
