@@ -8,7 +8,7 @@
     "build": "webpack --mode production"
   },
   "keywords": [],
-  "author": "",
+  "author": "Demodia GmbH - Kyle Schuller",
   "license": "ISC",
   "dependencies": {
     "preact": "^10.15.1",

@@ -2,24 +2,24 @@
   {
     "name": "Flüssigkunststoffe",
     "items": [
-      { "category": 3, "item": 1 },
-      { "category": 3, "item": 2 },
-      { "category": 3, "item": 3 },
-      { "category": 3, "item": 4 }
+      { "category": "Alsan Flüssigkunststoffe", "item": "Untergrundvorbereitung und Grundierung" },
+      { "category": "Alsan Flüssigkunststoffe", "item": "Dichte An-/ Abschlüsse und Detaillösungen" },
+      { "category": "Alsan Flüssigkunststoffe", "item": "Flächenabdichtung und Beschichtung" },
+      { "category": "Alsan Flüssigkunststoffe", "item": "Oberflächengestaltung" }
     ]
   },
   {
     "name": "Bituminös",
     "items": [
-      { "category": 1, "item": 1 },
-      { "category": 1, "item": 2 }
+      { "category": "Soprema Bituminöse Systeme", "item": "Bitumen Praxis Basis Abdichtungen im Bereich Flachdach" },
+      { "category": "Soprema Bituminöse Systeme", "item": "Bewegungsfugenbänder" }
     ]
   },
   {
     "name": "Höhensicherungssysteme",
     "items": [
-      { "category": 5, "item": 1 },
-      { "category": 5, "item": 2 }
+      { "category": "Höhensicherungen HSS", "item": "Montage von Höhensicherung HSS Grün & Soprasafe" },
+      { "category": "Höhensicherungen HSS", "item": "Planung von Höhensicherungen" }
     ]
   }
 ]

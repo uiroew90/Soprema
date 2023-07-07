@@ -9,16 +9,28 @@ import Checkout from './components/pages/Checkout';
 import Thanks from './components/pages/Thanks';
 
 const App = () => {
+  const [courses, setCourses] = useState([]);
+  const [packs, setPacks] = useState([]);
   const [selectedCourses, setSelectedCourses] = useState([]);
+
+  useEffect(() => {
+    fetch('https://cdn.jsdelivr.net/gh/Demodia/Soprema/projects/courses/data/courses.json')
+      .then(response => response.json())
+      .then(data => setCourses(data.filter(course => course.enabled)));
+
+    fetch('https://cdn.jsdelivr.net/gh/Demodia/Soprema/projects/courses/data/packs.json')
+      .then(response => response.json())
+      .then(data => setPacks(data));
+  }, []);
 
   return (
     <div id="app">
       <Router>
         <Home path="/" />
-        <Packs path="/packs" setSelectedCourses={setSelectedCourses} />
-        <Courses path="/courses" selectedCourses={selectedCourses} setSelectedCourses={setSelectedCourses} />
-        <Overview path="/overview" selectedCourses={selectedCourses} />
-        <Checkout path="/checkout" selectedCourses={selectedCourses} />
+        <Packs path="/packs" packs={packs} setSelectedCourses={setSelectedCourses} />
+        <Courses path="/courses" courses={courses} selectedCourses={selectedCourses} setSelectedCourses={setSelectedCourses} />
+        <Overview path="/overview" selectedCourses={selectedCourses} setSelectedCourses={setSelectedCourses} />
+        <Checkout path="/checkout" selectedCourses={selectedCourses} setSelectedCourses={setSelectedCourses} />
         <Thanks path="/thanks" />
       </Router>
     </div>
