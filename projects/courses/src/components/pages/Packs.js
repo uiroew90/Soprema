@@ -39,7 +39,7 @@ export default () => (
                 </div>
                 <div class="guides-element custom-guides-element span-4">
                   <div class="small-tule small-tule--light small-tule--image-link">
-                    <a href="#" class="small-tule-wrapper">
+                    <Link href="/courses" class="small-tule-wrapper">
                       <div class="small-tule-container">
                         <div class="small-tule-content wysiwyg">
                           <h3 class="small-tule-title">Bituminös</h3>
@@ -50,12 +50,12 @@ export default () => (
                           <p class="small-tule-button small-tule--custom-button">&nbsp;</p>
                         </div>
                       </div>
-                    </a>
+                    </Link>
                   </div>
                 </div>
                 <div class="guides-element custom-guides-element span-4">
                   <div class="small-tule small-tule--light small-tule--image-link">
-                    <a href="#" class="small-tule-wrapper">
+                    <Link href="/courses" class="small-tule-wrapper">
                       <div class="small-tule-container">
                         <div class="small-tule-content wysiwyg">
                           <h3 class="small-tule-title">Höhensicherungssysteme</h3>
@@ -66,7 +66,7 @@ export default () => (
                           <p class="small-tule-button small-tule--custom-button">&nbsp;</p>
                         </div>
                       </div>
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>

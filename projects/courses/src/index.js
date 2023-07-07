@@ -1,5 +1,5 @@
 import { h, render } from 'preact';
-import { useState } from 'preact/hooks';
+import { useState, useEffect } from 'preact/hooks';
 import { Router } from 'preact-router';
 import Home from './components/pages/Home';
 import Packs from './components/pages/Packs';
