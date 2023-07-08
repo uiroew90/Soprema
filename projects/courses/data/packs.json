@@ -1,6 +1,7 @@
 [
   {
     "name": "Flüssigkunststoffe",
+    "desc": ["Nach Abschluss des Kurses ist jeder Teilnehmer in der Lage, den Untergrund zu beurteilen und die richtige Grundierung einzusetzen.", "Nach Abschluss des Kurses ist jeder Teilnehmer in der Lage, Detailabdichtungen mit Flüssigkunststoff auszuführen.", "Nach Abschluss des Kurses ist jeder Teilnehmer in der Lage, Detailabdichtungen und kleinere Flächenbeschichtungen mit Alsan PMMA selbstständig auszuführen.", "Nach Abschluss des Kurses ist jeder Teilnehmer in der Lage, verschiedene dekorative Oberflächen mit Alsan PMMA Produkten zu gestalten."],
     "items": [
       { "category": "Alsan Flüssigkunststoffe", "item": "Untergrundvorbereitung und Grundierung" },
       { "category": "Alsan Flüssigkunststoffe", "item": "Dichte An-/ Abschlüsse und Detaillösungen" },
@@ -10,6 +11,7 @@
   },
   {
     "name": "Bituminös",
+    "desc": ["Jede/r Teilnehmer/in lernt die Verlegerichtlinien der Bitumen Abdichtungen kennen und die wichtigsten Verarbeitungspunkte und Details selbstständig auszuführen.", "Jede/r Teilnehmer/in lernt die Verlegerichtinien der verschiedenen Bewegungsfugenbänder kennen und die wichtigsten Verarbeitungspunkte und Details selbstständig auszuführen."],
     "items": [
       { "category": "Soprema Bituminöse Systeme", "item": "Bitumen Praxis Basis Abdichtungen im Bereich Flachdach" },
       { "category": "Soprema Bituminöse Systeme", "item": "Bewegungsfugenbänder" }
@@ -17,6 +19,7 @@
   },
   {
     "name": "Höhensicherungssysteme",
+    "desc": ["Vorschriftsgemässe und korrekte Montage von Grün und Soprasafe Höhensicherungen. Nach Abschluss der Schulung wird ein Zertifikat ausgestellt, welches den Teilnehmer berechtigt, die Grün- und Soprasafe-Systeme zu montieren.", "Vorschriftsgemässe Planung von Höhensicherungen."],
     "items": [
       { "category": "Höhensicherungen HSS", "item": "Montage von Höhensicherung HSS Grün & Soprasafe" },
       { "category": "Höhensicherungen HSS", "item": "Planung von Höhensicherungen" }
