@@ -16,7 +16,7 @@ const App = () => {
   useEffect(() => {
     fetch('https://cdn.jsdelivr.net/gh/Demodia/Soprema/projects/courses/data/courses.json')
       .then(response => response.json())
-      .then(data => setCourses(data.filter(course => course.enabled)));
+      .then(data => setCourses(data.filter(course => course.enable)));
 
     fetch('https://cdn.jsdelivr.net/gh/Demodia/Soprema/projects/courses/data/packs.json')
       .then(response => response.json())

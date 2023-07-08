@@ -135,3 +135,7 @@
 .viewer-element .cart-listing .cart-listing__item .cart-listing__item__content > textarea {
   grid-column: 1/3;
 }
+
+.viewer-element .accordion .accordion-title .active-count {
+  font-weight: 100;
+}
