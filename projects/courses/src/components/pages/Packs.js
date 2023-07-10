@@ -5,9 +5,12 @@ import Breadcrumb from '../sections/Breadcrumb';
 import Title from '../sections/Title';
 import Callout from '../sections/Callout';
 
-const Pack = ({ pack, setSelectedCourses }) => {
+const Pack = ({ pack, courses, setSelectedCourses }) => {
   const handleClick = () => {
-    setSelectedCourses(pack.courses);
+    const selectedCourses = pack.items.map(item => {
+      return courses.find(course => course.name === item.item);
+    });
+    setSelectedCourses(selectedCourses);
   };
 
   return (
@@ -18,7 +21,7 @@ const Pack = ({ pack, setSelectedCourses }) => {
             <div class="small-tule-content wysiwyg">
               <h3 class="small-tule-title">{pack.name}</h3>
               <ul>
-                {pack.description.map(desc => (
+                {pack.desc.map(desc => (
                   <li>{desc}</li>
                 ))}
               </ul>
@@ -31,7 +34,7 @@ const Pack = ({ pack, setSelectedCourses }) => {
   );
 };
 
-const Packs = ({ packs, setSelectedCourses }) => (
+const Packs = ({ packs, courses, setSelectedCourses }) => (
   <Fragment>
     <Breadcrumb links={[{ href: '/', text: 'Home' }, { text: 'Firmenkurse' }]} />
 
@@ -46,7 +49,7 @@ const Packs = ({ packs, setSelectedCourses }) => (
             <div class="guides noresize" style="">
               <div class="guides-wrapper custom-guides-wrapper">
                 {packs.map(pack => (
-                  <Pack pack={pack} setSelectedCourses={setSelectedCourses} />
+                  <Pack pack={pack} courses={courses} setSelectedCourses={setSelectedCourses} />
                 ))}
               </div>
             </div>

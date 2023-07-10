@@ -27,7 +27,7 @@ const App = () => {
     <div id="app">
       <Router>
         <Home path="/" />
-        <Packs path="/packs" packs={packs} setSelectedCourses={setSelectedCourses} />
+        <Packs path="/packs" packs={packs} courses={courses} setSelectedCourses={setSelectedCourses} />
         <Courses path="/courses" courses={courses} selectedCourses={selectedCourses} setSelectedCourses={setSelectedCourses} />
         <Overview path="/overview" selectedCourses={selectedCourses} setSelectedCourses={setSelectedCourses} />
         <Checkout path="/checkout" selectedCourses={selectedCourses} setSelectedCourses={setSelectedCourses} />
