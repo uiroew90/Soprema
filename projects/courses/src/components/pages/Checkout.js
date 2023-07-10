@@ -50,7 +50,7 @@ const Checkout = ({ selectedCourses, setSelectedCourses }) => {
     }
   };
 
-  const { handleChange, handleSubmit, values, errors, validateForm } = useForm(initialValues, onSubmit, validate);
+  const { handleChange, handleSubmit, values, errors, validateForm } = useForm(initialValues, onSubmit, validate, onSubmit);
 
   useEffect(() => {
     // Format selected courses into a text string

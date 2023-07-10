@@ -18,7 +18,7 @@ const Form = ({ children, onSubmit, initialValues = {}, validate, title, error, 
     const errors = validate(values);
     setErrors(errors);
 
-    if (Object.keys(errors).length === 0) {
+    if (errors && Object.keys(errors).length === 0) {
       onSubmit(values);
     }
   };

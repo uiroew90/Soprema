@@ -1,6 +1,6 @@
 import { useState, useEffect } from "preact/hooks";
 
-const useForm = (initialValues, callback, validate) => {
+const useForm = (initialValues, callback, validate, submitForm) => {
   const [values, setValues] = useState(initialValues);
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -22,10 +22,12 @@ const useForm = (initialValues, callback, validate) => {
     const errors = validate(values);
     setErrors(errors);
     setIsSubmitting(true);
+    if (Object.keys(errors).length === 0) {
+      submitForm(values);
+    }
   };
 
   const handleChange = (event) => {
-    event.persist();
     setValues((previousValues) => ({
       ...previousValues,
       [event.target.name]: event.target.value,
