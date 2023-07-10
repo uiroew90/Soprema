@@ -1,9 +1,8 @@
 import { h } from 'preact';
 import { route } from 'preact-router';
 import { useState, useRef, useEffect } from 'preact/hooks';
-import Breadcrumb from '../sections/Breadcrumb';
-import Title from '../sections/Title';
-import Callout from '../sections/Callout';
+
+import PageWrapper from '../PageWrapper';
 
 const Course = ({ course, selected, toggleCourse }) => (
   <button class={`custom-item-toggle flush ${selected ? 'is-active' : ''}`} onClick={() => toggleCourse(course)} aria-label={`Toggle selection for ${course.name}`}>
@@ -67,11 +66,14 @@ const Courses = ({ courses, selectedCourses, setSelectedCourses }) => {
     setSelectedCourses(selectedCourses.includes(course) ? selectedCourses.filter(c => c !== course) : [...selectedCourses, course]);
   };
 
+  const crumb = {
+    home: { href: '/', text: 'Home' },
+    packs: { href: '/packs', text: 'Firmenkurse' },
+    current: { text: 'Kursliste' },
+  };
+
   return (
-    <div>
-      <Breadcrumb links={[{ href: '/', text: 'Home' }, { href: '/packs', text: 'Firmenkurse' }, { text: 'Kursliste' }]} />
-      <Title text="Kursliste" />
-      <Callout />
+    <PageWrapper hasCallout="true" breadcrumbLinks={[crumb.home, crumb.packs, crumb.current]} titleText="Kursliste">
       <div class="mega-row cms-row vertical-spacing-bottom">
         <div class="container container-medium">
           <div class="row">
@@ -94,7 +96,7 @@ const Courses = ({ courses, selectedCourses, setSelectedCourses }) => {
           </div>
         </div>
       </div>
-    </div>
+    </PageWrapper>
   );
 };
 

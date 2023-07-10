@@ -1,9 +1,7 @@
-import { h, Fragment } from 'preact';
+import { h } from 'preact';
 import { Link } from 'preact-router';
 
-import Breadcrumb from '../sections/Breadcrumb';
-import Title from '../sections/Title';
-import Callout from '../sections/Callout';
+import PageWrapper from '../PageWrapper';
 
 const Pack = ({ pack, courses, setSelectedCourses }) => {
   const handleClick = () => {
@@ -40,30 +38,31 @@ const Pack = ({ pack, courses, setSelectedCourses }) => {
   );
 };
 
-const Packs = ({ packs, courses, setSelectedCourses }) => (
-  <Fragment>
-    <Breadcrumb links={[{ href: '/', text: 'Home' }, { text: 'Firmenkurse' }]} />
+const Packs = ({ packs, courses, setSelectedCourses }) => {
+  const crumb = {
+    home: { href: '/', text: 'Home' },
+    current: { text: 'Firmenkurse' },
+  };
 
-    <Title text="Firmenkurse" />
-
-    <Callout />
-
-    <div class="mega-row cms-row vertical-spacing-bottom">
-      <div class="container container-medium">
-        <div class="row">
-          <div class="col col-sm-12">
-            <div class="guides noresize" style="">
-              <div class="guides-wrapper custom-guides-wrapper">
-                {packs.map(pack => (
-                  <Pack key={pack.name} pack={pack} courses={courses} setSelectedCourses={setSelectedCourses} />
-                ))}
+  return (
+    <PageWrapper hasCallout="true" breadcrumbLinks={[crumb.home, crumb.current]} titleText="Firmenkurse">
+      <div class="mega-row cms-row vertical-spacing-bottom">
+        <div class="container container-medium">
+          <div class="row">
+            <div class="col col-sm-12">
+              <div class="guides noresize" style="">
+                <div class="guides-wrapper custom-guides-wrapper">
+                  {packs.map(pack => (
+                    <Pack key={pack.name} pack={pack} courses={courses} setSelectedCourses={setSelectedCourses} />
+                  ))}
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </Fragment>
-);
+    </PageWrapper>
+  );
+};
 
 export default Packs;
