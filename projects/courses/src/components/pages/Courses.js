@@ -64,11 +64,7 @@ const Courses = ({ courses, selectedCourses, setSelectedCourses }) => {
   }, {});
 
   const toggleCourse = course => {
-    if (!selectedCourses.includes(course)) {
-      console.error(`Course ${course.name} not found in selected courses`);
-      return;
-    }
-    setSelectedCourses(selectedCourses.filter(c => c !== course));
+    setSelectedCourses(selectedCourses.includes(course) ? selectedCourses.filter(c => c !== course) : [...selectedCourses, course]);
   };
 
   return (
