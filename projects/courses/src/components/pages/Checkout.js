@@ -56,7 +56,7 @@ const Checkout = ({ selectedCourses, setSelectedCourses }) => {
     const formData = { ...formState, selectedCourses: selectedCoursesText };
 
     // Submit the form data to Pardot
-    const response = await fetch('PARDOT_FORM_ENDPOINT', {
+    const response = await fetch('https://go.pardot.com/l/978613/2023-02-24/594nlk', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

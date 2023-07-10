@@ -19,7 +19,14 @@ const App = () => {
   };
 
   const handleCourseComment = (courseToUpdate, comment) => {
-    setSelectedCourses(selectedCourses.map(course => (course === courseToUpdate ? { ...course, comment } : course)));
+    setSelectedCourses(
+      selectedCourses.map(course => {
+        if (course === courseToUpdate) {
+          course.comment = comment;
+        }
+        return course;
+      })
+    );
   };
 
   useEffect(() => {

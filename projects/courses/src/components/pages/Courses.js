@@ -1,5 +1,5 @@
 import { h } from 'preact';
-import { Link } from 'preact-router';
+import { route } from 'preact-router';
 import { useState, useRef, useEffect } from 'preact/hooks';
 import Breadcrumb from '../sections/Breadcrumb';
 import Title from '../sections/Title';
@@ -86,9 +86,9 @@ const Courses = ({ courses, selectedCourses, setSelectedCourses }) => {
             </div>
             <div class="col col-sm-12">
               <div class="wysiwyg text-right">
-                <Link href="/overview" class="button">
+                <button onClick={() => selectedCourses.length > 0 && route('/overview')} disabled={selectedCourses.length === 0} class="button">
                   Kurse hinzufügen
-                </Link>
+                </button>
               </div>
             </div>
           </div>

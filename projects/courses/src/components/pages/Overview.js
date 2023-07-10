@@ -1,5 +1,5 @@
 import { h, Fragment } from 'preact';
-import { Link } from 'preact-router';
+import { Link, route } from 'preact-router';
 
 import Breadcrumb from '../sections/Breadcrumb';
 import Title from '../sections/Title';
@@ -40,11 +40,21 @@ const Overview = ({ selectedCourses, handleRemoveCourse, handleCourseComment }) 
             </div>
           </div>
           <div class="col col-sm-12">
-            <div class="wysiwyg text-right">
-              <Link href="/checkout" class="button">
-                Bestätigen
-              </Link>
-            </div>
+            {selectedCourses.length === 0 && (
+              <div class="wysiwyg">
+                <h2>There are no courses selected.</h2>
+                <p>
+                  Please go back to <Link href="/packs">Packs</Link> or <Link href="/courses">Courses</Link> before proceeding to checkout.
+                </p>
+              </div>
+            )}
+            {selectedCourses.length !== 0 && (
+              <div class="wysiwyg text-right">
+                <button onClick={() => selectedCourses.length > 0 && route('/checkout')} disabled={selectedCourses.length === 0} class="button">
+                  Bestätigen
+                </button>
+              </div>
+            )}
           </div>
         </div>
       </div>

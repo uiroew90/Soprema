@@ -19,6 +19,16 @@
 
     <link href="https://cdn.jsdelivr.net/gh/Demodia/Soprema/projects/courses/src/index.css" rel="stylesheet" media="all" />
 
+    <!-- TEMP: only here until I purge the JSDeliver cache, these styles are already in the index.css file -->
+    <style>
+      :is(.text-element, .viewer-element .wysiwyg) .button:disabled {
+        cursor: not-allowed;
+        filter: saturate(0.6);
+        opacity: 0.6;
+        pointer-events: none;
+      }
+    </style>
+
     <script src="https://www.soprema.ch/assets/sopremav4/libs/aw-thirds.js?asset_version=1687944306"></script>
     <script>
       AwCookie.initialize({
