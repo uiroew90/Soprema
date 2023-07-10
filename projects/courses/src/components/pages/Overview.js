@@ -1,14 +1,14 @@
-import { h } from 'preact';
-import { Link, route } from 'preact-router';
+import { h } from "preact";
+import { Link, route } from "preact-router";
 
-import PageWrapper from '../PageWrapper';
+import PageWrapper from "../PageWrapper";
 
 const Overview = ({ selectedCourses, handleRemoveCourse, handleCourseComment }) => {
   const crumb = {
-    home: { href: '/', text: 'Home' },
-    packs: { href: '/packs', text: 'Firmenkurse' },
-    courses: { href: '/courses', text: 'Kursliste' },
-    current: { text: 'Übersicht' },
+    home: { href: "/", text: "Home" },
+    packs: { href: "/packs", text: "Firmenkurse" },
+    courses: { href: "/courses", text: "Kursliste" },
+    current: { text: "Übersicht" },
   };
 
   return (
@@ -19,7 +19,7 @@ const Overview = ({ selectedCourses, handleRemoveCourse, handleCourseComment }) 
             <div class="col col-sm-12">
               <div class="guides noresize">
                 <div class="guides-wrapper cart-listing">
-                  {selectedCourses.map(course => (
+                  {selectedCourses.map((course) => (
                     <div class="guides-element cart-listing__item">
                       <div class="small-tule small-tule--light small-tule--image-link">
                         <div class="small-tule-wrapper">
@@ -32,7 +32,7 @@ const Overview = ({ selectedCourses, handleRemoveCourse, handleCourseComment }) 
                                 </svg>
                                 &nbsp; Löschen
                               </button>
-                              <textarea placeholder="Kommentar" onBlur={e => handleCourseComment(course, e.target.value)} defaultValue={course.comment}></textarea>
+                              <textarea placeholder="Kommentar" onBlur={(e) => handleCourseComment(course, e.target.value)} defaultValue={course.comment}></textarea>
                             </div>
                           </div>
                         </div>
@@ -53,7 +53,7 @@ const Overview = ({ selectedCourses, handleRemoveCourse, handleCourseComment }) 
               )}
               {selectedCourses.length !== 0 && (
                 <div class="wysiwyg text-right">
-                  <button onClick={() => selectedCourses.length > 0 && route('/checkout')} disabled={selectedCourses.length === 0} class="button">
+                  <button onClick={() => selectedCourses.length > 0 && route("/checkout")} disabled={selectedCourses.length === 0} class="button">
                     Bestätigen
                   </button>
                 </div>

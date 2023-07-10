@@ -1,15 +1,15 @@
-import { h } from 'preact';
+import { h } from "preact";
 
-import PageWrapper from '../PageWrapper';
+import PageWrapper from "../PageWrapper";
 
 export default () => {
   const crumb = {
-    home: { href: '/', text: 'Home' },
-    packs: { href: '/packs', text: 'Firmenkurse' },
-    courses: { href: '/courses', text: 'Kursliste' },
-    overview: { href: '/overview', text: 'Übersicht' },
-    checkout: { href: '/checkout', text: 'Formular' },
-    current: { text: 'Bestätigung' },
+    home: { href: "/", text: "Home" },
+    packs: { href: "/packs", text: "Firmenkurse" },
+    courses: { href: "/courses", text: "Kursliste" },
+    overview: { href: "/overview", text: "Übersicht" },
+    checkout: { href: "/checkout", text: "Formular" },
+    current: { text: "Bestätigung" },
   };
 
   return (

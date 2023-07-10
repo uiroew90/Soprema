@@ -1,13 +1,13 @@
-import { h } from 'preact';
-import { Link } from 'preact-router';
+import { h } from "preact";
+import { Link } from "preact-router";
 
-import PageWrapper from '../PageWrapper';
+import PageWrapper from "../PageWrapper";
 
 const Pack = ({ pack, courses, setSelectedCourses }) => {
   const handleClick = () => {
     const selectedCourses = pack.items
-      .map(item => {
-        const matchingCourse = courses.find(course => course.name === item.item);
+      .map((item) => {
+        const matchingCourse = courses.find((course) => course.name === item.item);
         if (!matchingCourse) {
           console.error(`No course found matching item ${item.item} in pack ${pack.name}`);
         }
@@ -25,7 +25,7 @@ const Pack = ({ pack, courses, setSelectedCourses }) => {
             <div class="small-tule-content wysiwyg">
               <h3 class="small-tule-title">{pack.name}</h3>
               <ul>
-                {pack.desc.map(desc => (
+                {pack.desc.map((desc) => (
                   <li>{desc}</li>
                 ))}
               </ul>
@@ -40,8 +40,8 @@ const Pack = ({ pack, courses, setSelectedCourses }) => {
 
 const Packs = ({ packs, courses, setSelectedCourses }) => {
   const crumb = {
-    home: { href: '/', text: 'Home' },
-    current: { text: 'Firmenkurse' },
+    home: { href: "/", text: "Home" },
+    current: { text: "Firmenkurse" },
   };
 
   return (
@@ -52,7 +52,7 @@ const Packs = ({ packs, courses, setSelectedCourses }) => {
             <div class="col col-sm-12">
               <div class="guides noresize" style="">
                 <div class="guides-wrapper custom-guides-wrapper">
-                  {packs.map(pack => (
+                  {packs.map((pack) => (
                     <Pack key={pack.name} pack={pack} courses={courses} setSelectedCourses={setSelectedCourses} />
                   ))}
                 </div>

@@ -1,5 +1,5 @@
-import { h, Fragment } from 'preact';
-import { Link } from 'preact-router';
+import { h, Fragment } from "preact";
+import { Link } from "preact-router";
 
 export default ({ links }) => (
   <div class="breadcrumb">

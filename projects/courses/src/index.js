@@ -1,26 +1,26 @@
-import { h, render } from 'preact';
-import { useState, useEffect } from 'preact/hooks';
-import { Router } from 'preact-router';
+import { h, render } from "preact";
+import { useState, useEffect } from "preact/hooks";
+import { Router } from "preact-router";
 
-import Home from './components/pages/Home';
-import Packs from './components/pages/Packs';
-import Courses from './components/pages/Courses';
-import Overview from './components/pages/Overview';
-import Checkout from './components/pages/Checkout';
-import Thanks from './components/pages/Thanks';
+import Home from "./components/pages/Home";
+import Packs from "./components/pages/Packs";
+import Courses from "./components/pages/Courses";
+import Overview from "./components/pages/Overview";
+import Checkout from "./components/pages/Checkout";
+import Thanks from "./components/pages/Thanks";
 
 const App = () => {
   const [courses, setCourses] = useState([]);
   const [packs, setPacks] = useState([]);
   const [selectedCourses, setSelectedCourses] = useState([]);
 
-  const handleRemoveCourse = courseToRemove => {
-    setSelectedCourses(selectedCourses.filter(course => course !== courseToRemove));
+  const handleRemoveCourse = (courseToRemove) => {
+    setSelectedCourses(selectedCourses.filter((course) => course !== courseToRemove));
   };
 
   const handleCourseComment = (courseToUpdate, comment) => {
     setSelectedCourses(
-      selectedCourses.map(course => {
+      selectedCourses.map((course) => {
         if (course === courseToUpdate) {
           course.comment = comment;
         }
@@ -30,29 +30,29 @@ const App = () => {
   };
 
   useEffect(() => {
-    fetch('https://cdn.jsdelivr.net/gh/Demodia/Soprema/projects/courses/data/courses.json')
-      .then(response => {
+    fetch("https://cdn.jsdelivr.net/gh/Demodia/Soprema/projects/courses/data/courses.json")
+      .then((response) => {
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
         return response.json();
       })
-      .then(data => setCourses(data.filter(course => course.enable)))
-      .catch(error => {
-        console.error('Error fetching courses:', error);
+      .then((data) => setCourses(data.filter((course) => course.enable)))
+      .catch((error) => {
+        console.error("Error fetching courses:", error);
         // TODO: Handle the error in UI
       });
 
-    fetch('https://cdn.jsdelivr.net/gh/Demodia/Soprema/projects/courses/data/packs.json')
-      .then(response => {
+    fetch("https://cdn.jsdelivr.net/gh/Demodia/Soprema/projects/courses/data/packs.json")
+      .then((response) => {
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
         return response.json();
       })
-      .then(data => setPacks(data))
-      .catch(error => {
-        console.error('Error fetching packs:', error);
+      .then((data) => setPacks(data))
+      .catch((error) => {
+        console.error("Error fetching packs:", error);
         // TODO: Handle the error in UI
       });
   }, []);
@@ -71,4 +71,4 @@ const App = () => {
   );
 };
 
-render(<App />, document.getElementById('role-main'));
+render(<App />, document.getElementById("role-main"));

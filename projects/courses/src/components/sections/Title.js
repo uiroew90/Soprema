@@ -1,4 +1,4 @@
-import { h } from 'preact';
+import { h } from "preact";
 
 export default ({ text }) => (
   <div class="mega-row cms-row bg-grey-full vertical-spacing-bottom">

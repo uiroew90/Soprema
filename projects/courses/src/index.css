@@ -31,7 +31,7 @@
 }
 .viewer-element .small-tule.small-tule--image-link .small-tule--custom-icon {
   display: grid;
-  grid-template-areas: 'stacked';
+  grid-template-areas: "stacked";
   place-content: center;
 }
 .viewer-element .small-tule.small-tule--image-link .small-tule--custom-icon > * {

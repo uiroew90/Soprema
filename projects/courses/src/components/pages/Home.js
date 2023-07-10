@@ -1,11 +1,11 @@
-import { h } from 'preact';
-import { Link } from 'preact-router';
+import { h } from "preact";
+import { Link } from "preact-router";
 
-import PageWrapper from '../PageWrapper';
+import PageWrapper from "../PageWrapper";
 
 export default () => {
   const crumb = {
-    current: { text: 'Home' },
+    current: { text: "Home" },
   };
 
   return (
