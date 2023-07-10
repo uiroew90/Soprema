@@ -1,6 +1,7 @@
 import { h, render } from 'preact';
 import { useState, useEffect } from 'preact/hooks';
 import { Router } from 'preact-router';
+
 import Home from './components/pages/Home';
 import Packs from './components/pages/Packs';
 import Courses from './components/pages/Courses';
@@ -12,6 +13,14 @@ const App = () => {
   const [courses, setCourses] = useState([]);
   const [packs, setPacks] = useState([]);
   const [selectedCourses, setSelectedCourses] = useState([]);
+
+  const handleRemoveCourse = courseToRemove => {
+    setSelectedCourses(selectedCourses.filter(course => course !== courseToRemove));
+  };
+
+  const handleCourseComment = (courseToUpdate, comment) => {
+    setSelectedCourses(selectedCourses.map(course => (course === courseToUpdate ? { ...course, comment } : course)));
+  };
 
   useEffect(() => {
     fetch('https://cdn.jsdelivr.net/gh/Demodia/Soprema/projects/courses/data/courses.json')
@@ -47,7 +56,7 @@ const App = () => {
         <Home path="/" />
         <Packs path="/packs" packs={packs} courses={courses} setSelectedCourses={setSelectedCourses} />
         <Courses path="/courses" courses={courses} selectedCourses={selectedCourses} setSelectedCourses={setSelectedCourses} />
-        <Overview path="/overview" selectedCourses={selectedCourses} setSelectedCourses={setSelectedCourses} />
+        <Overview path="/overview" selectedCourses={selectedCourses} handleRemoveCourse={handleRemoveCourse} handleCourseComment={handleCourseComment} />
         <Checkout path="/checkout" selectedCourses={selectedCourses} setSelectedCourses={setSelectedCourses} />
         <Thanks path="/thanks" />
       </Router>
