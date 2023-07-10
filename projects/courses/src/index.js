@@ -15,12 +15,30 @@ const App = () => {
 
   useEffect(() => {
     fetch('https://cdn.jsdelivr.net/gh/Demodia/Soprema/projects/courses/data/courses.json')
-      .then(response => response.json())
-      .then(data => setCourses(data.filter(course => course.enable)));
+      .then(response => {
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        return response.json();
+      })
+      .then(data => setCourses(data.filter(course => course.enable)))
+      .catch(error => {
+        console.error('Error fetching courses:', error);
+        // TODO: Handle the error in UI
+      });
 
     fetch('https://cdn.jsdelivr.net/gh/Demodia/Soprema/projects/courses/data/packs.json')
-      .then(response => response.json())
-      .then(data => setPacks(data));
+      .then(response => {
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        return response.json();
+      })
+      .then(data => setPacks(data))
+      .catch(error => {
+        console.error('Error fetching packs:', error);
+        // TODO: Handle the error in UI
+      });
   }, []);
 
   return (

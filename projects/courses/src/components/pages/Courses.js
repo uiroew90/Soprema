@@ -6,7 +6,7 @@ import Title from '../sections/Title';
 import Callout from '../sections/Callout';
 
 const Course = ({ course, selected, toggleCourse }) => (
-  <button class={`custom-item-toggle flush ${selected ? 'is-active' : ''}`} onClick={() => toggleCourse(course)}>
+  <button class={`custom-item-toggle flush ${selected ? 'is-active' : ''}`} onClick={() => toggleCourse(course)} aria-label={`Toggle selection for ${course.name}`}>
     <div class="custom-item-toggle__icon"></div>
     <h3>{course.name}</h3>
     <p>{course.desc}</p>
@@ -44,7 +44,7 @@ const Category = ({ category, courses, selectedCourses, toggleCourse }) => {
           <div class="accordion-content wysiwyg" aria-labelledby={`title__collapse__${category}`} ref={ref}>
             <div class="collapse-content-wrapper">
               {courses.map(course => (
-                <Course course={course} selected={selectedCourses.includes(course)} toggleCourse={toggleCourse} />
+                <Course key={course.name} course={course} selected={selectedCourses.includes(course)} toggleCourse={toggleCourse} />
               ))}
             </div>
           </div>
@@ -64,13 +64,11 @@ const Courses = ({ courses, selectedCourses, setSelectedCourses }) => {
   }, {});
 
   const toggleCourse = course => {
-    setSelectedCourses(prevSelectedCourses => {
-      if (prevSelectedCourses.includes(course)) {
-        return prevSelectedCourses.filter(c => c !== course);
-      } else {
-        return [...prevSelectedCourses, course];
-      }
-    });
+    if (!selectedCourses.includes(course)) {
+      console.error(`Course ${course.name} not found in selected courses`);
+      return;
+    }
+    setSelectedCourses(selectedCourses.filter(c => c !== course));
   };
 
   return (
@@ -85,7 +83,7 @@ const Courses = ({ courses, selectedCourses, setSelectedCourses }) => {
               <div class="accordion">
                 <div class="accordion-main-wrapper">
                   {Object.entries(categories).map(([category, courses]) => (
-                    <Category category={category} courses={courses} selectedCourses={selectedCourses} toggleCourse={toggleCourse} />
+                    <Category key={category} category={category} courses={courses} selectedCourses={selectedCourses} toggleCourse={toggleCourse} />
                   ))}
                 </div>
               </div>
