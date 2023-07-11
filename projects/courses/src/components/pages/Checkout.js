@@ -1,69 +1,60 @@
-import { h, Fragment } from "preact";
+import { h } from "preact";
 import { useState, useEffect } from "preact/hooks";
-import { route } from "preact-router";
+import { Link, route } from "preact-router";
 
 import PageWrapper from "../PageWrapper";
-import Form from "../elements/Form";
 import FormInput from "../elements/FormInput";
+import useFormState from "../../hooks/useFormState";
 
-import useForm from "../../hooks/useForm";
-import validate from "../../utils/validate";
+import { validate } from "../../utils/validate";
 
 const Checkout = ({ selectedCourses, setSelectedCourses }) => {
-  console.log("Checkout component rendered");
+  const { formState, setFormState, errors, setErrors, handleInputChange } = useFormState(
+    {
+      firstname: "",
+      lastname: "",
+      email: "",
+      company: "",
+      phone: "",
+      fax: "",
+      address: "",
+      city: "",
+      zip: "",
+      comment: "",
+    },
+    validate
+  );
 
-  const initialValues = {
-    company: "",
-    firstname: "",
-    lastname: "",
-    street: "",
-    zip: "",
-    phone: "",
-    fax: "",
-    email: "",
-    comment: "",
-  };
+  const [error, setError] = useState(null);
 
-  const onSubmit = async (values) => {
-    try {
-      // Convert selected courses into a text string
-      const selectedCoursesText = selectedCourses.map((course) => `${course.name}: ${course.comment || ""}`).join("\n");
-      const formData = { ...values, comment };
-
-      // Submit the form data to Pardot
-      const response = await fetch("https://go.soprema.ch/l/978613/2023-02-24/594nlk", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
-
-      if (response.ok) {
-        // Clear selected courses and navigate to the thanks page
-        setSelectedCourses([]);
-        route("/thanks");
-      } else {
-        // Handle submission error
-        throw new Error("Form submit failed.");
+  const handleSubmit = (event) => {
+    // Update errors object
+    const formElement = event.target;
+    const newErrors = Array.from(formElement.elements).reduce((errors, element) => {
+      if (element.required && !element.value) {
+        errors[element.name] = true;
       }
-    } catch (error) {
-      throw new Error(`Submit attempt => ${error.message}`);
+      return errors;
+    }, {});
+    setErrors(newErrors);
+
+    // Check if the form is valid
+    const formIsValid = Object.values(newErrors).every((error) => !error);
+    if (!formIsValid) {
+      // The form is invalid, so don't submit it
+      event.preventDefault();
     }
   };
-
-  const { handleChange, handleSubmit, values, errors, validateForm } = useForm(initialValues, onSubmit, validate, onSubmit);
-
-  const [comment, setComment] = useState("");
 
   useEffect(() => {
     // Format selected courses into a text string
     const selectedCoursesText = selectedCourses.map((course) => `• ${course.name}${course.comment ? `\n  '${course.comment}'` : ""}`).join("\n");
 
-    // Update the comment field only if the selectedCoursesText is different from the current comment value
-    if (comment !== selectedCoursesText) {
-      setComment(selectedCoursesText);
-    }
+    // Update the comment field in the formState
+    setFormState((prevState) => ({
+      ...prevState,
+      comment: selectedCoursesText,
+    }));
   }, [selectedCourses]);
 
   const crumb = {
@@ -73,9 +64,6 @@ const Checkout = ({ selectedCourses, setSelectedCourses }) => {
     overview: { href: "/overview", text: "Übersicht" },
     current: { text: "Formular" },
   };
-
-  console.log("handleSubmit in Checkout:", handleSubmit);
-  console.log("validateForm in Checkout:", validateForm);
 
   return (
     <PageWrapper breadcrumbLinks={[crumb.home, crumb.packs, crumb.courses, crumb.overview, crumb.current]} titleText="Formular Firmenkurse">
@@ -98,23 +86,37 @@ const Checkout = ({ selectedCourses, setSelectedCourses }) => {
             </div>
 
             <div class="col col-sm-12">
-              <Form onSubmit={handleSubmit} validate={validateForm} title="Kontaktdaten" error={errors.form} buttonText="Senden">
-                {() => (
-                  <Fragment>
-                    <FormInput label="Firma" type="text" name="company" required value={values.company} onChange={handleChange} errors={errors} />
-                    <FormInput label="Name" type="text" name="firstname" required value={values.firstname} onChange={handleChange} errors={errors} />
-                    <FormInput label="Vorname" type="text" name="lastname" required value={values.lastname} onChange={handleChange} errors={errors} />
-                    <FormInput label="Strasse/Nr." type="text" name="street" value={values.street} onChange={handleChange} errors={errors} />
-                    <FormInput label="PLZ/Ort" type="text" name="zip" value={values.zip} onChange={handleChange} errors={errors} />
-                    <FormInput label="Telefon" type="text" name="phone" value={values.phone} onChange={handleChange} errors={errors} />
-                    <FormInput label="Fax" type="text" name="fax" value={values.fax} onChange={handleChange} errors={errors} />
-                    <FormInput label="E-Mail" type="email" name="email" required value={values.email} onChange={handleChange} errors={errors} />
-                    {/* <div hidden> */}
-                    <FormInput label="Mitteilung" type="textarea" name="comment" required value={comment} onChange={(event) => setComment(event.target.value)} errors={errors} />
-                    {/* </div> */}
-                  </Fragment>
+              <form name="form-course-order" method="post" action="https://go.soprema.ch/l/978613/2023-02-24/594nlk" class="std-form mb-0" onSubmit={handleSubmit} novalidate="novalidate">
+                <div class="form-display-column">
+                  <h2 class="form-display-column-title">Kontaktdaten</h2>
+                  <div class="form-display-column-wrapper">
+                    <FormInput label="Name" type="text" name="firstname" required={true} value={formState.firstname} onChange={handleInputChange} errors={errors} />
+                    <FormInput label="Vorname" type="text" name="lastname" required={true} value={formState.lastname} onChange={handleInputChange} errors={errors} />
+                    <FormInput label="Firma" type="text" name="company" required={true} value={formState.company} onChange={handleInputChange} errors={errors} />
+                    <FormInput label="E-Mail" type="email" name="email" required={true} value={formState.email} onChange={handleInputChange} errors={errors} />
+                    <FormInput label="Telefon" type="text" name="phone" required={true} value={formState.phone} onChange={handleInputChange} errors={errors} />
+                    <FormInput label="Fax" type="text" name="fax" required={false} value={formState.fax} onChange={handleInputChange} errors={errors} />
+
+                    <FormInput label="Strasse/Nr." type="text" name="address" required={true} value={formState.address} onChange={handleInputChange} errors={errors} />
+                    <FormInput label="Ort" type="text" name="city" required={true} value={formState.city} onChange={handleInputChange} errors={errors} />
+                    <FormInput label="PLZ" type="text" name="zip" required={true} value={formState.zip} onChange={handleInputChange} errors={errors} />
+
+                    <FormInput label="Mitteilung" type="textarea" name="comment" required={true} value={formState.comment} onChange={handleInputChange} errors={errors} />
+                  </div>
+                </div>
+                {error && (
+                  <div class="form-group is-error text-center">
+                    <ul className="form-error">
+                      <li>{error}</li>
+                    </ul>
+                  </div>
                 )}
-              </Form>
+                <p class="form-submit-group">
+                  <button type="submit" class="form-button btn btn-primary btn">
+                    Senden
+                  </button>
+                </p>
+              </form>
             </div>
           </div>
         </div>
