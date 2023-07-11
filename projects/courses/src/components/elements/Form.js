@@ -2,6 +2,8 @@ import { h } from "preact";
 import { useState, useEffect } from "preact/hooks";
 
 const Form = ({ children, onSubmit, initialValues = {}, validate, title, error, buttonText }) => {
+  // console.log("onSubmit prop in Form:", onSubmit);
+
   const [values, setValues] = useState(initialValues);
   const [errors, setErrors] = useState({});
 
@@ -41,7 +43,13 @@ const Form = ({ children, onSubmit, initialValues = {}, validate, title, error, 
         </div>
       )}
       <p class="form-submit-group">
-        <button type="submit" class="form-button btn btn-primary btn">
+        <button
+          type="submit"
+          class="form-button btn btn-primary btn"
+          onClick={(event) => {
+            onSubmit(event);
+          }}
+        >
           {buttonText}
         </button>
       </p>

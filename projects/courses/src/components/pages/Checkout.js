@@ -1,5 +1,5 @@
 import { h, Fragment } from "preact";
-import { useEffect } from "preact/hooks";
+import { useState, useEffect } from "preact/hooks";
 import { route } from "preact-router";
 
 import PageWrapper from "../PageWrapper";
@@ -10,6 +10,8 @@ import useForm from "../../hooks/useForm";
 import validate from "../../utils/validate";
 
 const Checkout = ({ selectedCourses, setSelectedCourses }) => {
+  console.log("Checkout component rendered");
+
   const initialValues = {
     company: "",
     firstname: "",
@@ -26,7 +28,7 @@ const Checkout = ({ selectedCourses, setSelectedCourses }) => {
     try {
       // Convert selected courses into a text string
       const selectedCoursesText = selectedCourses.map((course) => `${course.name}: ${course.comment || ""}`).join("\n");
-      const formData = { ...values, selectedCourses: selectedCoursesText };
+      const formData = { ...values, comment };
 
       // Submit the form data to Pardot
       const response = await fetch("https://go.soprema.ch/l/978613/2023-02-24/594nlk", {
@@ -52,12 +54,16 @@ const Checkout = ({ selectedCourses, setSelectedCourses }) => {
 
   const { handleChange, handleSubmit, values, errors, validateForm } = useForm(initialValues, onSubmit, validate, onSubmit);
 
+  const [comment, setComment] = useState("");
+
   useEffect(() => {
     // Format selected courses into a text string
     const selectedCoursesText = selectedCourses.map((course) => `• ${course.name}${course.comment ? `\n  '${course.comment}'` : ""}`).join("\n");
 
-    // Update the comment field in the formState
-    handleChange({ target: { name: "comment", value: selectedCoursesText } });
+    // Update the comment field only if the selectedCoursesText is different from the current comment value
+    if (comment !== selectedCoursesText) {
+      setComment(selectedCoursesText);
+    }
   }, [selectedCourses]);
 
   const crumb = {
@@ -67,6 +73,9 @@ const Checkout = ({ selectedCourses, setSelectedCourses }) => {
     overview: { href: "/overview", text: "Übersicht" },
     current: { text: "Formular" },
   };
+
+  console.log("handleSubmit in Checkout:", handleSubmit);
+  console.log("validateForm in Checkout:", validateForm);
 
   return (
     <PageWrapper breadcrumbLinks={[crumb.home, crumb.packs, crumb.courses, crumb.overview, crumb.current]} titleText="Formular Firmenkurse">
@@ -100,9 +109,9 @@ const Checkout = ({ selectedCourses, setSelectedCourses }) => {
                     <FormInput label="Telefon" type="text" name="phone" value={values.phone} onChange={handleChange} errors={errors} />
                     <FormInput label="Fax" type="text" name="fax" value={values.fax} onChange={handleChange} errors={errors} />
                     <FormInput label="E-Mail" type="email" name="email" required value={values.email} onChange={handleChange} errors={errors} />
-                    <div hidden>
-                      <FormInput label="Mitteilung" type="textarea" name="comment" required value={values.comment} onChange={handleChange} errors={errors} />
-                    </div>
+                    {/* <div hidden> */}
+                    <FormInput label="Mitteilung" type="textarea" name="comment" required value={comment} onChange={(event) => setComment(event.target.value)} errors={errors} />
+                    {/* </div> */}
                   </Fragment>
                 )}
               </Form>
