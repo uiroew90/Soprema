@@ -27,7 +27,7 @@ const Category = ({ category, courses, selectedCourses, toggleCourse }) => {
   };
 
   const countSelectedCourses = () => {
-    return courses.filter((course) => selectedCourses.includes(course)).length;
+    return courses.filter((course) => selectedCourses.some((selectedCourse) => selectedCourse.name === course.name && selectedCourse.category === course.category)).length;
   };
 
   return (
@@ -43,7 +43,7 @@ const Category = ({ category, courses, selectedCourses, toggleCourse }) => {
           <div class="accordion-content wysiwyg" aria-labelledby={`title__collapse__${category}`} ref={ref}>
             <div class="collapse-content-wrapper">
               {courses.map((course) => (
-                <Course key={course.name} course={course} selected={selectedCourses.includes(course)} toggleCourse={toggleCourse} />
+                <Course key={course.name} course={course} selected={selectedCourses.some((selectedCourse) => selectedCourse.name === course.name && selectedCourse.category === course.category)} toggleCourse={toggleCourse} />
               ))}
             </div>
           </div>
@@ -63,7 +63,11 @@ const Courses = ({ courses, selectedCourses, setSelectedCourses }) => {
   }, {});
 
   const toggleCourse = (course) => {
-    setSelectedCourses(selectedCourses.includes(course) ? selectedCourses.filter((c) => c !== course) : [...selectedCourses, course]);
+    if (selectedCourses.some((selectedCourse) => selectedCourse.name === course.name && selectedCourse.category === course.category)) {
+      setSelectedCourses(selectedCourses.filter((selectedCourse) => selectedCourse.name !== course.name || selectedCourse.category !== course.category));
+    } else {
+      setSelectedCourses([...selectedCourses, course]);
+    }
   };
 
   const crumb = {

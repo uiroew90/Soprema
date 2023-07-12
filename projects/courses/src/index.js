@@ -12,19 +12,27 @@ import Thanks from "./components/pages/Thanks";
 const App = () => {
   const [courses, setCourses] = useState([]);
   const [packs, setPacks] = useState([]);
-  const [selectedCourses, setSelectedCourses] = useState([]);
+  const [selectedCourses, setSelectedCourses] = useState(() => {
+    const savedCourses = localStorage.getItem("selectedCourses");
+    return savedCourses ? JSON.parse(savedCourses) : [];
+  });
+
+  useEffect(() => {
+    localStorage.setItem("selectedCourses", JSON.stringify(selectedCourses));
+  }, [selectedCourses]);
 
   const handleRemoveCourse = (courseToRemove) => {
-    setSelectedCourses(selectedCourses.filter((course) => course !== courseToRemove));
+    setSelectedCourses(selectedCourses.filter((course) => course.name !== courseToRemove.name || course.category !== courseToRemove.category));
   };
 
-  const handleCourseComment = (courseToUpdate, comment) => {
+  const handleCourseComment = (courseToComment, comment) => {
     setSelectedCourses(
       selectedCourses.map((course) => {
-        if (course === courseToUpdate) {
-          course.comment = comment;
+        if (course.name === courseToComment.name && course.category === courseToComment.category) {
+          return { ...course, comment };
+        } else {
+          return course;
         }
-        return course;
       })
     );
   };
