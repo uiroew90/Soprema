@@ -69,7 +69,7 @@ const App = () => {
 
   return (
     <div id="app">
-      <Router url="https://go.soprema.ch/firmenkurse/firmenkurse">
+      <Router url={window.location.pathname}>
         <AsyncHome path="/" />
         <AsyncPacks path="/packs" packs={packs} courses={courses} setSelectedCourses={setSelectedCourses} />
         <AsyncCourses path="/courses" courses={courses} selectedCourses={selectedCourses} setSelectedCourses={setSelectedCourses} />
