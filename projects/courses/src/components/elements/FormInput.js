@@ -8,7 +8,7 @@ const FormInput = ({ label, type, name, value, onChange, required, errors }) => 
           {label}
         </label>
       </div>
-      {type === "textarea" ? <textarea id={`form-course-order_${name}`} name={name} required={required} class="form-control" value={value} onChange={onChange}></textarea> : <input type={type} id={`form-course-order_${name}`} name={name} required={required} class="form-control" value={value} onChange={onChange} />}
+      {type === "textarea" ? <textarea inert readonly id={`form-course-order_${name}`} name={name} required={required} class="form-control" value={value} onChange={onChange}></textarea> : <input type={type} id={`form-course-order_${name}`} name={name} required={required} class="form-control" value={value} onChange={onChange} />}
     </div>
   );
 };

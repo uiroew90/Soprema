@@ -48,7 +48,7 @@ const Checkout = ({ selectedCourses, setSelectedCourses }) => {
 
   useEffect(() => {
     // Format selected courses into a text string
-    const selectedCoursesText = selectedCourses.map((course) => `• ${course.name}${course.comment ? `\n  '${course.comment}'` : ""}`).join("\n");
+    const selectedCoursesText = selectedCourses.map((course) => `• ${course.name}${course.comment ? `\n  "${course.comment}"` : ""}`).join("\n");
 
     // Update the comment field in the formState
     setFormState((prevState) => ({
@@ -75,9 +75,9 @@ const Checkout = ({ selectedCourses, setSelectedCourses }) => {
                 <h2>Kursübersicht</h2>
                 <ul class="mini-overview list-none">
                   {selectedCourses.map((course) => (
-                    <li>
-                      <h4>{course.name}</h4>
-                      <p>{course.comment}</p>
+                    <li class="mb-3">
+                      <div class="lead mb-0">{course.name}</div>
+                      {course.comment && <blockquote class="mb-0">"{course.comment}"</blockquote>}
                     </li>
                   ))}
                 </ul>
@@ -101,7 +101,7 @@ const Checkout = ({ selectedCourses, setSelectedCourses }) => {
                     <FormInput label="Ort" type="text" name="city" required={true} value={formState.city} onChange={handleInputChange} errors={errors} />
                     <FormInput label="PLZ" type="text" name="zip" required={true} value={formState.zip} onChange={handleInputChange} errors={errors} />
 
-                    <FormInput label="Mitteilung" type="textarea" name="comment" required={true} value={formState.comment} onChange={handleInputChange} errors={errors} />
+                    <FormInput label="Mitteilung" type="textarea" name="order" required={true} value={formState.comment} onChange={handleInputChange} errors={errors} />
                   </div>
                 </div>
                 {error && (
