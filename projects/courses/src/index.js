@@ -69,13 +69,13 @@ const App = () => {
 
   return (
     <div id="app">
-      <Router url={window.location.pathname}>
-        <AsyncHome path="/order_home" />
-        <AsyncPacks path="/order_packs" packs={packs} courses={courses} setSelectedCourses={setSelectedCourses} />
-        <AsyncCourses path="/order_courses" courses={courses} selectedCourses={selectedCourses} setSelectedCourses={setSelectedCourses} />
-        <AsyncOverview path="/order_overview" selectedCourses={selectedCourses} handleRemoveCourse={handleRemoveCourse} handleCourseComment={handleCourseComment} />
-        <AsyncCheckout path="/order_checkout" selectedCourses={selectedCourses} setSelectedCourses={setSelectedCourses} />
-        <AsyncThanks path="/order_thanks" />
+      <Router url="https://go.soprema.ch/firmenkurse">
+        <AsyncHome path="/" />
+        <AsyncPacks path="/packs" packs={packs} courses={courses} setSelectedCourses={setSelectedCourses} />
+        <AsyncCourses path="/courses" courses={courses} selectedCourses={selectedCourses} setSelectedCourses={setSelectedCourses} />
+        <AsyncOverview path="/overview" selectedCourses={selectedCourses} handleRemoveCourse={handleRemoveCourse} handleCourseComment={handleCourseComment} />
+        <AsyncCheckout path="/checkout" selectedCourses={selectedCourses} setSelectedCourses={setSelectedCourses} />
+        <AsyncThanks path="/thanks" />
       </Router>
     </div>
   );
