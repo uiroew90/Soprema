@@ -2,14 +2,12 @@ import { h, render } from "preact";
 import { useState, useEffect } from "preact/hooks";
 import { Router } from "preact-router";
 
-import AsyncComponent from "./components/AsyncComponent";
-
-const AsyncHome = AsyncComponent(() => import("./components/pages/Home"));
-const AsyncPacks = AsyncComponent(() => import("./components/pages/Packs"));
-const AsyncCourses = AsyncComponent(() => import("./components/pages/Courses"));
-const AsyncOverview = AsyncComponent(() => import("./components/pages/Overview"));
-const AsyncCheckout = AsyncComponent(() => import("./components/pages/Checkout"));
-const AsyncThanks = AsyncComponent(() => import("./components/pages/Thanks"));
+import Home from "./components/pages/Home";
+import Packs from "./components/pages/Packs";
+import Courses from "./components/pages/Courses";
+import Overview from "./components/pages/Overview";
+import Checkout from "./components/pages/Checkout";
+import Thanks from "./components/pages/Thanks";
 
 const App = () => {
   const [courses, setCourses] = useState([]);
@@ -69,13 +67,13 @@ const App = () => {
 
   return (
     <div id="app">
-      <Router url="https://go.soprema.ch/firmenkurse">
-        <AsyncHome path="/" />
-        <AsyncPacks path="/packs" packs={packs} courses={courses} setSelectedCourses={setSelectedCourses} />
-        <AsyncCourses path="/courses" courses={courses} selectedCourses={selectedCourses} setSelectedCourses={setSelectedCourses} />
-        <AsyncOverview path="/overview" selectedCourses={selectedCourses} handleRemoveCourse={handleRemoveCourse} handleCourseComment={handleCourseComment} />
-        <AsyncCheckout path="/checkout" selectedCourses={selectedCourses} setSelectedCourses={setSelectedCourses} />
-        <AsyncThanks path="/thanks" />
+      <Router url={window.location.hash ? window.location.hash.slice(1) : "/"}>
+        <Home path="/" />
+        <Packs path="/packs" packs={packs} courses={courses} setSelectedCourses={setSelectedCourses} />
+        <Courses path="/courses" courses={courses} selectedCourses={selectedCourses} setSelectedCourses={setSelectedCourses} />
+        <Overview path="/overview" selectedCourses={selectedCourses} handleRemoveCourse={handleRemoveCourse} handleCourseComment={handleCourseComment} />
+        <Checkout path="/checkout" selectedCourses={selectedCourses} setSelectedCourses={setSelectedCourses} />
+        <Thanks path="/thanks" />
       </Router>
     </div>
   );
