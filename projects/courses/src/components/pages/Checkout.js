@@ -58,10 +58,10 @@ const Checkout = ({ selectedCourses, setSelectedCourses }) => {
   }, [selectedCourses]);
 
   const crumb = {
-    home: { href: "/", text: "Home" },
-    packs: { href: "/packs", text: "Firmenkurse" },
-    courses: { href: "/courses", text: "Kursliste" },
-    overview: { href: "/overview", text: "Übersicht" },
+    home: { href: "#/", text: "Home" },
+    packs: { href: "#packs", text: "Firmenkurse" },
+    courses: { href: "#courses", text: "Kursliste" },
+    overview: { href: "#overview", text: "Übersicht" },
     current: { text: "Formular" },
   };
 

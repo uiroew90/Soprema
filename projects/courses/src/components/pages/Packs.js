@@ -20,7 +20,7 @@ const Pack = ({ pack, courses, setSelectedCourses }) => {
   return (
     <div class="guides-element custom-guides-element span-4">
       <div class="small-tule small-tule--light small-tule--image-link">
-        <Link href="/courses" class="small-tule-wrapper" onClick={handleClick} aria-label={`Select courses from ${pack.name}`}>
+        <Link href="#courses" class="small-tule-wrapper" onClick={handleClick} aria-label={`Select courses from ${pack.name}`}>
           <div class="small-tule-container">
             <div class="small-tule-content wysiwyg">
               <h3 class="small-tule-title">{pack.name}</h3>
@@ -40,7 +40,7 @@ const Pack = ({ pack, courses, setSelectedCourses }) => {
 
 const Packs = ({ packs, courses, setSelectedCourses }) => {
   const crumb = {
-    home: { href: "/", text: "Home" },
+    home: { href: "#/", text: "Home" },
     current: { text: "Firmenkurse" },
   };
 

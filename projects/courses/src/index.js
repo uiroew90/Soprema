@@ -10,6 +10,13 @@ import Checkout from "./components/pages/Checkout";
 import Thanks from "./components/pages/Thanks";
 
 const App = () => {
+  const [hash, setHash] = useState(window.location.hash);
+  useEffect(() => {
+    const onHashChange = () => setHash(window.location.hash);
+    window.addEventListener("hashchange", onHashChange);
+    return () => window.removeEventListener("hashchange", onHashChange);
+  }, []);
+
   const [courses, setCourses] = useState([]);
   const [packs, setPacks] = useState([]);
   const [selectedCourses, setSelectedCourses] = useState(() => {
@@ -67,7 +74,7 @@ const App = () => {
 
   return (
     <div id="app">
-      <Router url={window.location.hash ? window.location.hash.slice(1) : "/"}>
+      <Router key={hash} url={hash ? hash.slice(1) : "/"}>
         <Home path="/" />
         <Packs path="/packs" packs={packs} courses={courses} setSelectedCourses={setSelectedCourses} />
         <Courses path="/courses" courses={courses} selectedCourses={selectedCourses} setSelectedCourses={setSelectedCourses} />

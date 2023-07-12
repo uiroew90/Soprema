@@ -71,8 +71,8 @@ const Courses = ({ courses, selectedCourses, setSelectedCourses }) => {
   };
 
   const crumb = {
-    home: { href: "/", text: "Home" },
-    packs: { href: "/packs", text: "Firmenkurse" },
+    home: { href: "#/", text: "Home" },
+    packs: { href: "#packs", text: "Firmenkurse" },
     current: { text: "Kursliste" },
   };
 
@@ -92,7 +92,7 @@ const Courses = ({ courses, selectedCourses, setSelectedCourses }) => {
             </div>
             <div class="col col-sm-12">
               <div class="wysiwyg text-right">
-                <button onClick={() => selectedCourses.length > 0 && route("/overview")} disabled={selectedCourses.length === 0} class="button">
+                <button onClick={() => selectedCourses.length > 0 && (window.location.hash = "#overview")} disabled={selectedCourses.length === 0} class="button">
                   Kurse hinzufügen
                 </button>
               </div>

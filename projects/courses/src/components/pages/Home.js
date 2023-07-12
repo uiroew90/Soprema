@@ -18,7 +18,7 @@ export default () => {
                 <div class="guides-wrapper custom-guides-wrapper">
                   <div class="guides-element custom-guides-element span-6">
                     <div class="small-tule small-tule--light small-tule--image-link">
-                      <Link href="/courses" class="small-tule-wrapper">
+                      <Link href="#courses" class="small-tule-wrapper">
                         <div class="small-tule-container">
                           <div class="small-tule--custom-icon">
                             <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" viewBox="0 0 640 512">
@@ -35,7 +35,7 @@ export default () => {
                   </div>
                   <div class="guides-element custom-guides-element span-6">
                     <div class="small-tule small-tule--light small-tule--image-link">
-                      <Link href="/packs" class="small-tule-wrapper">
+                      <Link href="#packs" class="small-tule-wrapper">
                         <div class="small-tule-container">
                           <div class="small-tule--custom-icon">
                             <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" viewBox="0 0 576 512">

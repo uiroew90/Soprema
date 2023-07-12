@@ -5,9 +5,9 @@ import PageWrapper from "../PageWrapper";
 
 const Overview = ({ selectedCourses, handleRemoveCourse, handleCourseComment }) => {
   const crumb = {
-    home: { href: "/", text: "Home" },
-    packs: { href: "/packs", text: "Firmenkurse" },
-    courses: { href: "/courses", text: "Kursliste" },
+    home: { href: "#/", text: "Home" },
+    packs: { href: "#packs", text: "Firmenkurse" },
+    courses: { href: "#courses", text: "Kursliste" },
     current: { text: "Übersicht" },
   };
 
@@ -47,13 +47,13 @@ const Overview = ({ selectedCourses, handleRemoveCourse, handleCourseComment }) 
                 <div class="wysiwyg">
                   <h2>There are no courses selected.</h2>
                   <p>
-                    Please go back to <Link href="/packs">Packs</Link> or <Link href="/courses">Courses</Link> before proceeding to checkout.
+                    Please go back to <Link href="#packs">Packs</Link> or <Link href="/courses">Courses</Link> before proceeding to checkout.
                   </p>
                 </div>
               )}
               {selectedCourses.length !== 0 && (
                 <div class="wysiwyg text-right">
-                  <button onClick={() => selectedCourses.length > 0 && route("/checkout")} disabled={selectedCourses.length === 0} class="button">
+                  <button onClick={() => selectedCourses.length > 0 && (window.location.hash = "#checkout")} disabled={selectedCourses.length === 0} class="button">
                     Bestätigen
                   </button>
                 </div>
