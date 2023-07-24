@@ -4,8 +4,8 @@
     [
       "@babel/preset-react",
       {
-        "pragma": "h",
-        "pragmaFrag": "Fragment"
+        "pragma": "React.createElement",
+        "pragmaFrag": "React.Fragment"
       }
     ]
   ]

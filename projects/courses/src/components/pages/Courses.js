@@ -1,12 +1,11 @@
-import { h } from "preact";
-import { route } from "preact-router";
-import { useState, useRef, useEffect } from "preact/hooks";
+import React, { useState, useEffect, useRef } from "react";
+import { useNavigate } from "react-router-dom";
 
 import PageWrapper from "../PageWrapper";
 
 const Course = ({ course, selected, toggleCourse }) => (
-  <button class={`custom-item-toggle flush ${selected ? "is-active" : ""}`} onClick={() => toggleCourse(course)} aria-label={`Toggle selection for ${course.name}`}>
-    <div class="custom-item-toggle__icon"></div>
+  <button className={`custom-item-toggle flush ${selected ? "is-active" : ""}`} onClick={() => toggleCourse(course)} aria-label={`Toggle selection for ${course.name}`}>
+    <div className="custom-item-toggle__icon"></div>
     <h3>{course.name}</h3>
     <p>{course.desc}</p>
   </button>
@@ -31,17 +30,17 @@ const Category = ({ category, courses, selectedCourses, toggleCourse }) => {
   };
 
   return (
-    <div class={`accordion-element ${isOpen ? "is-active" : ""}`}>
-      <div class="accordion-wrapper">
-        <button type="button" class="accordion-title text-uppercase" aria-expanded={isOpen} id={`title__collapse__${category}`} aria-controls="accordion-1" onClick={toggleOpen}>
+    <div className={`accordion-element ${isOpen ? "is-active" : ""}`}>
+      <div className="accordion-wrapper">
+        <button type="button" className="accordion-title text-uppercase" aria-expanded={isOpen} id={`title__collapse__${category}`} aria-controls="accordion-1" onClick={toggleOpen}>
           {category}{" "}
-          <span class="active-count">
+          <span className="active-count">
             ({countSelectedCourses()} / {courses.length})
           </span>
         </button>
-        <div class="accordion-container" style={{ height: `${height}px` }}>
-          <div class="accordion-content wysiwyg" aria-labelledby={`title__collapse__${category}`} ref={ref}>
-            <div class="collapse-content-wrapper">
+        <div className="accordion-container" style={{ height: `${height}px` }}>
+          <div className="accordion-content wysiwyg" aria-labelledby={`title__collapse__${category}`} ref={ref}>
+            <div className="collapse-content-wrapper">
               {courses.map((course) => (
                 <Course key={course.name} course={course} selected={selectedCourses.some((selectedCourse) => selectedCourse.name === course.name && selectedCourse.category === course.category)} toggleCourse={toggleCourse} />
               ))}
@@ -54,6 +53,8 @@ const Category = ({ category, courses, selectedCourses, toggleCourse }) => {
 };
 
 const Courses = ({ courses, selectedCourses, setSelectedCourses }) => {
+  const navigate = useNavigate();
+
   const categories = courses.reduce((acc, course) => {
     if (!acc[course.category]) {
       acc[course.category] = [];
@@ -71,28 +72,28 @@ const Courses = ({ courses, selectedCourses, setSelectedCourses }) => {
   };
 
   const crumb = {
-    home: { href: "#/", text: "Home" },
-    packs: { href: "#packs", text: "Firmenkurse" },
+    home: { href: "/", text: "Home" },
+    packs: { href: "/packs", text: "Firmenkurse" },
     current: { text: "Kursliste" },
   };
 
   return (
     <PageWrapper hasCallout="true" breadcrumbLinks={[crumb.home, crumb.packs, crumb.current]} titleText="Kursliste">
-      <div class="mega-row cms-row vertical-spacing-bottom">
-        <div class="container container-medium">
-          <div class="row">
-            <div class="col col-sm-12">
-              <div class="accordion">
-                <div class="accordion-main-wrapper">
+      <div className="mega-row cms-row vertical-spacing-bottom">
+        <div className="container container-medium">
+          <div className="row">
+            <div className="col col-sm-12">
+              <div className="accordion">
+                <div className="accordion-main-wrapper">
                   {Object.entries(categories).map(([category, courses]) => (
                     <Category key={category} category={category} courses={courses} selectedCourses={selectedCourses} toggleCourse={toggleCourse} />
                   ))}
                 </div>
               </div>
             </div>
-            <div class="col col-sm-12">
-              <div class="wysiwyg text-right">
-                <button onClick={() => selectedCourses.length > 0 && (window.location.hash = "#overview")} disabled={selectedCourses.length === 0} class="button">
+            <div className="col col-sm-12">
+              <div className="wysiwyg text-right">
+                <button onClick={() => selectedCourses.length > 0 && navigate("/overview")} disabled={selectedCourses.length === 0} className="button">
                   Kurse hinzufügen
                 </button>
               </div>

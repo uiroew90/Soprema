@@ -1,6 +1,5 @@
-import { h } from "preact";
-import { useState, useEffect } from "preact/hooks";
-import { Link, route } from "preact-router";
+import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 import PageWrapper from "../PageWrapper";
 import FormInput from "../elements/FormInput";
@@ -9,6 +8,8 @@ import useFormState from "../../hooks/useFormState";
 import { validate } from "../../utils/validate";
 
 const Checkout = ({ selectedCourses, setSelectedCourses }) => {
+  const navigate = useNavigate();
+
   const { formState, setFormState, errors, setErrors, handleInputChange } = useFormState(
     {
       firstname: "",
@@ -58,26 +59,26 @@ const Checkout = ({ selectedCourses, setSelectedCourses }) => {
   }, [selectedCourses]);
 
   const crumb = {
-    home: { href: "#/", text: "Home" },
-    packs: { href: "#packs", text: "Firmenkurse" },
-    courses: { href: "#courses", text: "Kursliste" },
-    overview: { href: "#overview", text: "Übersicht" },
+    home: { href: "/", text: "Home" },
+    packs: { href: "/packs", text: "Firmenkurse" },
+    courses: { href: "/courses", text: "Kursliste" },
+    overview: { href: "/overview", text: "Übersicht" },
     current: { text: "Formular" },
   };
 
   return (
     <PageWrapper breadcrumbLinks={[crumb.home, crumb.packs, crumb.courses, crumb.overview, crumb.current]} titleText="Formular Firmenkurse">
-      <div class="mega-row cms-row vertical-spacing-bottom">
-        <div class="container container-medium">
-          <div class="row">
-            <div class="col col-sm-12">
-              <div class="text-element noresize">
+      <div className="mega-row cms-row vertical-spacing-bottom">
+        <div className="container container-medium">
+          <div className="row">
+            <div className="col col-sm-12">
+              <div className="text-element noresize">
                 <h2>Kursübersicht</h2>
-                <ul class="mini-overview list-none">
+                <ul className="mini-overview list-none">
                   {selectedCourses.map((course) => (
-                    <li class="mb-3">
-                      <div class="lead mb-0">{course.name}</div>
-                      {course.comment && <blockquote class="mb-0">"{course.comment}"</blockquote>}
+                    <li key={course.name} className="mb-3">
+                      <div className="lead mb-0">{course.name}</div>
+                      {course.comment && <blockquote className="mb-0">"{course.comment}"</blockquote>}
                     </li>
                   ))}
                 </ul>
@@ -85,11 +86,11 @@ const Checkout = ({ selectedCourses, setSelectedCourses }) => {
               </div>
             </div>
 
-            <div class="col col-sm-12">
-              <form name="form-course-order" method="post" action="https://go.soprema.ch/l/978613/2023-02-24/594nlk" class="std-form mb-0" onSubmit={handleSubmit} novalidate="novalidate">
-                <div class="form-display-column">
-                  <h2 class="form-display-column-title">Kontaktdaten</h2>
-                  <div class="form-display-column-wrapper">
+            <div className="col col-sm-12">
+              <form name="form-course-order" method="post" action="https://go.soprema.ch/l/978613/2023-02-24/594nlk" className="std-form mb-0" onSubmit={handleSubmit} noValidate="novalidate">
+                <div className="form-display-column">
+                  <h2 className="form-display-column-title">Kontaktdaten</h2>
+                  <div className="form-display-column-wrapper">
                     <FormInput label="Name" type="text" name="firstname" required={true} value={formState.firstname} onChange={handleInputChange} errors={errors} />
                     <FormInput label="Vorname" type="text" name="lastname" required={true} value={formState.lastname} onChange={handleInputChange} errors={errors} />
                     <FormInput label="Firma" type="text" name="company" required={true} value={formState.company} onChange={handleInputChange} errors={errors} />
@@ -105,14 +106,14 @@ const Checkout = ({ selectedCourses, setSelectedCourses }) => {
                   </div>
                 </div>
                 {error && (
-                  <div class="form-group is-error text-center">
+                  <div className="form-group is-error text-center">
                     <ul className="form-error">
                       <li>{error}</li>
                     </ul>
                   </div>
                 )}
-                <p class="form-submit-group">
-                  <button type="submit" class="form-button btn btn-primary btn">
+                <p className="form-submit-group">
+                  <button type="submit" className="form-button btn btn-primary btn">
                     Senden
                   </button>
                 </p>

@@ -1,13 +1,13 @@
-import { h, Fragment } from "preact";
-import { Link } from "preact-router";
+import React, { Fragment } from "react";
+import { Link } from "react-router-dom";
 
-export default ({ links }) => (
-  <div class="breadcrumb">
-    <div class="breadcrumb-wrapper">
-      <p class="breadcrumb-element">
+const Breadcrumb = ({ links }) => (
+  <div className="breadcrumb">
+    <div className="breadcrumb-wrapper">
+      <p className="breadcrumb-element">
         {links.map((link, index) => (
           <Fragment key={index}>
-            {link.href ? <Link href={link.href}>{link.text}</Link> : <span class="active">{link.text}</span>}
+            {link.href ? <Link to={link.href}>{link.text}</Link> : <span className="active">{link.text}</span>}
             {index < links.length - 1 && <span>&nbsp;&gt;&nbsp;</span>}
           </Fragment>
         ))}
@@ -15,3 +15,5 @@ export default ({ links }) => (
     </div>
   </div>
 );
+
+export default Breadcrumb;

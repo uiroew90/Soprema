@@ -1,6 +1,7 @@
-import { h, render } from "preact";
-import { useState, useEffect } from "preact/hooks";
-import { Router } from "preact-router";
+import React, { StrictMode, useState, useEffect } from "react";
+import ReactDOM from "react-dom";
+import { createRoot } from "react-dom/client";
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
 
 import Home from "./components/pages/Home";
 import Packs from "./components/pages/Packs";
@@ -74,16 +75,24 @@ const App = () => {
 
   return (
     <div id="app">
-      <Router key={hash} url={hash ? hash.slice(1) : "/"}>
-        <Home path="/" />
-        <Packs path="/packs" packs={packs} courses={courses} setSelectedCourses={setSelectedCourses} />
-        <Courses path="/courses" courses={courses} selectedCourses={selectedCourses} setSelectedCourses={setSelectedCourses} />
-        <Overview path="/overview" selectedCourses={selectedCourses} handleRemoveCourse={handleRemoveCourse} handleCourseComment={handleCourseComment} />
-        <Checkout path="/checkout" selectedCourses={selectedCourses} setSelectedCourses={setSelectedCourses} />
-        <Thanks path="/thanks" />
+      <Router>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/packs" element={<Packs packs={packs} courses={courses} setSelectedCourses={setSelectedCourses} />} />
+          <Route path="/courses" element={<Courses courses={courses} selectedCourses={selectedCourses} setSelectedCourses={setSelectedCourses} />} />
+          <Route path="/overview" element={<Overview selectedCourses={selectedCourses} handleRemoveCourse={handleRemoveCourse} handleCourseComment={handleCourseComment} />} />
+          <Route path="/checkout" element={<Checkout selectedCourses={selectedCourses} setSelectedCourses={setSelectedCourses} />} />
+          <Route path="/thanks" element={<Thanks />} />
+        </Routes>
       </Router>
     </div>
   );
 };
 
-render(<App />, document.getElementById("role-main"));
+const container = document.getElementById("role-main");
+const root = createRoot(container);
+root.render(
+  <StrictMode>
+    <App />
+  </StrictMode>
+);

@@ -1,4 +1,4 @@
-import { useState, useEffect } from "preact/hooks";
+import { useState, useEffect } from "react";
 
 const useFormState = (initialState, validate) => {
   const [formState, setFormState] = useState(initialState);
