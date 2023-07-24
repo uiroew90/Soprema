@@ -1,7 +1,6 @@
 export default {
   translation: {
-    individual_courses: "Individual Courses",
-    prebuilt_packs: "Prebuilt Packs",
-    // ...
+    // Left blank becuase this project doesn't need English
+    // But it's useful to see the structure of the translation objects
   },
 };

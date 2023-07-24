@@ -1,369 +1,438 @@
-import React from "react";
-import { Link } from "react-router-dom";
+// Libraries and packages
+import React, { useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import i18n from "i18next";
+// Components
+import HeaderLogin from "../elements/HeaderLogin";
+import HeaderSearch from "../elements/HeaderSearch";
+import HeaderTopButtons from "../elements/HeaderTopButtons";
+import HeaderSubMenuBack from "../elements/HeaderSubMenuBack";
 
-import LanguageSwitcher from "../elements/LanguageSwitcher";
+const prependUrl = (link) => (link.startsWith("/") ? `https://www.soprema.ch${link}` : link);
 
-const CorporateHeader = () => {
+const SubMenuLink = ({ title, link, image, className, level }) => {
+  const fullLink = prependUrl(link);
   return (
-    <header className="header" id="role-banner" data-newheader role="banner">
-      <div className="header-wrapper">
-        <div className="header-logo">
-          <a className="header-logo-wrapper" href="/de/">
-            <img src="https://www.soprema.ch/files/resize/outside/200-200-logo-web_9e746a81662d1d01e8b543665902fb3e.webp" alt="accessibility.back_to_home" loading="lazy" />
+    <li
+      className={`header-menu-submenu-element header-menu-submenu-element--lvl${level} ${className}`}
+      data-header-secondlvl=''>
+      <a
+        className={`header-menu-submenu-link header-menu-submenu-link--lvl${level} ${className}`}
+        target='_self'
+        href={fullLink}>
+        {image && <div className='header-menu-submenu-image' style={{ backgroundImage: `url('${image}')` }}></div>}
+        {title}
+      </a>
+    </li>
+  );
+};
+
+const SubMenu = ({ title, link, image, children, className, level }) => {
+  const fullLink = prependUrl(link);
+  return (
+    <li
+      className={`header-menu-submenu-element header-menu-submenu-element--lvl${level} ${className}`}
+      data-header-secondlvl=''>
+      <a
+        className={`header-menu-submenu-link header-menu-submenu-link--lvl${level} ${className}`}
+        target='_self'
+        data-header-secondlvl-button=''
+        href={fullLink}>
+        {image && <div className='header-menu-submenu-image' style={{ backgroundImage: `url('${image}')` }}></div>}
+        {title}
+      </a>
+      <ul
+        className={`header-menu-submenu-list header-menu-submenu-list--lvl${level} ${className}`}
+        data-header-secondlvl-wrapper=''>
+        <HeaderSubMenuBack value={title} level={level} />
+        {children}
+      </ul>
+    </li>
+  );
+};
+
+export default () => {
+  const { t } = useTranslation();
+
+  const [currentLanguage, setCurrentLanguage] = useState(i18n.language);
+
+  useEffect(() => {
+    const handleLanguageChanged = (lng) => setCurrentLanguage(lng);
+
+    i18n.on("languageChanged", handleLanguageChanged);
+    return () => {
+      i18n.off("languageChanged", handleLanguageChanged);
+    };
+  }, []);
+
+  return (
+    <header className='header' id='role-banner' data-newheader='' role='banner'>
+      <div className='header-wrapper'>
+        <div className='header-logo'>
+          <a className='header-logo-wrapper' href={`https://www.soprema.ch/${currentLanguage}/`}>
+            <img
+              src='https://www.soprema.ch/files/resize/outside/200-200-logo-web_9e746a81662d1d01e8b543665902fb3e.webp'
+              alt='accessibility.back_to_home'
+              loading='lazy'
+            />
           </a>
         </div>
 
-        <div className="header-container">
-          <div className="header-menu" data-header-wrapper>
-            <nav className="header-menu-container">
-              <ul className="header-top-menu" data-header-nav>
-                <li className="header-top-element">
-                  <button className="header-top-link" data-header-search-btn type="button">
-                    <i className="ic ic-search"></i> Suche
+        <div className='header-container'>
+          <div className='header-menu' data-header-wrapper=''>
+            <nav className='header-menu-container'>
+              <HeaderTopButtons />
+              <ul className='header-menu-list' data-header-nav=''>
+                <li className='header-menu-element' data-header-menu=''>
+                  <button className='header-menu-link' data-header-menu-button='' type='button'>
+                    {t("headerNav.service.value")}
                   </button>
-                </li>
-                <li className="header-top-element">
-                  <a className="header-top-link" href="https://www.soprema.ch/de/presse/aktuell" target="_self">
-                    <div className="header-top-image" style={{ backgroundImage: "url('https://www.soprema.ch/files/resize/outside/50-50-press-2x_013643d7df009440e1a015aa8c76b9df.webp')" }}></div>
-                    Presse
-                  </a>
-                </li>
-                <li className="header-top-element">
-                  <a className="header-top-link" href="https://www.soprema.ch/de/kontaktformular" target="_self">
-                    <div className="header-top-image" style={{ backgroundImage: "url('https://www.soprema.ch/files/resize/outside/50-50-30429_5fd9ce7604a16bc7a95e1d0efea8a60f.webp')" }}></div>
-                    Kontakt
-                  </a>
-                </li>
-                <LanguageSwitcher />
-              </ul>
-              <ul className="header-menu-list" data-header-nav>
-                <li className="header-menu-element" data-header-menu>
-                  <button className="header-menu-link" data-header-menu-button type="button">
-                    Service
-                  </button>
-                  <div className="header-menu-submenu" data-header-menu-wrapper>
-                    <div className="header-menu-submenu-content" data-header-menu-content>
-                      <ul className="header-menu-submenu-list">
-                        <li className="header-menu-submenu-element header-menu-submenu-element--lvl2 header-menu-submenu-element--back header-menu-submenu-element--top">
-                          <button className="header-menu-submenu-back" data-header-back type="button">
-                            Menu
-                          </button>
-                        </li>
-                        <li className="header-menu-submenu-element header-menu-submenu-element--head header-menu-submenu-element--lvl2">
-                          <a className="header-menu-submenu-link header-menu-submenu-link--head header-menu-submenu-link--lvl2" href="https://www.soprema.ch/de/architektenservice-old">
-                            Service
+                  <div className='header-menu-submenu' data-header-menu-wrapper=''>
+                    <div className='header-menu-submenu-content' data-header-menu-content=''>
+                      <ul className='header-menu-submenu-list'>
+                        <HeaderSubMenuBack value={t("headerNav.back")} level='2' />
+                        <li className='header-menu-submenu-element header-menu-submenu-element--head header-menu-submenu-element--lvl2'>
+                          <a
+                            className='header-menu-submenu-link header-menu-submenu-link--head header-menu-submenu-link--lvl2'
+                            href='/de/architektenservice-old'>
+                            {t("headerNav.service.value")}
                           </a>
                         </li>
-                        <li className="header-menu-submenu-element header-menu-submenu-element--lvl2" data-header-secondlvl>
-                          <a className="header-menu-submenu-link header-menu-submenu-link--lvl2" href="https://www.soprema.ch/de/architektenservice" target="_self">
-                            <div className="header-menu-submenu-image" style={{ backgroundImage: "url('https://www.soprema.ch/files/resize/outside/50-50-architect-991e9a3a0ec20538df23ef0f5faa8b24_63a38401c2ef4c15b0f0517af57d7f8d.webp')" }}></div>
-                            Architektenservice
-                          </a>
-                        </li>
-                        <li className="header-menu-submenu-element header-menu-submenu-element--lvl2" data-header-secondlvl>
-                          <a className="header-menu-submenu-link header-menu-submenu-link--lvl2" href="https://www.soprema.ch/de/garantieleistungen" target="_self">
-                            <div className="header-menu-submenu-image" style={{ backgroundImage: "url('https://www.soprema.ch/files/resize/outside/50-50-30415-709f4959719e6501e35518b16fc847d1_759fff657e3903bd80671aa28a31f8f8.webp')" }}></div>
-                            Garantien
-                          </a>
-                        </li>
-                        <li className="header-menu-submenu-element header-menu-submenu-element--lvl2" data-header-secondlvl>
-                          <a className="header-menu-submenu-link header-menu-submenu-link--lvl2" data-header-secondlvl-button href="https://www.soprema.ch/de/dokumente" target="_self">
-                            Download
-                          </a>
-                          <ul className="header-menu-submenu-list header-menu-submenu-list--lvl2" data-header-secondlvl-wrapper>
-                            <li className="header-menu-submenu-element header-menu-submenu-element--lvl3 header-menu-submenu-element--back header-menu-submenu-element--top">
-                              <button className="header-menu-submenu-back" data-header-back type="button">
-                                Service
-                              </button>
-                            </li>
-                            <li className="header-menu-submenu-element header-menu-submenu-element--head header-menu-submenu-element--lvl3">
-                              <a className="header-menu-submenu-link header-menu-submenu-link--head header-menu-submenu-link--lvl3" href="https://www.soprema.ch/de/dokumente">
-                                Download
-                              </a>
-                            </li>
-                            <li className="header-menu-submenu-element header-menu-submenu-element--lvl3">
-                              <a className="header-menu-submenu-link header-menu-submenu-link--lvl3" href="https://www.soprema.ch/de/dokumente/download" target="_self">
-                                Dokumente
-                              </a>
-                            </li>
-                            <li className="header-menu-submenu-element header-menu-submenu-element--lvl3">
-                              <a className="header-menu-submenu-link header-menu-submenu-link--lvl3" href="https://www.soprema.ch/de/documentation/search-strict-product?language=de" target="_self">
-                                Download-Support
-                              </a>
-                            </li>
-                          </ul>
-                        </li>
-                        <li className="header-menu-submenu-element header-menu-submenu-element--lvl2" data-header-secondlvl>
-                          <a className="header-menu-submenu-link header-menu-submenu-link--lvl2" href="https://www.soprema.ch/de/schulungen" target="_self">
-                            Schulungen
-                          </a>
-                        </li>
-                        <li className="header-menu-submenu-element header-menu-submenu-element--lvl2" data-header-secondlvl>
-                          <a className="header-menu-submenu-link header-menu-submenu-link--lvl2" data-header-secondlvl-button href="#" target="_self">
-                            Systemfinder
-                          </a>
-                          <ul className="header-menu-submenu-list header-menu-submenu-list--lvl2" data-header-secondlvl-wrapper>
-                            <li className="header-menu-submenu-element header-menu-submenu-element--lvl3 header-menu-submenu-element--back header-menu-submenu-element--top">
-                              <button className="header-menu-submenu-back" data-header-back type="button">
-                                Service
-                              </button>
-                            </li>
-                            <li className="header-menu-submenu-element header-menu-submenu-element--head header-menu-submenu-element--lvl3">
-                              <a className="header-menu-submenu-link header-menu-submenu-link--head header-menu-submenu-link--lvl3" href="#">
-                                Systemfinder
-                              </a>
-                            </li>
-                            <li className="header-menu-submenu-element header-menu-submenu-element--lvl3">
-                              <a className="header-menu-submenu-link header-menu-submenu-link--lvl3" href="https://www.soprema.ch/de/selection-guide" target="_self">
-                                Systemfinder-Übersicht
-                              </a>
-                            </li>
-                            <li className="header-menu-submenu-element header-menu-submenu-element--lvl3">
-                              <a className="header-menu-submenu-link header-menu-submenu-link--lvl3" href="https://www.soprema.ch/de/guide-solutions/systemfinder-bitumenbahnen" target="_self">
-                                Systemfinder Bitumenbahnen
-                              </a>
-                            </li>
-                            <li className="header-menu-submenu-element header-menu-submenu-element--lvl3">
-                              <a className="header-menu-submenu-link header-menu-submenu-link--lvl3" href="https://www.soprema.ch/de/guide-solutions/systemfinder-kunststoffbahnen" target="_self">
-                                Systemfinder Kunststoffbahnen
-                              </a>
-                            </li>
-                            <li className="header-menu-submenu-element header-menu-submenu-element--lvl3">
-                              <a className="header-menu-submenu-link header-menu-submenu-link--lvl3" href="https://www.soprema.ch/de/guide-solutions/systemfinder-fluessigkunststoffe" target="_self">
-                                Systemfinder Flüssigkunststoffe
-                              </a>
-                            </li>
-                            <li className="header-menu-submenu-element header-menu-submenu-element--lvl3">
-                              <a className="header-menu-submenu-link header-menu-submenu-link--lvl3" href="https://www.soprema.ch/de/dachrechner" target="_self">
-                                Dachrechner
-                              </a>
-                            </li>
-                          </ul>
-                        </li>
-                        <li className="header-menu-submenu-element header-menu-submenu-element--lvl2" data-header-secondlvl>
-                          <a className="header-menu-submenu-link header-menu-submenu-link--lvl2" href="https://www.soprema.ch/de/serviceleistungen" target="_self">
-                            <div className="header-menu-submenu-image" style={{ backgroundImage: "url('https://www.soprema.ch/files/resize/outside/50-50-30413-08e478f0a12093f672f5f2e1f4d6790b_debd8976fa7b675d00c54d1e8396741b.webp')" }}></div>
-                            Serviceleistungen
-                          </a>
-                        </li>
+                        <SubMenuLink
+                          title={t("headerNav.service.items.architectService.value")}
+                          link='/de/architektenservice'
+                          image='https://www.soprema.ch/files/resize/outside/50-50-architect-991e9a3a0ec20538df23ef0f5faa8b24_63a38401c2ef4c15b0f0517af57d7f8d.webp'
+                          level='2'
+                        />
+                        <SubMenuLink
+                          title={t("headerNav.service.items.trainingCourses.value")}
+                          link={t("headerNav.service.items.trainingCourses.link")}
+                          image='https://www.soprema.ch/files/resize/outside/50-50-icon-schulung_c91db75368b7bc1053e8a63a6a5a57cb.webp'
+                          level='2'
+                        />
+                        <SubMenuLink
+                          title={t("headerNav.service.items.guarantees.value")}
+                          link={t("headerNav.service.items.guarantees.link")}
+                          image='https://www.soprema.ch/files/resize/outside/50-50-30415-709f4959719e6501e35518b16fc847d1_759fff657e3903bd80671aa28a31f8f8.webp'
+                          level='2'
+                        />
+                        <SubMenu
+                          title={t("headerNav.service.items.documentDownload.value")}
+                          link={t("headerNav.service.items.documentDownload.link")}
+                          image='https://www.soprema.ch/files/resize/outside/50-50-icon-download_df6df2dbe4445ca92c40b38fc85f467d.webp'
+                          level='2'>
+                          <SubMenuLink
+                            title={t("headerNav.service.items.documentDownload.value")}
+                            link={t("headerNav.service.items.documentDownload.link")}
+                            level='3'
+                          />
+                          <SubMenuLink
+                            title={t("headerNav.service.items.documentDownloadSupport.value")}
+                            link={t("headerNav.service.items.documentDownloadSupport.link")}
+                            level='3'
+                          />
+                        </SubMenu>
+                        <SubMenu
+                          title={t("headerNav.service.items.systemFinder.value")}
+                          link={t("headerNav.service.items.systemFinder.link")}
+                          image='https://www.soprema.ch/files/resize/outside/50-50-icon-system_1cc22276b889573c277f0d301371d960.webp'
+                          level='2'>
+                          <SubMenuLink
+                            title={t("headerNav.service.items.systemFinderOverview.value")}
+                            link={t("headerNav.service.items.systemFinderOverview.link")}
+                            level='3'
+                          />
+                          <SubMenuLink
+                            title={t("headerNav.service.items.bitumenMembranesSystemFinder.value")}
+                            link={t("headerNav.service.items.bitumenMembranesSystemFinder.link")}
+                            level='3'
+                          />
+                          <SubMenuLink
+                            title={t("headerNav.service.items.plasticTracksSystemFinder.value")}
+                            link={t("headerNav.service.items.plasticTracksSystemFinder.link")}
+                            level='3'
+                          />
+                          <SubMenuLink
+                            title={t("headerNav.service.items.liquidPlasticsSystemFinder.value")}
+                            link={t("headerNav.service.items.liquidPlasticsSystemFinder.link")}
+                            level='3'
+                          />
+                        </SubMenu>
+                        <SubMenuLink
+                          title={t("headerNav.service.items.serviceOfferings.value")}
+                          link={t("headerNav.service.items.serviceOfferings.link")}
+                          image='https://www.soprema.ch/files/resize/outside/50-50-30413-08e478f0a12093f672f5f2e1f4d6790b_debd8976fa7b675d00c54d1e8396741b.webp'
+                          level='2'
+                        />
                       </ul>
                     </div>
                   </div>
                 </li>
-                <li className="header-menu-element" data-header-menu>
-                  <button className="header-menu-link" data-header-menu-button type="button">
-                    Produkte
+                <li className='header-menu-element' data-header-menu=''>
+                  <button className='header-menu-link' data-header-menu-button='' type='button'>
+                    {t("headerNav.product.value")}
                   </button>
-                  <div className="header-menu-submenu" data-header-menu-wrapper>
-                    <div className="header-menu-submenu-content" data-header-menu-content>
-                      <ul className="header-menu-submenu-list">
-                        <li className="header-menu-submenu-element header-menu-submenu-element--lvl2 header-menu-submenu-element--back header-menu-submenu-element--top">
-                          <button className="header-menu-submenu-back" data-header-back type="button">
-                            Menu
-                          </button>
-                        </li>
-                        <li className="header-menu-submenu-element header-menu-submenu-element--head header-menu-submenu-element--lvl2">
-                          <a className="header-menu-submenu-link header-menu-submenu-link--head header-menu-submenu-link--lvl2" href="#">
-                            Produkte
+                  <div className='header-menu-submenu' data-header-menu-wrapper=''>
+                    <div className='header-menu-submenu-content' data-header-menu-content=''>
+                      <ul className='header-menu-submenu-list'>
+                        <HeaderSubMenuBack value={t("headerNav.back")} level='2' />
+                        <li className='header-menu-submenu-element header-menu-submenu-element--head header-menu-submenu-element--lvl2'>
+                          <a
+                            className='header-menu-submenu-link header-menu-submenu-link--head header-menu-submenu-link--lvl2'
+                            href='#'>
+                            {t("headerNav.product.value")}
                           </a>
                         </li>
-                        <li className="header-menu-submenu-element header-menu-submenu-element--lvl2" data-header-secondlvl>
-                          <a className="header-menu-submenu-link header-menu-submenu-link--lvl2" data-header-secondlvl-button href="https://www.soprema.ch/de/abdichtungssysteme-bitumen" target="_self">
-                            <div className="header-menu-submenu-image" style={{ backgroundImage: "url('https://www.soprema.ch/files/resize/outside/50-50-30433_7998501b9fbf3b5a32a07b9fce9d3940.webp')" }}></div>
-                            Abdichtung
-                          </a>
-                          <ul className="header-menu-submenu-list header-menu-submenu-list--lvl2" data-header-secondlvl-wrapper>
-                            <li className="header-menu-submenu-element header-menu-submenu-element--lvl3 header-menu-submenu-element--back header-menu-submenu-element--top">
-                              <button className="header-menu-submenu-back" data-header-back type="button">
-                                Produkte
-                              </button>
-                            </li>
-                            <li className="header-menu-submenu-element header-menu-submenu-element--head header-menu-submenu-element--lvl3">
-                              <a className="header-menu-submenu-link header-menu-submenu-link--head header-menu-submenu-link--lvl3" href="https://www.soprema.ch/de/abdichtungssysteme-bitumen">
-                                Abdichtung
-                              </a>
-                            </li>
-                            <li className="header-menu-submenu-element header-menu-submenu-element--lvl3">
-                              <a className="header-menu-submenu-link header-menu-submenu-link--lvl3" href="https://www.soprema.ch/de/abdichtungssysteme-bitumen" target="_self">
-                                Bitumendichtungsbahnen
-                              </a>
-                            </li>
-                            <li className="header-menu-submenu-element header-menu-submenu-element--lvl3">
-                              <a className="header-menu-submenu-link header-menu-submenu-link--lvl3" href="https://www.soprema.ch/de/fluessigkunststoff" target="_self">
-                                Flüssigkunststoffe
-                              </a>
-                            </li>
-                            <li className="header-menu-submenu-element header-menu-submenu-element--lvl3">
-                              <a className="header-menu-submenu-link header-menu-submenu-link--lvl3" href="https://www.soprema.ch/de/kunststoffdichtungsbahnen" target="_self">
-                                Kunststoffdichtungsbahnen
-                              </a>
-                            </li>
-                          </ul>
-                        </li>
-                        <li className="header-menu-submenu-element header-menu-submenu-element--lvl2" data-header-secondlvl>
-                          <a className="header-menu-submenu-link header-menu-submenu-link--lvl2" href="https://www.soprema.ch/de/waermedaemmung-soprema" target="_self">
-                            <div className="header-menu-submenu-image" style={{ backgroundImage: "url('https://www.soprema.ch/files/resize/outside/50-50-30436_1808a6a3f56eed7bfda6866f86dc8a92.webp')" }}></div>
-                            Wärmedämmungen
-                          </a>
-                        </li>
-                        <li className="header-menu-submenu-element header-menu-submenu-element--lvl2" data-header-secondlvl>
-                          <a className="header-menu-submenu-link header-menu-submenu-link--lvl2" href="https://www.soprema.ch/de/absturzsicherungen" target="_self">
-                            <div className="header-menu-submenu-image" style={{ backgroundImage: "url('https://www.soprema.ch/files/resize/outside/50-50-chut-quand-tu-tombes_c61fcd26378b636191efe3e3f9590c55.webp')" }}></div>
-                            Höhensicherungssysteme
-                          </a>
-                        </li>
-                        <li className="header-menu-submenu-element header-menu-submenu-element--lvl2" data-header-secondlvl>
-                          <a className="header-menu-submenu-link header-menu-submenu-link--lvl2" href="https://www.soprema.ch/de/ingenieurbau" target="_self">
-                            <div className="header-menu-submenu-image" style={{ backgroundImage: "url('https://www.soprema.ch/files/resize/outside/50-50-30444_da920933b76a6a04e9a4ba1be20f2f05.webp')" }}></div>
-                            Ingenieurbau
-                          </a>
-                        </li>
-                        <li className="header-menu-submenu-element header-menu-submenu-element--lvl2" data-header-secondlvl>
-                          <a className="header-menu-submenu-link header-menu-submenu-link--lvl2" href="https://www.soprema.ch/de/sortiment/eco-produkte" target="_self">
-                            <div className="header-menu-submenu-image" style={{ backgroundImage: "url('https://www.soprema.ch/files/resize/outside/50-50-eco-product_690eac3b8aa39cfc21cf82a65c4f8a7c.webp')" }}></div>
-                            ECO Produkte
-                          </a>
-                        </li>
-                        <li className="header-menu-submenu-element header-menu-submenu-element--lvl2" data-header-secondlvl>
-                          <a className="header-menu-submenu-link header-menu-submenu-link--lvl2" href="https://www.soprema.ch/de/begruenung" target="_self">
-                            <div className="header-menu-submenu-image" style={{ backgroundImage: "url('https://www.soprema.ch/files/resize/outside/50-50-30448_c93f369db92e4661d17a3d781169e526.webp')" }}></div>
-                            Begrünung
-                          </a>
-                        </li>
-                        <li className="header-menu-submenu-element header-menu-submenu-element--lvl2" data-header-secondlvl>
-                          <a className="header-menu-submenu-link header-menu-submenu-link--lvl2" href="https://www.soprema.ch/de/sortiment/premium-class-systeme" target="_self">
-                            <div className="header-menu-submenu-image" style={{ backgroundImage: "url('https://www.soprema.ch/files/resize/outside/50-50-path-8855-2x_2bf175a21e38011b92c77882165a96d3.webp')" }}></div>
-                            PREMIUM-CLASS Systeme
-                          </a>
-                        </li>
+                        <SubMenu
+                          title={t("headerNav.product.items.seal.value")}
+                          link={t("headerNav.product.items.seal.link")}
+                          image='https://www.soprema.ch/files/resize/outside/50-50-30433_7998501b9fbf3b5a32a07b9fce9d3940.webp'
+                          level={2}>
+                          <HeaderSubMenuBack value={t("headerNav.product.items.abdichtung.value")} level='3' />
+                          <SubMenuLink
+                            title={t("headerNav.product.items.abdichtung.items.bitumendichtungsbahnen.value")}
+                            link='/de/abdichtungssysteme-bitumen'
+                            level={3}
+                          />
+                          <SubMenuLink
+                            title={t("headerNav.product.items.abdichtung.items.fluessigkunststoffe.value")}
+                            link='/de/fluessigkunststoff'
+                            level={3}
+                          />
+                          <SubMenuLink
+                            title={t("headerNav.product.items.abdichtung.items.kunststoffdichtungsbahnen.value")}
+                            link='/de/kunststoffdichtungsbahnen'
+                            level={3}
+                          />
+                        </SubMenu>
+                        <SubMenuLink
+                          title={t("headerNav.product.items.thermalInsulation.value")}
+                          link={t("headerNav.product.items.thermalInsulation.link")}
+                          image='https://www.soprema.ch/files/resize/outside/50-50-30436_1808a6a3f56eed7bfda6866f86dc8a92.webp'
+                          level={2}
+                        />
+                        <SubMenuLink
+                          title={t("headerNav.product.items.hoehensicherungssysteme.value")}
+                          link='/de/absturzsicherungen'
+                          image='https://www.soprema.ch/files/resize/outside/50-50-chut-quand-tu-tombes_c61fcd26378b636191efe3e3f9590c55.webp'
+                          level={2}
+                        />
+                        <SubMenuLink
+                          title={t("headerNav.product.items.ingenieurbau.value")}
+                          link='/de/ingenieurbau'
+                          image='https://www.soprema.ch/files/resize/outside/50-50-30444_da920933b76a6a04e9a4ba1be20f2f05.webp'
+                          level={2}
+                        />
+                        <SubMenuLink
+                          title={t("headerNav.product.items.ecoProdukte.value")}
+                          link='/de/sortiment/eco-produkte'
+                          image='https://www.soprema.ch/files/resize/outside/50-50-eco-product_690eac3b8aa39cfc21cf82a65c4f8a7c.webp'
+                          level={2}
+                        />
+                        <SubMenuLink
+                          title={t("headerNav.product.items.begruenung.value")}
+                          link='/de/begruenung'
+                          image='https://www.soprema.ch/files/resize/outside/50-50-30448_c93f369db92e4661d17a3d781169e526.webp'
+                          level={2}
+                        />
+                        <SubMenuLink
+                          title={t("headerNav.product.items.premiumClassSysteme.value")}
+                          link='/de/sortiment/premium-class-systeme'
+                          image='https://www.soprema.ch/files/resize/outside/50-50-path-8855-2x_2bf175a21e38011b92c77882165a96d3.webp'
+                          level={2}
+                        />
                       </ul>
                     </div>
                   </div>
                 </li>
-                <li className="header-menu-element" data-header-menu>
-                  <button className="header-menu-link" data-header-menu-button type="button">
-                    Soprema
+                <li className='header-menu-element' data-header-menu=''>
+                  <button className='header-menu-link' data-header-menu-button='' type='button'>
+                    {t("headerNav.Soprema.value")}
                   </button>
-                  <div className="header-menu-submenu" data-header-menu-wrapper>
-                    <div className="header-menu-submenu-content" data-header-menu-content>
-                      <ul className="header-menu-submenu-list">
-                        <li className="header-menu-submenu-element header-menu-submenu-element--lvl2 header-menu-submenu-element--back header-menu-submenu-element--top">
-                          <button className="header-menu-submenu-back" data-header-back type="button">
-                            Menu
-                          </button>
-                        </li>
-                        <li className="header-menu-submenu-element header-menu-submenu-element--head header-menu-submenu-element--lvl2">
-                          <a className="header-menu-submenu-link header-menu-submenu-link--head header-menu-submenu-link--lvl2" href="https://www.soprema.ch/de/soprema">
-                            Soprema
+                  <div className='header-menu-submenu' data-header-menu-wrapper=''>
+                    <div className='header-menu-submenu-content' data-header-menu-content=''>
+                      <ul className='header-menu-submenu-list'>
+                        <HeaderSubMenuBack value={t("headerNav.back")} level='2' />
+                        <li className='header-menu-submenu-element header-menu-submenu-element--head header-menu-submenu-element--lvl2'>
+                          <a
+                            className='header-menu-submenu-link header-menu-submenu-link--head header-menu-submenu-link--lvl2'
+                            href='/de/soprema'>
+                            {t("headerNav.Soprema.value")}
                           </a>
                         </li>
-                        <li className="header-menu-submenu-element header-menu-submenu-element--lvl2" data-header-secondlvl>
-                          <a className="header-menu-submenu-link header-menu-submenu-link--lvl2" data-header-secondlvl-button href="#" target="_self">
-                            <div className="header-menu-submenu-image" style={{ backgroundImage: "url('https://www.soprema.ch/files/resize/outside/50-50-30426_bab25d684ad6bca63a285bcb29d3a4ad.webp')" }}></div>
+                        <li
+                          className='header-menu-submenu-element header-menu-submenu-element--lvl2'
+                          data-header-secondlvl=''>
+                          <a
+                            className='header-menu-submenu-link header-menu-submenu-link--lvl2'
+                            target='_self'
+                            data-header-secondlvl-button=''
+                            href='#'>
+                            <div
+                              className='header-menu-submenu-image'
+                              style={{
+                                backgroundImage:
+                                  "url('https://www.soprema.ch/files/resize/outside/50-50-30426_bab25d684ad6bca63a285bcb29d3a4ad.webp')",
+                              }}></div>
                             Unternehmen
                           </a>
-                          <ul className="header-menu-submenu-list header-menu-submenu-list--lvl2" data-header-secondlvl-wrapper>
-                            <li className="header-menu-submenu-element header-menu-submenu-element--lvl3 header-menu-submenu-element--back header-menu-submenu-element--top">
-                              <button className="header-menu-submenu-back" data-header-back type="button">
-                                Soprema
-                              </button>
-                            </li>
-                            <li className="header-menu-submenu-element header-menu-submenu-element--head header-menu-submenu-element--lvl3">
-                              <a className="header-menu-submenu-link header-menu-submenu-link--head header-menu-submenu-link--lvl3" href="#">
+                          <ul
+                            className='header-menu-submenu-list header-menu-submenu-list--lvl2'
+                            data-header-secondlvl-wrapper=''>
+                            <HeaderSubMenuBack value={t("headerNav.Soprema.value")} level='3' />
+                            <li className='header-menu-submenu-element header-menu-submenu-element--head header-menu-submenu-element--lvl3'>
+                              <a
+                                className='header-menu-submenu-link header-menu-submenu-link--head header-menu-submenu-link--lvl3'
+                                href='#'>
                                 Unternehmen
                               </a>
                             </li>
-                            <li className="header-menu-submenu-element header-menu-submenu-element--lvl3">
-                              <a className="header-menu-submenu-link header-menu-submenu-link--lvl3" href="https://www.soprema.ch/de/ueber-soprema" target="_self">
+                            <li className='header-menu-submenu-element header-menu-submenu-element--lvl3'>
+                              <a
+                                className='header-menu-submenu-link header-menu-submenu-link--lvl3'
+                                target='_self'
+                                href='/de/ueber-soprema'>
                                 Über SOPREMA
                               </a>
                             </li>
-                            <li className="header-menu-submenu-element header-menu-submenu-element--lvl3">
-                              <a className="header-menu-submenu-link header-menu-submenu-link--lvl3" href="https://www.soprema.ch/de/soprema-weltweit" target="_self">
+                            <li className='header-menu-submenu-element header-menu-submenu-element--lvl3'>
+                              <a
+                                className='header-menu-submenu-link header-menu-submenu-link--lvl3'
+                                target='_self'
+                                href='/de/soprema-weltweit'>
                                 SOPREMA Weltweit
                               </a>
                             </li>
-                            <li className="header-menu-submenu-element header-menu-submenu-element--lvl3">
-                              <a className="header-menu-submenu-link header-menu-submenu-link--lvl3" href="https://www.soprema.ch/de/geschichte" target="_self">
+                            <li className='header-menu-submenu-element header-menu-submenu-element--lvl3'>
+                              <a
+                                className='header-menu-submenu-link header-menu-submenu-link--lvl3'
+                                target='_self'
+                                href='/de/geschichte'>
                                 Geschichte SOPREMA
                               </a>
                             </li>
-                            <li className="header-menu-submenu-element header-menu-submenu-element--lvl3">
-                              <a className="header-menu-submenu-link header-menu-submenu-link--lvl3" href="https://www.soprema.ch/de/unternehmen/unser-team" target="_self">
+                            <li className='header-menu-submenu-element header-menu-submenu-element--lvl3'>
+                              <a
+                                className='header-menu-submenu-link header-menu-submenu-link--lvl3'
+                                target='_self'
+                                href='/de/unternehmen/unser-team'>
                                 Unser Team
                               </a>
                             </li>
-                            <li className="header-menu-submenu-element header-menu-submenu-element--lvl3">
-                              <a className="header-menu-submenu-link header-menu-submenu-link--lvl3" href="https://www.soprema.ch/de/unternehmen/sponsoring" target="_self">
+                            <li className='header-menu-submenu-element header-menu-submenu-element--lvl3'>
+                              <a
+                                className='header-menu-submenu-link header-menu-submenu-link--lvl3'
+                                target='_self'
+                                href='/de/unternehmen/sponsoring'>
                                 Sponsoring
                               </a>
                             </li>
-                            <li className="header-menu-submenu-element header-menu-submenu-element--lvl3">
-                              <a className="header-menu-submenu-link header-menu-submenu-link--lvl3" href="https://www.soprema.ch/de/jobsiere" target="_self">
+                            <li className='header-menu-submenu-element header-menu-submenu-element--lvl3'>
+                              <a
+                                className='header-menu-submenu-link header-menu-submenu-link--lvl3'
+                                target='_self'
+                                href='/de/jobsiere'>
                                 Jobs &amp; Karriere
                               </a>
                             </li>
-                            <li className="header-menu-submenu-element header-menu-submenu-element--lvl3">
-                              <a className="header-menu-submenu-link header-menu-submenu-link--lvl3" href="https://www.soprema.ch/de/bauarena" target="_self">
+                            <li className='header-menu-submenu-element header-menu-submenu-element--lvl3'>
+                              <a
+                                className='header-menu-submenu-link header-menu-submenu-link--lvl3'
+                                target='_self'
+                                href='/de/bauarena'>
                                 Standort Bauarena Volketswil
                               </a>
                             </li>
-                            <li className="header-menu-submenu-element header-menu-submenu-element--lvl3">
-                              <a className="header-menu-submenu-link header-menu-submenu-link--lvl3" href="https://www.soprema.ch/de/soprema-videos" target="_self">
+                            <li className='header-menu-submenu-element header-menu-submenu-element--lvl3'>
+                              <a
+                                className='header-menu-submenu-link header-menu-submenu-link--lvl3'
+                                target='_self'
+                                href='/de/soprema-videos'>
                                 Soprema Videos
                               </a>
                             </li>
                           </ul>
                         </li>
-                        <li className="header-menu-submenu-element header-menu-submenu-element--lvl2" data-header-secondlvl>
-                          <a className="header-menu-submenu-link header-menu-submenu-link--lvl2" data-header-secondlvl-button href="#" target="_self">
-                            <div className="header-menu-submenu-image" style={{ backgroundImage: "url('https://www.soprema.ch/files/resize/outside/50-50-group-1802-2x_1ebf1aaac45b72fd3f9bb0c1843e092a.webp')" }}></div>
+                        <li
+                          className='header-menu-submenu-element header-menu-submenu-element--lvl2'
+                          data-header-secondlvl=''>
+                          <a
+                            className='header-menu-submenu-link header-menu-submenu-link--lvl2'
+                            target='_self'
+                            data-header-secondlvl-button=''
+                            href='#'>
+                            <div
+                              className='header-menu-submenu-image'
+                              style={{
+                                backgroundImage:
+                                  "url('https://www.soprema.ch/files/resize/outside/50-50-group-1802-2x_1ebf1aaac45b72fd3f9bb0c1843e092a.webp')",
+                              }}></div>
                             Referenzen
                           </a>
-                          <ul className="header-menu-submenu-list header-menu-submenu-list--lvl2" data-header-secondlvl-wrapper>
-                            <li className="header-menu-submenu-element header-menu-submenu-element--lvl3 header-menu-submenu-element--back header-menu-submenu-element--top">
-                              <button className="header-menu-submenu-back" data-header-back type="button">
-                                Soprema
-                              </button>
-                            </li>
-                            <li className="header-menu-submenu-element header-menu-submenu-element--head header-menu-submenu-element--lvl3">
-                              <a className="header-menu-submenu-link header-menu-submenu-link--head header-menu-submenu-link--lvl3" href="#">
+                          <ul
+                            className='header-menu-submenu-list header-menu-submenu-list--lvl2'
+                            data-header-secondlvl-wrapper=''>
+                            <HeaderSubMenuBack value={t("headerNav.Soprema.value")} level='3' />
+                            <li className='header-menu-submenu-element header-menu-submenu-element--head header-menu-submenu-element--lvl3'>
+                              <a
+                                className='header-menu-submenu-link header-menu-submenu-link--head header-menu-submenu-link--lvl3'
+                                href='#'>
                                 Referenzen
                               </a>
                             </li>
-                            <li className="header-menu-submenu-element header-menu-submenu-element--lvl3">
-                              <a className="header-menu-submenu-link header-menu-submenu-link--lvl3" href="https://www.soprema.ch/de/soprema/referenzen/alle-referenzen" target="_self">
+                            <li className='header-menu-submenu-element header-menu-submenu-element--lvl3'>
+                              <a
+                                className='header-menu-submenu-link header-menu-submenu-link--lvl3'
+                                target='_self'
+                                href='/de/soprema/referenzen/alle-referenzen'>
                                 alle Referenzen
                               </a>
                             </li>
-                            <li className="header-menu-submenu-element header-menu-submenu-element--lvl3">
-                              <a className="header-menu-submenu-link header-menu-submenu-link--lvl3" href="https://www.soprema.ch/de/bitumendichtungsbahnen" target="_self">
+                            <li className='header-menu-submenu-element header-menu-submenu-element--lvl3'>
+                              <a
+                                className='header-menu-submenu-link header-menu-submenu-link--lvl3'
+                                target='_self'
+                                href='/de/bitumendichtungsbahnen'>
                                 Bitumendichtungsbahnen
                               </a>
                             </li>
-                            <li className="header-menu-submenu-element header-menu-submenu-element--lvl3">
-                              <a className="header-menu-submenu-link header-menu-submenu-link--lvl3" href="https://www.soprema.ch/de/kunststoffdichtungsbahnen_1" target="_self">
+                            <li className='header-menu-submenu-element header-menu-submenu-element--lvl3'>
+                              <a
+                                className='header-menu-submenu-link header-menu-submenu-link--lvl3'
+                                target='_self'
+                                href='/de/kunststoffdichtungsbahnen_1'>
                                 Kunststoffdichtungsbahnen
                               </a>
                             </li>
-                            <li className="header-menu-submenu-element header-menu-submenu-element--lvl3">
-                              <a className="header-menu-submenu-link header-menu-submenu-link--lvl3" href="https://www.soprema.ch/de/flussigkunststoff" target="_self">
+                            <li className='header-menu-submenu-element header-menu-submenu-element--lvl3'>
+                              <a
+                                className='header-menu-submenu-link header-menu-submenu-link--lvl3'
+                                target='_self'
+                                href='/de/flussigkunststoff'>
                                 Flüssigkunststoff
                               </a>
                             </li>
-                            <li className="header-menu-submenu-element header-menu-submenu-element--lvl3">
-                              <a className="header-menu-submenu-link header-menu-submenu-link--lvl3" href="https://www.soprema.ch/de/waermedaemmung" target="_self">
+                            <li className='header-menu-submenu-element header-menu-submenu-element--lvl3'>
+                              <a
+                                className='header-menu-submenu-link header-menu-submenu-link--lvl3'
+                                target='_self'
+                                href='/de/waermedaemmung'>
                                 Wärmedämmung
                               </a>
                             </li>
-                            <li className="header-menu-submenu-element header-menu-submenu-element--lvl3">
-                              <a className="header-menu-submenu-link header-menu-submenu-link--lvl3" href="https://www.soprema.ch/de/begrunung" target="_self">
+                            <li className='header-menu-submenu-element header-menu-submenu-element--lvl3'>
+                              <a
+                                className='header-menu-submenu-link header-menu-submenu-link--lvl3'
+                                target='_self'
+                                href='/de/begrunung'>
                                 Begrünung
                               </a>
                             </li>
-                            <li className="header-menu-submenu-element header-menu-submenu-element--lvl3">
-                              <a className="header-menu-submenu-link header-menu-submenu-link--lvl3" href="https://www.soprema.ch/de/absturzsicherheit" target="_self">
+                            <li className='header-menu-submenu-element header-menu-submenu-element--lvl3'>
+                              <a
+                                className='header-menu-submenu-link header-menu-submenu-link--lvl3'
+                                target='_self'
+                                href='/de/absturzsicherheit'>
                                 Absturzsicherheit
                               </a>
                             </li>
@@ -373,10 +442,11 @@ const CorporateHeader = () => {
                     </div>
                   </div>
                 </li>
+                <HeaderLogin />
               </ul>
             </nav>
           </div>
-          <button className="header-burger" data-header-burger type="button" aria-label="accessibility.menu.open">
+          <button className='header-burger' data-header-burger='' type='button' aria-label='accessibility.menu.open'>
             <div></div>
             <div></div>
             <div></div>
@@ -384,70 +454,7 @@ const CorporateHeader = () => {
           </button>
         </div>
       </div>
-      <div className="header-search" data-header-search>
-        <button className="header-search-close" data-header-search-close type="button">
-          <i className="ic ic-close"></i>
-        </button>
-        <div className="bannerv4 bannerv4--size-full-height bannerv4--search-oui bannerv4--image-cover">
-          <div className="bannerv4-wrapper">
-            <video className="bannerv4-video" playsInline muted loop autoPlay poster="https://www.soprema.ch/files/thumbnail-image2_7bb22fa15ff7c078d88381fc152c76fb.jpg">
-              <source src="https://soprema-cms.s3.eu-west-3.amazonaws.com/site_8/306abafb1388b1413ed37b8d5a5ac6bd.mp4?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&amp;X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIATPX2NE5VDLG6MVAH%2F20230630%2Feu-west-3%2Fs3%2Faws4_request&amp;X-Amz-Date=20230630T090809Z&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Expires=1200&amp;X-Amz-Signature=a89691e70f706870b2d2959f843e69187880f6e344aa5ef47c2d2269b222d4ff" type="video/mp4" />
-            </video>
-            <div className="bannerv4-container">
-              <div className="bannerv4-content wysiwyg">
-                <p className="title-lvl-4" style={{ textAlign: "center" }}>
-                  &nbsp;
-                </p>
-                <p className="title-lvl-1" style={{ textAlign: "center" }}>
-                  SO STARK.
-                  <br />
-                  SOPREMA.
-                </p>
-              </div>
-              <div className="search-banner">
-                <div className="search-banner-container">
-                  <form className="search-banner-form" data-mods="autocomplete" method="GET" action="https://www.soprema.ch/de/search">
-                    <div className="search-banner-input-wrapper">
-                      <input className="search-banner-input" name="query" data-autocomplete-input type="text" aria-label="Nach Produkten, Marken oder Suchbegriffen suchen..." autoComplete="off" placeholder="Nach Produkten, Marken oder Suchbegriffen suchen..." />
-                      <button className="search-banner-button" type="submit">
-                        Finden
-                      </button>
-                    </div>
-                    <div className="search-banner-results" data-autocomplete-wrapper></div>
-                  </form>
-                  <div className="search-banner-terms">
-                    <a className="search-banner-terms-word" href="https://www.soprema.ch/de/gamme/abdichtung/bitumendichtungsbahnen">
-                      Bitumendichtungsbahnen
-                    </a>
-                    <a className="search-banner-terms-word" href="https://www.soprema.ch/de/gamme/abdichtung/kunststoffdichtungsbahnen">
-                      Kunststoffdichtungsbahnen
-                    </a>
-                    <a className="search-banner-terms-word" href="https://www.soprema.ch/de/fluessigkunststoff">
-                      Flüssigkunststoffe
-                    </a>
-                    <a className="search-banner-terms-word" href="https://www.soprema.ch/de/gamme/daemmstoffe">
-                      Dämmstoffe
-                    </a>
-                    <a className="search-banner-terms-word" href="https://www.soprema.ch/de/gamme/dachbegruenung">
-                      Begrünung
-                    </a>
-                    <a className="search-banner-terms-word" href="https://www.soprema.ch/de/gamme/produkte-hoehensicherungssysteme">
-                      Höhensicherungssysteme
-                    </a>
-                  </div>
-                </div>
-                <div className="search-banner-actions">
-                  <a className="search-banner-actions-button" href="https://www.soprema.ch/de/sostark">
-                    Gesamten Unternehmensfilm anschauen
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <HeaderSearch />
     </header>
   );
 };
-
-export default CorporateHeader;

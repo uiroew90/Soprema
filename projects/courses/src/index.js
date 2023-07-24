@@ -1,5 +1,4 @@
 import React, { StrictMode, useState, useEffect } from "react";
-import ReactDOM from "react-dom";
 import { createRoot } from "react-dom/client";
 import { HashRouter as Router, Routes, Route } from "react-router-dom";
 
@@ -58,7 +57,11 @@ const App = () => {
   }, [selectedCourses]);
 
   const handleRemoveCourse = (courseToRemove) => {
-    setSelectedCourses(selectedCourses.filter((course) => course.name !== courseToRemove.name || course.category !== courseToRemove.category));
+    setSelectedCourses(
+      selectedCourses.filter(
+        (course) => course.name !== courseToRemove.name || course.category !== courseToRemove.category
+      )
+    );
   };
 
   const handleCourseComment = (courseToComment, comment) => {
@@ -102,28 +105,46 @@ const App = () => {
   }, []);
 
   return (
-    <div id="app">
+    <StrictMode>
       <CorporateHeader />
-      <main className="container-fluid page-content-cms" id="role-main">
+      <main className='container-fluid page-content-cms' id='role-main'>
         <Router>
           <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/packs" element={<Packs packs={packs} courses={courses} setSelectedCourses={setSelectedCourses} />} />
-            <Route path="/courses" element={<Courses courses={courses} selectedCourses={selectedCourses} setSelectedCourses={setSelectedCourses} />} />
-            <Route path="/overview" element={<Overview selectedCourses={selectedCourses} handleRemoveCourse={handleRemoveCourse} handleCourseComment={handleCourseComment} />} />
-            <Route path="/checkout" element={<Checkout selectedCourses={selectedCourses} setSelectedCourses={setSelectedCourses} />} />
-            <Route path="/thanks" element={<Thanks />} />
+            <Route path='/' element={<Home />} />
+            <Route
+              path='/packs'
+              element={<Packs packs={packs} courses={courses} setSelectedCourses={setSelectedCourses} />}
+            />
+            <Route
+              path='/courses'
+              element={
+                <Courses courses={courses} selectedCourses={selectedCourses} setSelectedCourses={setSelectedCourses} />
+              }
+            />
+            <Route
+              path='/overview'
+              element={
+                <Overview
+                  selectedCourses={selectedCourses}
+                  handleRemoveCourse={handleRemoveCourse}
+                  handleCourseComment={handleCourseComment}
+                />
+              }
+            />
+            <Route
+              path='/checkout'
+              element={<Checkout selectedCourses={selectedCourses} setSelectedCourses={setSelectedCourses} />}
+            />
+            <Route path='/thanks' element={<Thanks />} />
           </Routes>
         </Router>
       </main>
-    </div>
+    </StrictMode>
   );
 };
 
-const container = document.getElementById("root");
-const root = createRoot(container);
-root.render(
-  <StrictMode>
-    <App />
-  </StrictMode>
-);
+// const container = document.getElementById("root");
+// const root = createRoot(container);
+// root.render(<App />);
+
+createRoot(document.getElementById("root")).render(<App />);

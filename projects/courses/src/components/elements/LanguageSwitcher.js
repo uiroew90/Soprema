@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import i18n from "i18next";
 
-const LanguageSwitcher = () => {
+export default () => {
   const [currentLanguage, setCurrentLanguage] = useState(i18n.language);
   const languages = ["de", "en", "fr", "it"];
   const otherLanguages = languages.filter((lang) => lang !== currentLanguage);
@@ -16,18 +16,18 @@ const LanguageSwitcher = () => {
   }, []);
 
   return (
-    <li className="header-top-element header-lang" data-header-menu>
-      <button className="header-top-link" data-header-menu-button type="button">
-        <div className="header-lang-img">
+    <li className='header-top-element header-lang' data-header-menu=''>
+      <button className='header-top-link' data-header-menu-button='' type='button'>
+        <div className='header-lang-img'>
           {/* <img src={`https://www.soprema.ch/bundles/awcms/compiled/images/${currentLanguage}.svg`} alt={currentLanguage.toUpperCase()} /> */}
-          <img src={`https://www.soprema.ch/bundles/awcms/compiled/images/ch.svg`} alt="" />
+          <img src={`https://www.soprema.ch/bundles/awcms/compiled/images/ch.svg`} alt='' />
         </div>
         {currentLanguage.toUpperCase()}
       </button>
-      <ul className="header-top-submenu" data-header-menu-wrapper>
+      <ul className='header-top-submenu' data-header-menu-wrapper=''>
         {otherLanguages.map((lang) => (
-          <li className="header-top-submenu-element" key={lang}>
-            <a className="header-top-submenu-link" onClick={() => i18n.changeLanguage(lang)}>
+          <li className='header-top-submenu-element' key={lang}>
+            <a className='header-top-submenu-link' onClick={() => i18n.changeLanguage(lang)}>
               {lang.toUpperCase()}
             </a>
           </li>
@@ -36,5 +36,3 @@ const LanguageSwitcher = () => {
     </li>
   );
 };
-
-export default LanguageSwitcher;
