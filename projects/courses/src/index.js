@@ -3,12 +3,40 @@ import ReactDOM from "react-dom";
 import { createRoot } from "react-dom/client";
 import { HashRouter as Router, Routes, Route } from "react-router-dom";
 
+import CorporateHeader from "./components/sections/CorporateHeader";
+
+// Routes
 import Home from "./components/pages/Home";
 import Packs from "./components/pages/Packs";
 import Courses from "./components/pages/Courses";
 import Overview from "./components/pages/Overview";
 import Checkout from "./components/pages/Checkout";
 import Thanks from "./components/pages/Thanks";
+
+// Internationalization
+import i18n from "i18next";
+import { initReactI18next } from "react-i18next";
+import LanguageDetector from "i18next-browser-languagedetector";
+import de from "./locales/de";
+import en from "./locales/en";
+import fr from "./locales/fr";
+import it from "./locales/it";
+
+i18n
+  .use(LanguageDetector)
+  .use(initReactI18next)
+  .init({
+    resources: {
+      de: de,
+      en: en,
+      fr: fr,
+      it: it,
+    },
+    fallbackLng: "en",
+    interpolation: {
+      escapeValue: false,
+    },
+  });
 
 const App = () => {
   const [hash, setHash] = useState(window.location.hash);
@@ -75,21 +103,24 @@ const App = () => {
 
   return (
     <div id="app">
-      <Router>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/packs" element={<Packs packs={packs} courses={courses} setSelectedCourses={setSelectedCourses} />} />
-          <Route path="/courses" element={<Courses courses={courses} selectedCourses={selectedCourses} setSelectedCourses={setSelectedCourses} />} />
-          <Route path="/overview" element={<Overview selectedCourses={selectedCourses} handleRemoveCourse={handleRemoveCourse} handleCourseComment={handleCourseComment} />} />
-          <Route path="/checkout" element={<Checkout selectedCourses={selectedCourses} setSelectedCourses={setSelectedCourses} />} />
-          <Route path="/thanks" element={<Thanks />} />
-        </Routes>
-      </Router>
+      <CorporateHeader />
+      <main className="container-fluid page-content-cms" id="role-main">
+        <Router>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/packs" element={<Packs packs={packs} courses={courses} setSelectedCourses={setSelectedCourses} />} />
+            <Route path="/courses" element={<Courses courses={courses} selectedCourses={selectedCourses} setSelectedCourses={setSelectedCourses} />} />
+            <Route path="/overview" element={<Overview selectedCourses={selectedCourses} handleRemoveCourse={handleRemoveCourse} handleCourseComment={handleCourseComment} />} />
+            <Route path="/checkout" element={<Checkout selectedCourses={selectedCourses} setSelectedCourses={setSelectedCourses} />} />
+            <Route path="/thanks" element={<Thanks />} />
+          </Routes>
+        </Router>
+      </main>
     </div>
   );
 };
 
-const container = document.getElementById("role-main");
+const container = document.getElementById("root");
 const root = createRoot(container);
 root.render(
   <StrictMode>

@@ -1,3 +1,7 @@
 export default {
-  greeting: "ITALIAN => Hello, World!",
+  translation: {
+    individual_courses: "IT >> Individual Courses",
+    prebuilt_packs: "IT >> Prebuilt Packs",
+    // ...
+  },
 };

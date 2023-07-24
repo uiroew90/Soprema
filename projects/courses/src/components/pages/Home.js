@@ -1,9 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 import PageWrapper from "../PageWrapper";
 
 const Home = () => {
+  const { t } = useTranslation();
+
   const crumb = {
     current: { text: "Home" },
   };
@@ -26,7 +29,7 @@ const Home = () => {
                             </svg>
                           </div>
                           <div className="small-tule-content">
-                            <p className="small-tule-title small-tule--custom-title">Erstellen Sie Ihren eigenen Kurs von Grund auf</p>
+                            <p className="small-tule-title small-tule--custom-title">{t("individual_courses")}</p>
                             <p className="small-tule-button small-tule--custom-button">&nbsp;</p>
                           </div>
                         </div>
@@ -43,7 +46,7 @@ const Home = () => {
                             </svg>
                           </div>
                           <div className="small-tule-content">
-                            <p className="small-tule-title small-tule--custom-title">Beginnen Sie mit einem unserer vorgefertigten Kurse</p>
+                            <p className="small-tule-title small-tule--custom-title">{t("prebuilt_packs")}</p>
                             <p className="small-tule-button small-tule--custom-button">&nbsp;</p>
                           </div>
                         </div>
