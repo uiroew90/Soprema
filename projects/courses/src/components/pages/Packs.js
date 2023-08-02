@@ -1,5 +1,6 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 import RouteWrapper from "../RouteWrapper";
 
@@ -47,27 +48,31 @@ const Pack = ({ pack, courses, setSelectedCourses }) => {
   );
 };
 
-const crumb = {
-  home: { href: "/", text: "Home" },
-  current: { text: "Firmenkurse" },
-};
+export default ({ packs, courses, setSelectedCourses }) => {
+  const { t } = useTranslation();
 
-export default ({ packs, courses, setSelectedCourses }) => (
-  <RouteWrapper hasCallout='true' breadcrumbLinks={[crumb.home, crumb.current]} titleText='Firmenkurse'>
-    <div className='mega-row cms-row vertical-spacing-bottom'>
-      <div className='container container-medium'>
-        <div className='row'>
-          <div className='col col-sm-12'>
-            <div className='guides noresize'>
-              <div className='guides-wrapper custom-guides-wrapper'>
-                {packs.map((pack) => (
-                  <Pack key={pack.name} pack={pack} courses={courses} setSelectedCourses={setSelectedCourses} />
-                ))}
+  const crumb = {
+    home: { href: "/", text: t("breadcrumbs.home") },
+    current: { text: t("breadcrumbs.packs") },
+  };
+
+  return (
+    <RouteWrapper hasCallout='true' breadcrumbLinks={[crumb.home, crumb.current]} titleText={t("routePacks.title")}>
+      <div className='mega-row cms-row vertical-spacing-bottom'>
+        <div className='container container-medium'>
+          <div className='row'>
+            <div className='col col-sm-12'>
+              <div className='guides noresize'>
+                <div className='guides-wrapper custom-guides-wrapper'>
+                  {packs.map((pack) => (
+                    <Pack key={pack.name} pack={pack} courses={courses} setSelectedCourses={setSelectedCourses} />
+                  ))}
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </RouteWrapper>
-);
+    </RouteWrapper>
+  );
+};

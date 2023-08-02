@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 import RouteWrapper from "../RouteWrapper";
 import FormInput from "../elements/FormInput";
@@ -7,16 +7,16 @@ import useFormState from "../../hooks/useFormState";
 
 import { validate } from "../../utils/validate";
 
-const crumb = {
-  home: { href: "/", text: "Home" },
-  packs: { href: "/packs", text: "Firmenkurse" },
-  courses: { href: "/courses", text: "Kursliste" },
-  overview: { href: "/overview", text: "Übersicht" },
-  current: { text: "Formular" },
-};
-
 export default ({ selectedCourses, setSelectedCourses }) => {
-  const navigate = useNavigate();
+  const { t } = useTranslation();
+
+  const crumb = {
+    home: { href: "/", text: t("breadcrumbs.home") },
+    packs: { href: "/packs", text: t("breadcrumbs.packs") },
+    courses: { href: "/courses", text: t("breadcrumbs.courses") },
+    overview: { href: "/overview", text: t("breadcrumbs.overview") },
+    current: { text: t("breadcrumbs.checkout") },
+  };
 
   const { formState, setFormState, errors, setErrors, handleInputChange } = useFormState(
     {
@@ -71,13 +71,13 @@ export default ({ selectedCourses, setSelectedCourses }) => {
   return (
     <RouteWrapper
       breadcrumbLinks={[crumb.home, crumb.packs, crumb.courses, crumb.overview, crumb.current]}
-      titleText='Formular Firmenkurse'>
+      titleText={t("routeCheckout.title")}>
       <div className='mega-row cms-row vertical-spacing-bottom'>
         <div className='container container-medium'>
           <div className='row'>
             <div className='col col-sm-12'>
               <div className='text-element noresize'>
-                <h2>Kursübersicht</h2>
+                <h2>{t("routeCheckout.overviewHeader")}</h2>
                 <ul className='mini-overview list-none'>
                   {selectedCourses.map((course) => (
                     <li key={course.name} className='mb-3'>
@@ -86,7 +86,7 @@ export default ({ selectedCourses, setSelectedCourses }) => {
                     </li>
                   ))}
                 </ul>
-                <p>Bitte füllen Sie das folgende Formular aus.</p>
+                <p>{t("routeCheckout.formMessage")}</p>
               </div>
             </div>
 
@@ -99,10 +99,10 @@ export default ({ selectedCourses, setSelectedCourses }) => {
                 onSubmit={handleSubmit}
                 noValidate='novalidate'>
                 <div className='form-display-column'>
-                  <h2 className='form-display-column-title'>Kontaktdaten</h2>
+                  <h2 className='form-display-column-title'>{t("routeCheckout.formHeader")}</h2>
                   <div className='form-display-column-wrapper'>
                     <FormInput
-                      label='Name'
+                      label={t("routeCheckout.firstname")}
                       type='text'
                       name='firstname'
                       required={true}
@@ -111,7 +111,7 @@ export default ({ selectedCourses, setSelectedCourses }) => {
                       errors={errors}
                     />
                     <FormInput
-                      label='Vorname'
+                      label={t("routeCheckout.lastname")}
                       type='text'
                       name='lastname'
                       required={true}
@@ -120,7 +120,7 @@ export default ({ selectedCourses, setSelectedCourses }) => {
                       errors={errors}
                     />
                     <FormInput
-                      label='Firma'
+                      label={t("routeCheckout.company")}
                       type='text'
                       name='company'
                       required={true}
@@ -129,7 +129,7 @@ export default ({ selectedCourses, setSelectedCourses }) => {
                       errors={errors}
                     />
                     <FormInput
-                      label='E-Mail'
+                      label={t("routeCheckout.email")}
                       type='email'
                       name='email'
                       required={true}
@@ -138,7 +138,7 @@ export default ({ selectedCourses, setSelectedCourses }) => {
                       errors={errors}
                     />
                     <FormInput
-                      label='Telefon'
+                      label={t("routeCheckout.phone")}
                       type='text'
                       name='phone'
                       required={true}
@@ -147,7 +147,7 @@ export default ({ selectedCourses, setSelectedCourses }) => {
                       errors={errors}
                     />
                     <FormInput
-                      label='Fax'
+                      label={t("routeCheckout.fax")}
                       type='text'
                       name='fax'
                       required={false}
@@ -157,7 +157,7 @@ export default ({ selectedCourses, setSelectedCourses }) => {
                     />
 
                     <FormInput
-                      label='Strasse/Nr.'
+                      label={t("routeCheckout.address")}
                       type='text'
                       name='address'
                       required={true}
@@ -166,7 +166,7 @@ export default ({ selectedCourses, setSelectedCourses }) => {
                       errors={errors}
                     />
                     <FormInput
-                      label='Ort'
+                      label={t("routeCheckout.city")}
                       type='text'
                       name='city'
                       required={true}
@@ -175,7 +175,7 @@ export default ({ selectedCourses, setSelectedCourses }) => {
                       errors={errors}
                     />
                     <FormInput
-                      label='PLZ'
+                      label={t("routeCheckout.zip")}
                       type='text'
                       name='zip'
                       required={true}
@@ -185,7 +185,7 @@ export default ({ selectedCourses, setSelectedCourses }) => {
                     />
 
                     <FormInput
-                      label='Mitteilung'
+                      label={t("routeCheckout.order")}
                       type='textarea'
                       name='order'
                       required={true}
@@ -204,7 +204,7 @@ export default ({ selectedCourses, setSelectedCourses }) => {
                 )}
                 <p className='form-submit-group'>
                   <button type='submit' className='form-button btn btn-primary btn'>
-                    Senden
+                    {t("routeCheckout.buttonText")}
                   </button>
                 </p>
               </form>

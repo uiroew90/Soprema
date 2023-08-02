@@ -3,6 +3,7 @@ import { createRoot } from "react-dom/client";
 import { HashRouter as Router, Routes, Route } from "react-router-dom";
 
 import CorporateHeader from "./components/sections/CorporateHeader";
+import CorporateFooter from "./components/sections/CorporateFooter";
 
 // Routes
 import Home from "./components/pages/Home";
@@ -77,7 +78,10 @@ const App = () => {
   };
 
   useEffect(() => {
-    fetch("https://cdn.jsdelivr.net/gh/Demodia/Soprema/projects/courses/data/courses.json")
+    const currentLanguage = i18n.language;
+
+    // fetch(`https://cdn.jsdelivr.net/gh/Demodia/Soprema/projects/courses/data/courses_${currentLanguage}.json`)
+    fetch(`https://cdn.jsdelivr.net/gh/Demodia/Soprema/projects/courses/data/courses.json`)
       .then((response) => {
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
@@ -90,7 +94,8 @@ const App = () => {
         // TODO: Handle the error in UI
       });
 
-    fetch("https://cdn.jsdelivr.net/gh/Demodia/Soprema/projects/courses/data/packs.json")
+    // fetch(`https://cdn.jsdelivr.net/gh/Demodia/Soprema/projects/courses/data/packs_${currentLanguage}.json`)
+    fetch(`https://cdn.jsdelivr.net/gh/Demodia/Soprema/projects/courses/data/packs.json`)
       .then((response) => {
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
@@ -102,7 +107,7 @@ const App = () => {
         console.error("Error fetching packs:", error);
         // TODO: Handle the error in UI
       });
-  }, []);
+  }, [i18n.language]);
 
   return (
     <StrictMode>
@@ -139,6 +144,7 @@ const App = () => {
           </Routes>
         </Router>
       </main>
+      <CorporateFooter />
     </StrictMode>
   );
 };

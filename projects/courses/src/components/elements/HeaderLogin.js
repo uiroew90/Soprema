@@ -11,10 +11,10 @@ export default () => {
       </button>
       <div className='header-spaces' data-header-space=''>
         <div className='header-spaces-container'>
-          <p className='header-spaces-title'>{t("header.nav.login.value")}</p>
+          <p className='header-spaces-title'>{t("headerNav.login.value")}</p>
           <ul className='header-spaces-list'>
             <li className='header-spaces-element'>
-              <a href={t("header.nav.login.link")} className='header-spaces-link' tabIndex='-1'>
+              <a href={t("headerNav.login.link")} className='header-spaces-link' tabIndex='-1'>
                 <div className='header-spaces-link-image'>
                   <img
                     loading='lazy'

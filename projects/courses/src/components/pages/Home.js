@@ -4,15 +4,15 @@ import { useTranslation } from "react-i18next";
 
 import RouteWrapper from "../RouteWrapper";
 
-const crumb = {
-  current: { text: "Home" },
-};
-
 export default () => {
   const { t } = useTranslation();
 
+  const crumb = {
+    current: { text: t("breadcrumbs.home") },
+  };
+
   return (
-    <RouteWrapper breadcrumbLinks={[crumb.current]} titleText='Home'>
+    <RouteWrapper breadcrumbLinks={[crumb.current]} titleText={t("routeHome.title")}>
       <div className='mega-row cms-row vertical-spacing-bottom'>
         <div className='container container-small'>
           <div className='row'>
@@ -32,7 +32,7 @@ export default () => {
                           </div>
                           <div className='small-tule-content'>
                             <p className='small-tule-title small-tule--custom-title'>
-                              {t("route.home.individual_courses")}
+                              {t("routeHome.individual_courses")}
                             </p>
                             <p className='small-tule-button small-tule--custom-button'>&nbsp;</p>
                           </div>
@@ -52,9 +52,7 @@ export default () => {
                             </svg>
                           </div>
                           <div className='small-tule-content'>
-                            <p className='small-tule-title small-tule--custom-title'>
-                              {t("route.home.prebuilt_packs")}
-                            </p>
+                            <p className='small-tule-title small-tule--custom-title'>{t("routeHome.prebuilt_packs")}</p>
                             <p className='small-tule-button small-tule--custom-button'>&nbsp;</p>
                           </div>
                         </div>

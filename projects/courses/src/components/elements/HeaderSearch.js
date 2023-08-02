@@ -1,6 +1,10 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 export default () => {
+  const { t } = useTranslation();
+  const terms = t("headerSearch.terms", { returnObjects: true });
+
   return (
     <div className='header-search' data-header-search=''>
       <button className='header-search-close' data-header-search-close='' type='button'>
@@ -18,7 +22,7 @@ export default () => {
                 &nbsp;
               </p>
               <p className='title-lvl-1' style={{ textAlign: "center" }}>
-                SO STARK.
+                {t("headerSearch.tagline")}.
                 <br />
                 SOPREMA.
               </p>
@@ -29,53 +33,36 @@ export default () => {
                   className='search-banner-form'
                   data-mods='autocomplete'
                   method='GET'
-                  action='https://www.soprema.ch/de/search'>
+                  action={t("headerSearch.formEndpoint")}>
                   <div className='search-banner-input-wrapper'>
                     <input
                       className='search-banner-input'
                       name='query'
                       data-autocomplete-input
                       type='text'
-                      aria-label='Nach Produkten, Marken oder Suchbegriffen suchen...'
+                      aria-label={t("headerSearch.fieldPlaceholder")}
                       autoComplete='off'
-                      placeholder='Nach Produkten, Marken oder Suchbegriffen suchen...'
+                      placeholder={t("headerSearch.fieldPlaceholder")}
                     />
                     <button className='search-banner-button' type='submit'>
-                      Finden
+                      {t("headerSearch.buttonText")}
                     </button>
                   </div>
                   <div className='search-banner-results' data-autocomplete-wrapper=''></div>
                 </form>
                 <div className='search-banner-terms'>
-                  <a
-                    className='search-banner-terms-word'
-                    href='https://www.soprema.ch/de/gamme/abdichtung/bitumendichtungsbahnen'>
-                    Bitumendichtungsbahnen
-                  </a>
-                  <a
-                    className='search-banner-terms-word'
-                    href='https://www.soprema.ch/de/gamme/abdichtung/kunststoffdichtungsbahnen'>
-                    Kunststoffdichtungsbahnen
-                  </a>
-                  <a className='search-banner-terms-word' href='https://www.soprema.ch/de/fluessigkunststoff'>
-                    Flüssigkunststoffe
-                  </a>
-                  <a className='search-banner-terms-word' href='https://www.soprema.ch/de/gamme/daemmstoffe'>
-                    Dämmstoffe
-                  </a>
-                  <a className='search-banner-terms-word' href='https://www.soprema.ch/de/gamme/dachbegruenung'>
-                    Begrünung
-                  </a>
-                  <a
-                    className='search-banner-terms-word'
-                    href='https://www.soprema.ch/de/gamme/produkte-hoehensicherungssysteme'>
-                    Höhensicherungssysteme
-                  </a>
+                  {Array.isArray(terms) &&
+                    terms.length > 0 &&
+                    terms.map((term, index) => (
+                      <a key={index} className='search-banner-terms-word' href={term.link}>
+                        {term.value}
+                      </a>
+                    ))}
                 </div>
               </div>
               <div className='search-banner-actions'>
-                <a className='search-banner-actions-button' href='https://www.soprema.ch/de/sostark'>
-                  Gesamten Unternehmensfilm anschauen
+                <a className='search-banner-actions-button' href={t("headerSearch.actionLink")}>
+                  {t("headerSearch.actionText")}
                 </a>
               </div>
             </div>

@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 import RouteWrapper from "../RouteWrapper";
 
@@ -73,14 +74,15 @@ const Category = ({ category, courses, selectedCourses, toggleCourse }) => {
   );
 };
 
-const crumb = {
-  home: { href: "/", text: "Home" },
-  packs: { href: "/packs", text: "Firmenkurse" },
-  current: { text: "Kursliste" },
-};
-
 export default ({ courses, selectedCourses, setSelectedCourses }) => {
+  const { t } = useTranslation();
   const navigate = useNavigate();
+
+  const crumb = {
+    home: { href: "/", text: t("breadcrumbs.home") },
+    packs: { href: "/packs", text: t("breadcrumbs.packs") },
+    current: { text: t("breadcrumbs.courses") },
+  };
 
   const categories = courses.reduce((acc, course) => {
     if (!acc[course.category]) {
@@ -107,7 +109,10 @@ export default ({ courses, selectedCourses, setSelectedCourses }) => {
   };
 
   return (
-    <RouteWrapper hasCallout='true' breadcrumbLinks={[crumb.home, crumb.packs, crumb.current]} titleText='Kursliste'>
+    <RouteWrapper
+      hasCallout='true'
+      breadcrumbLinks={[crumb.home, crumb.packs, crumb.current]}
+      titleText={t("routeCourses.title")}>
       <div className='mega-row cms-row vertical-spacing-bottom'>
         <div className='container container-medium'>
           <div className='row'>
@@ -132,7 +137,7 @@ export default ({ courses, selectedCourses, setSelectedCourses }) => {
                   onClick={() => selectedCourses.length > 0 && navigate("/overview")}
                   disabled={selectedCourses.length === 0}
                   className='button'>
-                  Kurse hinzufügen
+                  {t("routeCourses.buttonText")}
                 </button>
               </div>
             </div>
