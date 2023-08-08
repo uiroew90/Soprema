@@ -1,0 +1,42 @@
+[
+  {
+    "name": "Étanchéité liquide",
+    "desc": [
+      "À la fin du cours, chaque participant sera capable d'évaluer le substrat et d'appliquer la bonne primaire.",
+      "À la fin du cours, chaque participant sera capable d'effectuer des détails d'étanchéité avec de l'étanchéité liquide.",
+      "À la fin du cours, chaque participant sera capable d'effectuer des détails d'étanchéité et des revêtements de surface plus petits avec Alsan PMMA de manière autonome.",
+      "À la fin du cours, chaque participant sera capable de créer différentes surfaces décoratives avec des produits Alsan PMMA."
+    ],
+    "items": [
+      { "category": "Étanchéité liquide Alsan", "item": "Préparation du support et couche primaire" },
+      { "category": "Étanchéité liquide Alsan", "item": "Raccords/Finitions étanches et étanchéités de détails" },
+      { "category": "Étanchéité liquide Alsan", "item": "Étanchéité et revêtement de surface" },
+      { "category": "Étanchéité liquide Alsan", "item": "Conception de surfaces" }
+    ]
+  },
+  {
+    "name": "Bitumineux",
+    "desc": [
+      "Chaque participant(e) apprend à connaître les directives de pose des étanchéités bitumineuses et à exécuter de manière autonome les points de mise en œuvre et les détails les plus importants.",
+      "Chaque participant(e) apprend à connaître les lignes de pose des différentes bandes de joints de dilatation et à exécuter lui-même les points de pose et les détails les plus importants."
+    ],
+    "items": [
+      {
+        "category": "Soprema systèmes bitumineux",
+        "item": "Bitume Pratique Etanchéité de base dans le domaine des toitures plates"
+      },
+      { "category": "Soprema systèmes bitumineux", "item": "Bandes d'étanchéité" }
+    ]
+  },
+  {
+    "name": "Systèmes de sécurité en hauteur",
+    "desc": [
+      "Montage correct et conforme aux prescriptions des systèmes antichute Grün et Soprasafe. À l'issue de la formation, un certificat est délivré, qui autorise le participant à monter les systèmes Grün et Soprasafe.",
+      "Planification conforme des dispositifs de sécurité en hauteur."
+    ],
+    "items": [
+      { "category": "Sécurités antichute HSS", "item": "Montage de la sécurité en hauteur HSS Grün & Soprasafe" },
+      { "category": "Sécurités antichute HSS", "item": "Planification de la sécurité en hauteur" }
+    ]
+  }
+]

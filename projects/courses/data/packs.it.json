@@ -1,0 +1,45 @@
+[
+  {
+    "name": "Resine liquide",
+    "desc": [
+      "Dopo aver completato il corso, ogni partecipante sarà in grado di valutare il sottofondo e applicare il primer corretto.",
+      "Al termine del corso, ogni partecipante sarà in grado di realizzare un'impermeabilizzazione di dettagli con la resina liquida.",
+      "Al termine del corso, ogni partecipante è in grado di realizzare autonomamente impermeabilizzazioni di dettagli e piccoli rivestimenti superficiali con ALSAN PMMA.",
+      "Al termine del corso, ogni partecipante sarà in grado di creare varie decorazioni di superfici con i prodotti ALSAN PMMA."
+    ],
+    "items": [
+      { "category": "Alsan resine liquide", "item": "Preparazione del sottofondo e priming" },
+      { "category": "Alsan resine liquide", "item": "Raccordi/Risvolti a tenuta e soluzioni di dettaglio" },
+      { "category": "Alsan resine liquide", "item": "Impermeabilizzazione superficiale e rivestimento" },
+      { "category": "Alsan resine liquide", "item": "Realizzazione superficiale" }
+    ]
+  },
+  {
+    "name": "Bituminoso",
+    "desc": [
+      "Ogni partecipante apprende le linee guida per la posa dell'impermeabilizzazione bituminosa e come realizzare in autonomia i punti di lavorazione e i dettagli più importanti.",
+      "Ogni partecipante apprende le linee guida per l'installazione dei vari nastri per giunti di movimento e come realizzare autonomamente i punti di applicazione e i dettagli più importanti."
+    ],
+    "items": [
+      {
+        "category": "Soprema sistemi bituminosi ",
+        "item": "Impermeabilizzazione a base di bitume nel settore dei tetti piani"
+      },
+      { "category": "Soprema sistemi bituminosi ", "item": "Striscie per giunti di movimento" }
+    ]
+  },
+  {
+    "name": "Sistemi di protezione anticaduta",
+    "desc": [
+      "Installazione corretta dei sistemi di sicurezza in altezza Grün e Soprasafe in conformità alle normative. Al termine della formazione viene rilasciato un certificato che abilita il partecipante all'installazione dei sistemi Grün e Soprasafe.",
+      "Progettazione di dispositivi anticaduta in conformità alle normative."
+    ],
+    "items": [
+      {
+        "category": "Sistemi di protezione anticaduta HSS",
+        "item": "Montaggio del dispositivo di sicurezza in altezza HSS Grün & Soprasafe"
+      },
+      { "category": "Sistemi di protezione anticaduta HSS", "item": "Pianificazione della protezione anticaduta" }
+    ]
+  }
+]

@@ -93,10 +93,7 @@ const App = () => {
   }, []);
 
   useEffect(() => {
-    console.log(
-      `Trying to fetch: https://cdn.jsdelivr.net/gh/Demodia/Soprema/projects/courses/data/courses_${currentLanguage}.json`
-    );
-    fetch(`https://cdn.jsdelivr.net/gh/Demodia/Soprema/projects/courses/data/courses_${currentLanguage}.json`)
+    fetch(`https://cdn.jsdelivr.net/gh/Demodia/Soprema/projects/courses/data/courses.${currentLanguage}.json`)
       .then((response) => {
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
@@ -109,8 +106,7 @@ const App = () => {
         // TODO: Handle the error in UI
       });
 
-    // fetch(`https://cdn.jsdelivr.net/gh/Demodia/Soprema/projects/courses/data/packs_${currentLanguage}.json`)
-    fetch(`https://cdn.jsdelivr.net/gh/Demodia/Soprema/projects/courses/data/packs.json`)
+    fetch(`https://cdn.jsdelivr.net/gh/Demodia/Soprema/projects/courses/data/packs.${currentLanguage}.json`)
       .then((response) => {
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
