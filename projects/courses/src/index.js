@@ -93,6 +93,9 @@ const App = () => {
   }, []);
 
   useEffect(() => {
+    console.log(
+      `Trying to fetch: https://cdn.jsdelivr.net/gh/Demodia/Soprema/projects/courses/data/courses_${currentLanguage}.json`
+    );
     fetch(`https://cdn.jsdelivr.net/gh/Demodia/Soprema/projects/courses/data/courses_${currentLanguage}.json`)
       .then((response) => {
         if (!response.ok) {
