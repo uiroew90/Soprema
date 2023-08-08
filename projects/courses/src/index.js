@@ -18,7 +18,6 @@ import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
 import LanguageDetector from "i18next-browser-languagedetector";
 import de from "./locales/de";
-import en from "./locales/en";
 import fr from "./locales/fr";
 import it from "./locales/it";
 
@@ -28,11 +27,10 @@ i18n
   .init({
     resources: {
       de: de,
-      en: en,
       fr: fr,
       it: it,
     },
-    fallbackLng: "en",
+    fallbackLng: "de",
     interpolation: {
       escapeValue: false,
     },
@@ -77,11 +75,25 @@ const App = () => {
     );
   };
 
-  useEffect(() => {
-    const currentLanguage = i18n.language;
+  const [currentLanguage, setCurrentLanguage] = useState(i18n.language);
 
-    // fetch(`https://cdn.jsdelivr.net/gh/Demodia/Soprema/projects/courses/data/courses_${currentLanguage}.json`)
-    fetch(`https://cdn.jsdelivr.net/gh/Demodia/Soprema/projects/courses/data/courses.json`)
+  useEffect(() => {
+    // This function is called whenever the language changes
+    const handleLanguageChange = (lng) => {
+      setCurrentLanguage(lng);
+    };
+
+    // Listen for changes in the language
+    i18n.on("languageChanged", handleLanguageChange);
+
+    // Clean up the listener when the component unmounts
+    return () => {
+      i18n.off("languageChanged", handleLanguageChange);
+    };
+  }, []);
+
+  useEffect(() => {
+    fetch(`https://cdn.jsdelivr.net/gh/Demodia/Soprema/projects/courses/data/courses_${currentLanguage}.json`)
       .then((response) => {
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
@@ -148,9 +160,5 @@ const App = () => {
     </StrictMode>
   );
 };
-
-// const container = document.getElementById("root");
-// const root = createRoot(container);
-// root.render(<App />);
 
 createRoot(document.getElementById("root")).render(<App />);

@@ -3,7 +3,7 @@ import i18n from "i18next";
 
 export default () => {
   const [currentLanguage, setCurrentLanguage] = useState(i18n.language);
-  const languages = ["de", "en", "fr", "it"];
+  const languages = ["de", "fr", "it"];
   const otherLanguages = languages.filter((lang) => lang !== currentLanguage);
 
   useEffect(() => {
