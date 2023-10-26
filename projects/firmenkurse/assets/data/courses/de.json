@@ -1,0 +1,112 @@
+[
+  {
+    "id": 1,
+    "enable": true,
+    "category": "Soprema Bituminöse Systeme",
+    "name": "Bitumen Praxis Basis Abdichtungen im Bereich Flachdach",
+    "desc": "Jede/r Teilnehmer/in lernt die Verlegerichtlinien der Bitumen Abdichtungen kennen und die wichtigsten Verarbeitungspunkte und Details selbstständig auszuführen."
+  },
+  {
+    "id": 2,
+    "enable": true,
+    "category": "Soprema Bituminöse Systeme",
+    "name": "Bewegungsfugenbänder",
+    "desc": "Jede/r Teilnehmer/in lernt die Verlegerichtinien der verschiedenen Bewegungsfugenbänder kennen und die wichtigsten Verarbeitungspunkte und Details selbstständig auszuführen."
+  },
+  {
+    "id": 3,
+    "enable": true,
+    "category": "Soprema Bituminöse Systeme",
+    "name": "Bitumen Praxis Plus",
+    "desc": "Jede/r Teilnehmer/in lernt die Verlegerichtlinien der neuzeitlichen Abdichtungsbahnen und die wichtigsten Verarbeitungstechniken und Details selbstständig auszuführen."
+  },
+
+  {
+    "id": 4,
+    "enable": true,
+    "category": "Flag Kunststoff Dichtungsbahnen",
+    "name": "Flag Praxis Basis Abdichtungen im Bereich Flachdach",
+    "desc": "Jeder Teilnehmer lernt die Verlegerichtlinien der FLAGON Abdichtungen kennen und die wichtigsten Verarbeitungspunkte und Details selbständig auszuführen."
+  },
+  {
+    "id": 5,
+    "enable": true,
+    "category": "Flag Kunststoff Dichtungsbahnen",
+    "name": "Flag Praxis Plus",
+    "desc": "Jede/r Teilnehmer/in lernt die Verlegerichtlinien der neuzeitlichen TPO Kunststoffabdichtungen kennen, die wichtigsten Verarbeitungspunkte und Details selbständig auszuführen."
+  },
+
+  {
+    "id": 6,
+    "enable": true,
+    "category": "Alsan Flüssigkunststoffe",
+    "name": "Untergrundvorbereitung und Grundierung",
+    "desc": "Nach Abschluss des Kurses ist jeder Teilnehmer in der Lage, den Untergrund zu beurteilen und die richtige Grundierung einzusetzen."
+  },
+  {
+    "id": 7,
+    "enable": true,
+    "category": "Alsan Flüssigkunststoffe",
+    "name": "Dichte An-/ Abschlüsse und Detaillösungen",
+    "desc": "Nach Abschluss des Kurses ist jeder Teilnehmer in der Lage, Detailabdichtungen mit Flüssigkunststoff auszuführen."
+  },
+  {
+    "id": 8,
+    "enable": true,
+    "category": "Alsan Flüssigkunststoffe",
+    "name": "Flächenabdichtung und Beschichtung",
+    "desc": "Nach Abschluss des Kurses ist jeder Teilnehmer in der Lage, Detailabdichtungen und kleinere Flächenbeschichtungen mit Alsan PMMA selbstständig auszuführen."
+  },
+  {
+    "id": 9,
+    "enable": true,
+    "category": "Alsan Flüssigkunststoffe",
+    "name": "Oberflächengestaltung",
+    "desc": "Nach Abschluss des Kurses ist jeder Teilnehmer in der Lage, verschiedene dekorative Oberflächen mit Alsan PMMA Produkten zu gestalten."
+  },
+
+  {
+    "id": 10,
+    "enable": true,
+    "category": "Prenotec Flüssigkunststoffe",
+    "name": "Dichte An-/ Abschlüsse und Detaillösungen",
+    "desc": "Das praktische Verarbeiten mit vielen Tipps und Tricks für ein schnelles und sicheres Abdichten."
+  },
+  {
+    "id": 11,
+    "enable": true,
+    "category": "Prenotec Flüssigkunststoffe",
+    "name": "Flächenabdichtung und dekorative Beschichtung",
+    "desc": "Teilnehmer, die diesen Kurs besuchen, sind in der Lage sämtliche Balkonbeschichtungen und Terrassenabdichtungen selbstständig durchzuführen."
+  },
+  {
+    "id": 12,
+    "enable": true,
+    "category": "Prenotec Flüssigkunststoffe",
+    "name": "Flächenabdichtung mit Prenopur PMMA",
+    "desc": "Die Teilnehmer erhalten hilfreiche Tipps und Tricks für die fachgerechte Ausführung. Nach Abschluss des Kurses ist jeder Teilnehmer in der Lage die verschiedenen PMMA Systeme einzubauen."
+  },
+
+  {
+    "id": 13,
+    "enable": true,
+    "category": "Höhensicherungen HSS",
+    "name": "Montage von Höhensicherung HSS Grün & Soprasafe",
+    "desc": "Vorschriftsgemässe und korrekte Montage von Grün und Soprasafe Höhensicherungen. Nach Abschluss der Schulung wird ein Zertifikat ausgestellt, welches den Teilnehmer berechtigt, die Grün- und Soprasafe-Systeme zu montieren."
+  },
+  {
+    "id": 14,
+    "enable": true,
+    "category": "Höhensicherungen HSS",
+    "name": "Planung von Höhensicherungen",
+    "desc": "Vorschriftsgemässe Planung von Höhensicherungen."
+  },
+
+  {
+    "id": 15,
+    "enable": true,
+    "category": "Planung",
+    "name": "SIA-Norm 271 und BauAV",
+    "desc": "Die Teilnehmer können sich in kurzer Zeit und auf eine leichte Art die neusten Vorgaben aneignen."
+  }
+]
