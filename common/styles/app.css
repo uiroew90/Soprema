@@ -2,8 +2,8 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,700;1,400&display=swap');
 @font-face {
   font-family: icons-jjb9e8twsrocf57rdejj9v;
-  src: url(https://cdn.jsdelivr.net/gh/Demodia/Soprema/assets/fonts/icons-jjb9e8twsrocf57rdejj9v.eot);
-  src: url(https://cdn.jsdelivr.net/gh/Demodia/Soprema/assets/fonts/icons-jjb9e8twsrocf57rdejj9v.eot#iefix) format('embedded-opentype'), url(https://cdn.jsdelivr.net/gh/Demodia/Soprema/assets/fonts/icons-jjb9e8twsrocf57rdejj9v.woff) format('woff'), url(https://cdn.jsdelivr.net/gh/Demodia/Soprema/assets/fonts/fonts/icons-jjb9e8twsrocf57rdejj9v.ttf) format('truetype'), url(https://cdn.jsdelivr.net/gh/Demodia/Soprema/assets/fonts/icons-jjb9e8twsrocf57rdejj9v.svg#icons-jjb9e8twsrocf57rdejj9v) format('svg');
+  src: url(https://cdn.jsdelivr.net/gh/Demodia/Soprema/common/fonts/icons-jjb9e8twsrocf57rdejj9v.eot);
+  src: url(https://cdn.jsdelivr.net/gh/Demodia/Soprema/common/fonts/icons-jjb9e8twsrocf57rdejj9v.eot#iefix) format('embedded-opentype'), url(https://cdn.jsdelivr.net/gh/Demodia/Soprema/common/fonts/icons-jjb9e8twsrocf57rdejj9v.woff) format('woff'), url(https://cdn.jsdelivr.net/gh/Demodia/Soprema/common/fonts/fonts/icons-jjb9e8twsrocf57rdejj9v.ttf) format('truetype'), url(https://cdn.jsdelivr.net/gh/Demodia/Soprema/common/fonts/icons-jjb9e8twsrocf57rdejj9v.svg#icons-jjb9e8twsrocf57rdejj9v) format('svg');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -261,8 +261,8 @@
 }
 @font-face {
   font-family: FontAwesome;
-  src: url(https://cdn.jsdelivr.net/gh/Demodia/Soprema/assets/fonts/font-awesome/fontawesome-webfont.eot?v=4.7.0);
-  src: url(https://cdn.jsdelivr.net/gh/Demodia/Soprema/assets/fonts/font-awesome/fontawesome-webfont.eot?v=4.7.0#iefix) format('embedded-opentype'), url(https://cdn.jsdelivr.net/gh/Demodia/Soprema/assets/fonts/font-awesome/fontawesome-webfont.woff2?v=4.7.0) format('woff2'), url(https://cdn.jsdelivr.net/gh/Demodia/Soprema/assets/fonts/font-awesome/fontawesome-webfont.woff?v=4.7.0) format('woff'), url(https://cdn.jsdelivr.net/gh/Demodia/Soprema/assets/fonts/font-awesome/fontawesome-webfont.ttf?v=4.7.0) format('truetype'), url(https://cdn.jsdelivr.net/gh/Demodia/Soprema/assets/fonts/font-awesome/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular) format('svg');
+  src: url(https://cdn.jsdelivr.net/gh/Demodia/Soprema/common/fonts/font-awesome/fontawesome-webfont.eot?v=4.7.0);
+  src: url(https://cdn.jsdelivr.net/gh/Demodia/Soprema/common/fonts/font-awesome/fontawesome-webfont.eot?v=4.7.0#iefix) format('embedded-opentype'), url(https://cdn.jsdelivr.net/gh/Demodia/Soprema/common/fonts/font-awesome/fontawesome-webfont.woff2?v=4.7.0) format('woff2'), url(https://cdn.jsdelivr.net/gh/Demodia/Soprema/common/fonts/font-awesome/fontawesome-webfont.woff?v=4.7.0) format('woff'), url(https://cdn.jsdelivr.net/gh/Demodia/Soprema/common/fonts/font-awesome/fontawesome-webfont.ttf?v=4.7.0) format('truetype'), url(https://cdn.jsdelivr.net/gh/Demodia/Soprema/common/fonts/font-awesome/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular) format('svg');
   font-weight: 400;
   font-style: normal;
 }
