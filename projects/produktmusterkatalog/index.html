@@ -1,18 +1,42 @@
 <!DOCTYPE html>
-<html class="viewer-element" lang="en">
+<html class="viewer-element">
   <head>
-    <meta charset="UTF-8" />
-    <title>Firmenkurse - Soprema</title>
-    <meta name="description" content />
+    <base href="https://go.soprema.ch" />
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="description" content="%%description%%" />
+    <title>%%title%%</title>
+
     <meta name="theme-color" content="#007cc3" />
     <meta name="apple-mobile-web-app-status-bar-style" content="#007cc3" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
     <meta name="referrer" content="no-referrer-when-downgrade" />
+
     <link type="image/png" href="https://www.soprema.ch/files/favicon_5dc13f5100c5b.webp" rel="icon" />
-    <link href="https://cdn.jsdelivr.net/gh/Demodia/Soprema@main/common/styles/front.css" rel="stylesheet" media="all" />
-    <link href="https://cdn.jsdelivr.net/gh/Demodia/Soprema@main/common/styles/app.css" rel="stylesheet" media="all" />
-    <link href="https://cdn.jsdelivr.net/gh/Demodia/Soprema@main/projects/firmenkurse/assets/style/index.css" rel="stylesheet" media="all" />
-    <script defer="defer" src="bundle.js"></script>
+
+    <link href="https://cdn.jsdelivr.net/gh/Demodia/Soprema/common/styles/front.css" rel="stylesheet" media="all" />
+    <link href="https://cdn.jsdelivr.net/gh/Demodia/Soprema/common/styles/app.css" rel="stylesheet" media="all" />
+
+    <link href="https://cdn.jsdelivr.net/gh/Demodia/Soprema/projects/courses/src/index.css" rel="stylesheet" media="all" />
+    <link rel="shortcut icon" href="https://www.demodia.com/hubfs/Demodia-Icon-2014-(128).png" />
+    <link rel="preconnect" href="https://kit.fontawesome.com" />
+
+    <script async crossorigin="anonymous" src="https://kit.fontawesome.com/0019447fb5.js"></script>
+
+    <script defer src="https://cdn.jsdelivr.net/gh/Demodia/Soprema@main/projects/Produktmusterkatalog/custom.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+
+    <style>
+      .ordered {
+        background-color: #b1d1e9;
+        color: #ffffff;
+      }
+      .product-element:hover {
+        cursor: pointer;
+      }
+    </style>
   </head>
   <body class="site-id--8 is-homepage">
     <div class="wrapper wrapper-front tp1">
@@ -430,7 +454,7 @@
 	L0,706.562v239.73v239.729l536.458,308.465l184.408,105.615l885.157-514.664l-95.559-55.324L720.866,1491.135z"></path>
           </symbol>
           <symbol id="calculator-chat" viewBox="0 0 1320 1792">
-            <style>
+            <style type="text/css">
               .st0 {
                 fill-rule: evenodd;
                 clip-rule: evenodd;
@@ -448,7 +472,7 @@
 	C1126.2,1243.2,911,1420,660.9,1420.2z"></path>
           </symbol>
           <symbol id="calculator-doc" viewBox="0 0 1100 1792">
-            <style>
+            <style type="text/css">
               .st0 {
                 fill-rule: evenodd;
                 clip-rule: evenodd;
@@ -526,7 +550,7 @@
 	C633.34,814.67,629.85,814.67,624.62,814.67z"></path>
           </symbol>
           <symbol id="geoloc" viewBox="0 0 1200 1792">
-            <style>
+            <style type="text/css">
               .st0 {
                 fill: #010101;
               }
@@ -563,7 +587,7 @@
 	h866.784v-234.551H549.818V1477.992z"></path>
           </symbol>
           <symbol id="more" viewBox="0 0 1200 1792">
-            <style>
+            <style type="text/css">
               .st0 {
                 fill: #002e56;
               }
@@ -585,7 +609,7 @@
 	l329.984,56.468l-148.229,864.667l-181.755-31.762v142.934H278.811l1004.072,171.168l206.461-1214.062L1067.6,326.026z"></path>
           </symbol>
           <symbol id="pin" viewBox="0 0 900 1792">
-            <style>
+            <style type="text/css">
               .st0 {
                 fill: #010101;
               }
@@ -770,21 +794,611 @@
           </symbol>
         </svg>
       </div>
-      <div id="root"></div>
+
+      <header class="header" role="banner" id="role-banner" data-newheader>
+        <div class="header-wrapper">
+          <div class="header-logo">
+            <h1 class="header-logo-wrapper"><img loading="lazy" src="https://www.soprema.ch/files/resize/outside/200-200-logo-web_9e746a81662d1d01e8b543665902fb3e.webp" alt="Soprema CH" /></h1>
+          </div>
+          <div class="header-container">
+            <div class="header-menu" data-header-wrapper>
+              <nav class="header-menu-container">
+                <ul class="header-top-menu" data-header-nav>
+                  <li class="header-top-element">
+                    <button type="button" class="header-top-link" data-header-search-btn><i class="ic ic-search"></i> <span trans-key="suche">Suche</span></button>
+                  </li>
+                  <li class="header-top-element">
+                    <a class="header-top-link" target="_self" href="https://www.soprema.ch/de/presse/aktuell"
+                      ><div class="header-top-image" style="background-image: url('https://www.soprema.ch/files/resize/outside/50-50-press-2x_013643d7df009440e1a015aa8c76b9df.webp')"></div>
+                      <span trans-key="aktuelles">Aktuelles</span>
+                    </a>
+                  </li>
+                  <li class="header-top-element">
+                    <a class="header-top-link" target="_self" href="https://www.soprema.ch/de/kontaktformular"
+                      ><div class="header-top-image" style="background-image: url('https://www.soprema.ch/files/resize/outside/50-50-30429_5fd9ce7604a16bc7a95e1d0efea8a60f.webp')"></div>
+                      <span trans-key="kontakt">Kontakt</span>
+                    </a>
+                  </li>
+                  <li class="header-top-element header-lang" data-header-menu>
+                    <button type="button" class="header-top-link" data-header-menu-button id="lang-menu">
+                      <div class="header-lang-img"><img src="https://www.soprema.ch/bundles/awcms/compiled/images/ch.svg" alt="DE" /></div>
+                      <span id="current-lang">DE</span>
+                    </button>
+                    <ul class="header-top-submenu" data-header-menu-wrapper>
+                      <li class="header-top-submenu-element"><a attr-lang="de" class="lang-switcher header-top-submenu-link" href="#"> DE</a></li>
+                      <li class="header-top-submenu-element"><a attr-lang="fr" class="lang-switcher header-top-submenu-link" href="#"> FR</a></li>
+                      <li class="header-top-submenu-element"><a attr-lang="it" class="lang-switcher header-top-submenu-link" href="#"> IT</a></li>
+                    </ul>
+                  </li>
+                </ul>
+                <!--
+                <ul class="header-menu-list" data-header-nav>
+                  <li class="header-menu-element" data-header-menu>
+                    <button type="button" class="header-menu-link" data-header-menu-button trans-key="service"> Service</button>
+                    <div class="header-menu-submenu" data-header-menu-wrapper>
+                      <div class="header-menu-submenu-content" data-header-menu-content>
+                        <ul class="header-menu-submenu-list">
+                          <li class="header-menu-submenu-element header-menu-submenu-element--lvl2 header-menu-submenu-element--back header-menu-submenu-element--top"><button type="button" class="header-menu-submenu-back" data-header-back>Menu</button></li>
+                          <li class="header-menu-submenu-element header-menu-submenu-element--head header-menu-submenu-element--lvl2"><a class="header-menu-submenu-link header-menu-submenu-link--head header-menu-submenu-link--lvl2" href="https://www.soprema.ch/de/architektenservice-old">Service</a></li>
+                          <li class="header-menu-submenu-element header-menu-submenu-element--lvl2" data-header-secondlvl>
+                            <a class="header-menu-submenu-link header-menu-submenu-link--lvl2" target="_self" href="https://www.soprema.ch/de/architektenservice"
+                              ><div class="header-menu-submenu-image" style="background-image: url('https://www.soprema.ch/files/resize/outside/50-50-architect-991e9a3a0ec20538df23ef0f5faa8b24_63a38401c2ef4c15b0f0517af57d7f8d.webp')"></div>
+                              <span trans-key="architektenservice">Architektenservice</span>
+                            </a>
+                          </li>
+                          <li class="header-menu-submenu-element header-menu-submenu-element--lvl2" data-header-secondlvl>
+                            <a class="header-menu-submenu-link header-menu-submenu-link--lvl2" target="_self" href="https://www.soprema.ch/de/schulungen"
+                              ><div class="header-menu-submenu-image" style="background-image: url('https://www.soprema.ch/files/resize/outside/50-50-icon-schulung_c91db75368b7bc1053e8a63a6a5a57cb.webp')"></div>
+                              <span trans-key="schulungen">Schulungen</span>
+                            </a>
+                          </li>
+                          <li class="header-menu-submenu-element header-menu-submenu-element--lvl2" data-header-secondlvl>
+                            <a class="header-menu-submenu-link header-menu-submenu-link--lvl2" target="_self" href="https://www.soprema.ch/de/garantieleistungen"
+                              ><div class="header-menu-submenu-image" style="background-image: url('https://www.soprema.ch/files/resize/outside/50-50-30415-709f4959719e6501e35518b16fc847d1_759fff657e3903bd80671aa28a31f8f8.webp')"></div>
+                              <span trans-key="garantien">Garantien</span>
+                            </a>
+                          </li>
+                          <li class="header-menu-submenu-element header-menu-submenu-element--lvl2" data-header-secondlvl>
+                            <a class="header-menu-submenu-link header-menu-submenu-link--lvl2" target="_self" data-header-secondlvl-button href="https://www.soprema.ch/de/dokumente"
+                              ><div class="header-menu-submenu-image" style="background-image: url('https://www.soprema.ch/files/resize/outside/50-50-icon-download_df6df2dbe4445ca92c40b38fc85f467d.webp')"></div>
+                              <span trans-key="download">Download</span>
+                            </a>
+                            <ul class="header-menu-submenu-list header-menu-submenu-list--lvl2" data-header-secondlvl-wrapper>
+                              <li class="header-menu-submenu-element header-menu-submenu-element--lvl3 header-menu-submenu-element--back header-menu-submenu-element--top"><button type="button" class="header-menu-submenu-back" data-header-back>Service</button></li>
+                              <li class="header-menu-submenu-element header-menu-submenu-element--head header-menu-submenu-element--lvl3"><a class="header-menu-submenu-link header-menu-submenu-link--head header-menu-submenu-link--lvl3" href="https://www.soprema.ch/de/dokumente"><span trans-key="download">Download</span></a></li>
+                              <li class="header-menu-submenu-element header-menu-submenu-element--lvl3"><a class="header-menu-submenu-link header-menu-submenu-link--lvl3" target="_self" href="https://www.soprema.ch/de/dokumente/download"><span trans-key="dokumente">Dokumente</span></a></li>
+                              <li class="header-menu-submenu-element header-menu-submenu-element--lvl3"><a class="header-menu-submenu-link header-menu-submenu-link--lvl3" target="_self" href="https://www.soprema.ch/de/documentation/search-strict-product?language=de"><span trans-key="download_support">Download-Support</span></a></li>
+                            </ul>
+                          </li>
+                          <li class="header-menu-submenu-element header-menu-submenu-element--lvl2" data-header-secondlvl>
+                            <a class="header-menu-submenu-link header-menu-submenu-link--lvl2" target="_self" data-header-secondlvl-button href="#"
+                              ><div class="header-menu-submenu-image" style="background-image: url('https://www.soprema.ch/files/resize/outside/50-50-icon-system_1cc22276b889573c277f0d301371d960.webp')"></div>
+                              <span trans-key="systemfinder">Systemfinder</span>
+                            </a>
+                            <ul class="header-menu-submenu-list header-menu-submenu-list--lvl2" data-header-secondlvl-wrapper>
+                              <li class="header-menu-submenu-element header-menu-submenu-element--lvl3 header-menu-submenu-element--back header-menu-submenu-element--top"><button type="button" class="header-menu-submenu-back" data-header-back>Service</button></li>
+                              <li class="header-menu-submenu-element header-menu-submenu-element--head header-menu-submenu-element--lvl3"><a class="header-menu-submenu-link header-menu-submenu-link--head header-menu-submenu-link--lvl3" href="#"><span trans-key="systemfinder">Systemfinder</span></a></li>
+                              <li class="header-menu-submenu-element header-menu-submenu-element--lvl3"><a class="header-menu-submenu-link header-menu-submenu-link--lvl3" target="_self" href="https://www.soprema.ch/de/selection-guide"><span trans-key="systemfinder_übersicht">Systemfinder-Übersicht</span></a></li>
+                              <li class="header-menu-submenu-element header-menu-submenu-element--lvl3"><a class="header-menu-submenu-link header-menu-submenu-link--lvl3" target="_self" href="https://www.soprema.ch/de/guide-solutions/systemfinder-bitumenbahnen"><span trans-key="systemfinder_bitumenbahnen">Systemfinder Bitumenbahnen</span></a></li>
+                              <li class="header-menu-submenu-element header-menu-submenu-element--lvl3"><a class="header-menu-submenu-link header-menu-submenu-link--lvl3" target="_self" href="https://www.soprema.ch/de/guide-solutions/systemfinder-kunststoffbahnen"><span trans-key="systemfinder_kunststoffbahnen">Systemfinder Kunststoffbahnen</span></a></li>
+                              <li class="header-menu-submenu-element header-menu-submenu-element--lvl3"><a class="header-menu-submenu-link header-menu-submenu-link--lvl3" target="_self" href="https://www.soprema.ch/de/guide-solutions/systemfinder-fluessigkunststoffe"><span trans-key="systemfinder_flüssigkunststoffe">Systemfinder Flüssigkunststoffe</span></a></li>
+                            </ul>
+                          </li>
+                          <li class="header-menu-submenu-element header-menu-submenu-element--lvl2" data-header-secondlvl>
+                            <a class="header-menu-submenu-link header-menu-submenu-link--lvl2" target="_self" href="https://www.soprema.ch/de/serviceleistungen"
+                              ><div class="header-menu-submenu-image" style="background-image: url('https://www.soprema.ch/files/resize/outside/50-50-30413-08e478f0a12093f672f5f2e1f4d6790b_debd8976fa7b675d00c54d1e8396741b.webp')"></div>
+                              <span trans-key="serviceleistungen">Serviceleistungen</span>
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="header-menu-element" data-header-menu>
+                    <button type="button" class="header-menu-link" data-header-menu-button trans-key="produkte">Produkte</button>
+                    <div class="header-menu-submenu" data-header-menu-wrapper>
+                      <div class="header-menu-submenu-content" data-header-menu-content>
+                        <ul class="header-menu-submenu-list">
+                          <li class="header-menu-submenu-element header-menu-submenu-element--lvl2 header-menu-submenu-element--back header-menu-submenu-element--top"><button type="button" class="header-menu-submenu-back" data-header-back>Menu</button></li>
+                          <li class="header-menu-submenu-element header-menu-submenu-element--head header-menu-submenu-element--lvl2"><a class="header-menu-submenu-link header-menu-submenu-link--head header-menu-submenu-link--lvl2" href="#">Produkte</a></li>
+                          <li class="header-menu-submenu-element header-menu-submenu-element--lvl2" data-header-secondlvl>
+                            <a class="header-menu-submenu-link header-menu-submenu-link--lvl2" target="_self" data-header-secondlvl-button href="https://www.soprema.ch/de/abdichtungssysteme-bitumen"
+                              ><div class="header-menu-submenu-image" style="background-image: url('https://www.soprema.ch/files/resize/outside/50-50-30433_7998501b9fbf3b5a32a07b9fce9d3940.webp')"></div>
+                              <span trans-key="abdichtung">Abdichtung</span>
+                            </a>
+                            <ul class="header-menu-submenu-list header-menu-submenu-list--lvl2" data-header-secondlvl-wrapper>
+                              <li class="header-menu-submenu-element header-menu-submenu-element--lvl3 header-menu-submenu-element--back header-menu-submenu-element--top"><button type="button" class="header-menu-submenu-back" data-header-back><span trans-key="produkte">Produkte</span></button></li>
+                              <li class="header-menu-submenu-element header-menu-submenu-element--head header-menu-submenu-element--lvl3"><a class="header-menu-submenu-link header-menu-submenu-link--head header-menu-submenu-link--lvl3" href="https://www.soprema.ch/de/abdichtungssysteme-bitumen"><span trans-key="abdichtung">Abdichtung</span></a></li>
+                              <li class="header-menu-submenu-element header-menu-submenu-element--lvl3"><a class="header-menu-submenu-link header-menu-submenu-link--lvl3" target="_self" href="https://www.soprema.ch/de/abdichtungssysteme-bitumen"><span trans-key="bitumendichtungsbahnen">Bitumendichtungsbahnen</span></a></li>
+                              <li class="header-menu-submenu-element header-menu-submenu-element--lvl3"><a class="header-menu-submenu-link header-menu-submenu-link--lvl3" target="_self" href="https://www.soprema.ch/de/fluessigkunststoff"><span trans-key="flüssigkunststoffe">Flüssigkunststoffe</span></a></li>
+                              <li class="header-menu-submenu-element header-menu-submenu-element--lvl3"><a class="header-menu-submenu-link header-menu-submenu-link--lvl3" target="_self" href="https://www.soprema.ch/de/kunststoffdichtungsbahnen"><span trans-key="kunststoffdichtungsbahnen">Kunststoffdichtungsbahnen</span></a></li>
+                            </ul>
+                          </li>
+                          <li class="header-menu-submenu-element header-menu-submenu-element--lvl2" data-header-secondlvl>
+                            <a class="header-menu-submenu-link header-menu-submenu-link--lvl2" target="_self" href="https://www.soprema.ch/de/waermedaemmung-soprema"
+                              ><div class="header-menu-submenu-image" style="background-image: url('https://www.soprema.ch/files/resize/outside/50-50-30436_1808a6a3f56eed7bfda6866f86dc8a92.webp')"></div>
+                              <span trans-key="wärmedämmungen">Wärmedämmungen</span>
+                            </a>
+                          </li>
+                          <li class="header-menu-submenu-element header-menu-submenu-element--lvl2" data-header-secondlvl>
+                            <a class="header-menu-submenu-link header-menu-submenu-link--lvl2" target="_self" href="https://www.soprema.ch/de/absturzsicherungen"
+                              ><div class="header-menu-submenu-image" style="background-image: url('https://www.soprema.ch/files/resize/outside/50-50-chut-quand-tu-tombes_c61fcd26378b636191efe3e3f9590c55.webp')"></div>
+                              <span trans-key="höhensicherungssysteme">Höhensicherungssysteme</span>
+                            </a>
+                          </li>
+                          <li class="header-menu-submenu-element header-menu-submenu-element--lvl2" data-header-secondlvl>
+                            <a class="header-menu-submenu-link header-menu-submenu-link--lvl2" target="_self" href="https://www.soprema.ch/de/ingenieurbau"
+                              ><div class="header-menu-submenu-image" style="background-image: url('https://www.soprema.ch/files/resize/outside/50-50-30444_da920933b76a6a04e9a4ba1be20f2f05.webp')"></div>
+                              <span trans-key="ingenieurbau">Ingenieurbau</span>
+                            </a>
+                          </li>
+                          <li class="header-menu-submenu-element header-menu-submenu-element--lvl2" data-header-secondlvl>
+                            <a class="header-menu-submenu-link header-menu-submenu-link--lvl2" target="_self" href="https://www.soprema.ch/de/sortiment/eco-produkte"
+                              ><div class="header-menu-submenu-image" style="background-image: url('https://www.soprema.ch/files/resize/outside/50-50-eco-product_690eac3b8aa39cfc21cf82a65c4f8a7c.webp')"></div>
+                              <span trans-key="eco_produkte">ECO Produkte</span>
+                            </a>
+                          </li>
+                          <li class="header-menu-submenu-element header-menu-submenu-element--lvl2" data-header-secondlvl>
+                            <a class="header-menu-submenu-link header-menu-submenu-link--lvl2" target="_self" href="https://www.soprema.ch/de/begruenung"
+                              ><div class="header-menu-submenu-image" style="background-image: url('https://www.soprema.ch/files/resize/outside/50-50-30448_c93f369db92e4661d17a3d781169e526.webp')"></div>
+                              <span trans-key="begrünung">Begrünung</span>
+                            </a>
+                          </li>
+                          <li class="header-menu-submenu-element header-menu-submenu-element--lvl2" data-header-secondlvl>
+                            <a class="header-menu-submenu-link header-menu-submenu-link--lvl2" target="_self" href="https://www.soprema.ch/de/sortiment/premium-class-systeme"
+                              ><div class="header-menu-submenu-image" style="background-image: url('https://www.soprema.ch/files/resize/outside/50-50-path-8855-2x_2bf175a21e38011b92c77882165a96d3.webp')"></div>
+                              <span trans-key="premium_class_systeme">PREMIUM-CLASS Systeme</span>
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="header-menu-element" data-header-menu>
+                    <button type="button" class="header-menu-link" data-header-menu-button>Soprema</button>
+                    <div class="header-menu-submenu" data-header-menu-wrapper>
+                      <div class="header-menu-submenu-content" data-header-menu-content>
+                        <ul class="header-menu-submenu-list">
+                          <li class="header-menu-submenu-element header-menu-submenu-element--lvl2 header-menu-submenu-element--back header-menu-submenu-element--top"><button type="button" class="header-menu-submenu-back" data-header-back>Menu</button></li>
+                          <li class="header-menu-submenu-element header-menu-submenu-element--head header-menu-submenu-element--lvl2"><a class="header-menu-submenu-link header-menu-submenu-link--head header-menu-submenu-link--lvl2" href="https://www.soprema.ch/de/soprema">Soprema</a></li>
+                          <li class="header-menu-submenu-element header-menu-submenu-element--lvl2" data-header-secondlvl>
+                            <a class="header-menu-submenu-link header-menu-submenu-link--lvl2" target="_self" data-header-secondlvl-button href="#"
+                              ><div class="header-menu-submenu-image" style="background-image: url('https://www.soprema.ch/files/resize/outside/50-50-30426_bab25d684ad6bca63a285bcb29d3a4ad.webp')"></div>
+                              <span trans-key="unternehmen">Unternehmen</span>
+                            </a>
+                            <ul class="header-menu-submenu-list header-menu-submenu-list--lvl2" data-header-secondlvl-wrapper>
+                              <li class="header-menu-submenu-element header-menu-submenu-element--lvl3 header-menu-submenu-element--back header-menu-submenu-element--top"><button type="button" class="header-menu-submenu-back" data-header-back>Soprema</button></li>
+                              <li class="header-menu-submenu-element header-menu-submenu-element--head header-menu-submenu-element--lvl3"><a class="header-menu-submenu-link header-menu-submenu-link--head header-menu-submenu-link--lvl3" href="#"><span trans-key="unternehmen">Unternehmen</span></a></li>
+                              <li class="header-menu-submenu-element header-menu-submenu-element--lvl3"><a class="header-menu-submenu-link header-menu-submenu-link--lvl3" target="_self" href="https://www.soprema.ch/de/ueber-soprema"><span trans-key="über_soprema">Über SOPREMA</span></a></li>
+                              <li class="header-menu-submenu-element header-menu-submenu-element--lvl3"><a class="header-menu-submenu-link header-menu-submenu-link--lvl3" target="_self" href="https://www.soprema.ch/de/soprema-weltweit"><span trans-key="soprema_weltweit">SOPREMA Weltweit</span></a></li>
+                              <li class="header-menu-submenu-element header-menu-submenu-element--lvl3"><a class="header-menu-submenu-link header-menu-submenu-link--lvl3" target="_self" href="https://www.soprema.ch/de/geschichte"><span trans-key="geschichte_soprema">Geschichte SOPREMA</span></a></li>
+                              <li class="header-menu-submenu-element header-menu-submenu-element--lvl3"><a class="header-menu-submenu-link header-menu-submenu-link--lvl3" target="_self" href="https://www.soprema.ch/de/unternehmen/unser-team"><span trans-key="unser_team">Unser Team</span></a></li>
+                              <li class="header-menu-submenu-element header-menu-submenu-element--lvl3"><a class="header-menu-submenu-link header-menu-submenu-link--lvl3" target="_self" href="https://www.soprema.ch/de/unternehmen/sponsoring"><span trans-key="sponsoring">Sponsoring</span></a></li>
+                              <li class="header-menu-submenu-element header-menu-submenu-element--lvl3"><a class="header-menu-submenu-link header-menu-submenu-link--lvl3" target="_self" href="https://www.soprema.ch/de/jobsiere"><span trans-key="jobs_karriere">Jobs &amp; Karriere</span></a></li>
+                              <li class="header-menu-submenu-element header-menu-submenu-element--lvl3"><a class="header-menu-submenu-link header-menu-submenu-link--lvl3" target="_self" href="https://www.soprema.ch/de/bauarena"><span trans-key="standort_bauarena_volketswil">Standort Bauarena Volketswil</span></a></li>
+                              <li class="header-menu-submenu-element header-menu-submenu-element--lvl3"><a class="header-menu-submenu-link header-menu-submenu-link--lvl3" target="_self" href="https://www.soprema.ch/de/soprema-videos"><span trans-key="soprema_videos">Soprema Videos</span></a></li>
+                            </ul>
+                          </li>
+                          <li class="header-menu-submenu-element header-menu-submenu-element--lvl2" data-header-secondlvl>
+                            <a class="header-menu-submenu-link header-menu-submenu-link--lvl2" target="_self" data-header-secondlvl-button href="#"
+                              ><div class="header-menu-submenu-image" style="background-image: url('https://www.soprema.ch/files/resize/outside/50-50-group-1802-2x_1ebf1aaac45b72fd3f9bb0c1843e092a.webp')"></div>
+                              <span trans-key="referenzen">Referenzen</span>
+                            </a>
+                            <ul class="header-menu-submenu-list header-menu-submenu-list--lvl2" data-header-secondlvl-wrapper>
+                            
+ <li class="header-menu-submenu-element header-menu-submenu-element--lvl3 header-menu-submenu-element--back header-menu-submenu-element--top"><button type="button" class="header-menu-submenu-back" data-header-back>Soprema</button></li>
+ <li class="header-menu-submenu-element header-menu-submenu-element--head header-menu-submenu-element--lvl3"><a class="header-menu-submenu-link header-menu-submenu-link--head header-menu-submenu-link--lvl3" href="#"><span trans-key="referenzen">Referenzen</span></a></li>
+ <li class="header-menu-submenu-element header-menu-submenu-element--lvl3"><a class="header-menu-submenu-link header-menu-submenu-link--lvl3" target="_self" href="https://www.soprema.ch/de/soprema/referenzen/alle-referenzen"><span trans-key="alle_referenzen">alle Referenzen</span></a></li>
+ <li class="header-menu-submenu-element header-menu-submenu-element--lvl3"><a class="header-menu-submenu-link header-menu-submenu-link--lvl3" target="_self" href="https://www.soprema.ch/de/bitumendichtungsbahnen"><span trans-key="bitumendichtungsbahnen">Bitumendichtungsbahnen</span></a></li>
+ <li class="header-menu-submenu-element header-menu-submenu-element--lvl3"><a class="header-menu-submenu-link header-menu-submenu-link--lvl3" target="_self" href="https://www.soprema.ch/de/kunststoffdichtungsbahnen_1"><span trans-key="kunststoffdichtungsbahnen">Kunststoffdichtungsbahnen</span></a></li>
+ <li class="header-menu-submenu-element header-menu-submenu-element--lvl3"><a class="header-menu-submenu-link header-menu-submenu-link--lvl3" target="_self" href="https://www.soprema.ch/de/flussigkunststoff"><span trans-key="flüssigkunststoff">Flüssigkunststoff</span></a></li>
+ <li class="header-menu-submenu-element header-menu-submenu-element--lvl3"><a class="header-menu-submenu-link header-menu-submenu-link--lvl3" target="_self" href="https://www.soprema.ch/de/waermedaemmung"><span trans-key="wärmedämmung">Wärmedämmung</span></a></li>
+ <li class="header-menu-submenu-element header-menu-submenu-element--lvl3"><a class="header-menu-submenu-link header-menu-submenu-link--lvl3" target="_self" href="https://www.soprema.ch/de/begrunung"><span trans-key="begrünung">Begrünung</span></a></li>
+ <li class="header-menu-submenu-element header-menu-submenu-element--lvl3"><a class="header-menu-submenu-link header-menu-submenu-link--lvl3" target="_self" href="https://www.soprema.ch/de/absturzsicherheit"><span trans-key="absturzsicherheit">Absturzsicherheit</span></a></li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="header-menu-element header-menu-element--profil">
+                    <button type="button" class="header-menu-space" data-header-space-btn><i class="ic ic-profil-light"></i><span class="hide-access">accessibility.spaces</span></button>
+                    <div class="header-spaces" data-header-space>
+                      <div class="header-spaces-container">
+                        <p class="header-spaces-title">Login-Bereich</p>
+                        <ul class="header-spaces-list">
+                          <li class="header-spaces-element">
+                            <a href="https://my.soprema.ch/" class="header-spaces-link"
+                              ><div class="header-spaces-link-image"><img loading="lazy" src="https://www.soprema.ch/assets/sopremav4/images/spaces/espace-etancheur.jpg" alt="" /></div>
+                              <p class="header-spaces-link-label">mySoprema</p></a
+                            >
+                          </li>
+                        </ul>
+                        <div class="header-spaces-socials">
+                          <ul class="social-links">
+                            <li class="social-links-element">
+                              <a class="social-links-link" href="https://www.linkedin.com/company/soprema-switzerland/" target="_blank" rel="noopener noreferrer" title="LinkedIn"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                            </li>
+                            <li class="social-links-element">
+                              <a class="social-links-link" href="https://www.instagram.com/sopremaag/" target="_blank" rel="noopener noreferrer" title="Instagram"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                            </li>
+                            <li class="social-links-element">
+                              <a class="social-links-link" href="https://www.facebook.com/SopremaAG/" target="_blank" rel="noopener noreferrer" title="Facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                            </li>
+                            <li class="social-links-element">
+                              <a class="social-links-link" href="https://www.youtube.com/user/SopremaAG" target="_blank" rel="noopener noreferrer" title="YouTube"><i class="fa fa-youtube" aria-hidden="true"></i></a>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+                -->
+              </nav>
+            </div>
+            <button type="button" class="header-burger" data-header-burger aria-label="accessibility.menu.open">
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+            </button>
+          </div>
+        </div>
+        <div class="header-search" data-header-search>
+          <button type="button" class="header-search-close" data-header-search-close><i class="ic ic-close"></i></button>
+          <div class="bannerv4 bannerv4--size-full-height bannerv4--search-oui bannerv4--image-cover">
+            <div class="bannerv4-wrapper">
+              <video class="bannerv4-video" playsinline muted loop autoplay poster="https://www.soprema.ch/files/thumbnail-image2_7bb22fa15ff7c078d88381fc152c76fb.jpeg"><source src="https://soprema-cms.s3.eu-west-3.amazonaws.com/site_8/306abafb1388b1413ed37b8d5a5ac6bd.mp4?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&amp;X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIATPX2NE5VDLG6MVAH%2F20230816%2Feu-west-3%2Fs3%2Faws4_request&amp;X-Amz-Date=20230816T082852Z&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Expires=1200&amp;X-Amz-Signature=8cee47a56db353ced2a8473fa6d173db973555737d7a6fb0a96e7c716621e3ff" type="video/mp4" /></video>
+              <div class="bannerv4-container">
+                <div class="bannerv4-content wysiwyg">
+                  <p class="title-lvl-4" style="text-align: center">&nbsp;</p>
+                  <p class="title-lvl-1" style="text-align: center">SO STARK.<br />SOPREMA.</p>
+                </div>
+                <div class="search-banner">
+                  <div class="search-banner-container">
+                    <form class="search-banner-form" method="GET" action="https://www.soprema.ch/de/search" data-mods="autocomplete">
+                      <div class="search-banner-input-wrapper"><input value="" data-autocomplete-input type="text" name="query" autocomplete="off" class="search-banner-input" aria-label="Nach Produkten, Marken oder Suchbegriffen suchen..." placeholder="Nach Produkten, Marken oder Suchbegriffen suchen..." /><button type="submit" class="search-banner-button">Finden</button></div>
+                      <div class="search-banner-results" data-autocomplete-wrapper></div>
+                    </form>
+                    <div class="search-banner-terms"><a href="https://www.soprema.ch/de/gamme/abdichtung/bitumendichtungsbahnen" class="search-banner-terms-word">Bitumendichtungsbahnen</a><a href="https://www.soprema.ch/de/gamme/abdichtung/kunststoffdichtungsbahnen" class="search-banner-terms-word">Kunststoffdichtungsbahnen</a><a href="https://www.soprema.ch/de/fluessigkunststoff" class="search-banner-terms-word">Flüssigkunststoffe</a><a href="https://www.soprema.ch/de/gamme/daemmstoffe" class="search-banner-terms-word">Dämmstoffe</a><a href="https://www.soprema.ch/de/gamme/dachbegruenung" class="search-banner-terms-word">Begrünung</a><a href="https://www.soprema.ch/de/gamme/produkte-hoehensicherungssysteme" class="search-banner-terms-word">Höhensicherungssysteme</a></div>
+                  </div>
+                  <div class="search-banner-actions"><a href="https://www.soprema.ch/de/sostark" class="search-banner-actions-button">Gesamten Unternehmensfilm anschauen</a></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container-fluid page-content-cms" id="role-main">
+        <div class="swiper">
+          <div class="swiper-wrapper">
+            <div id="slide_Overview" class="swiper-slide" aria-label="Overview Slide" style="block-size: max-content">
+              <div class="breadcrumb">
+                <div class="breadcrumb-wrapper">
+                  <p class="breadcrumb-element">
+                    <a href="#/" class="slideToHome"><span trans-key="home">Home</span></a>
+                    <span>&nbsp;&gt;&nbsp;</span>
+                    <span class="active"><span trans-key="produktmusterkatalog">Produktmusterkatalog</span></span>
+                  </p>
+                </div>
+              </div>
+              <div class="mega-row cms-row bg-grey-full vertical-spacing-bottom">
+                <div class="container">
+                  <div class="row">
+                    <div class="col col-sm-12">
+                      <div class="text-element noresize">
+                        <h1 class="title-lvl-1"><span trans-key="produktmusterkatalog">Produktmusterkatalog</span></h1>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="product-list">
+                <div class="product-list-wrapper">
+                  <div class="product-list-container">
+                    <div class="product-list-list">
+                      <div class="product-list-list-header">
+                        <input type="text" id="text-filter" placeholder="Filter" name="text-filter" class="hs-input" trans-key="filter" trans-attr="placeholder" />
+                      </div>
+
+                      <div class="product-list-list-wrapper" id="__overviewItemList"></div>
+
+                      <div class="wysiwyg text-right">
+                        <button id="__toShipping" type="button" class="button">
+                          <span trans-key="versanddetails">Versanddetails</span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div id="slide_Shipping" class="swiper-slide" aria-label="Shipping Details Slide" style="block-size: max-content">
+              <div class="breadcrumb">
+                <div class="breadcrumb-wrapper">
+                  <p class="breadcrumb-element">
+                    <a href="#/" class="slideToHome">Home</a>
+                    <span>&nbsp;&gt;&nbsp;</span>
+                    <span class="active"><span trans-key="produktmuster">Produktmuster</span> - <span trans-key="versanddetails">Versanddetails</span></span>
+                  </p>
+                </div>
+              </div>
+              <div class="mega-row cms-row bg-grey-full vertical-spacing-bottom">
+                <div class="container">
+                  <div class="row">
+                    <div class="col col-sm-12">
+                      <div class="text-element noresize">
+                        <h1 class="title-lvl-1"><span trans-key="produktmuster">Produktmuster</span> <span trans-key="versanddetails">Versanddetails</span></h1>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mega-row cms-row vertical-spacing-bottom">
+                <div class="container">
+                  <div class="row">
+                    <div id="shippingBlurb" class="col-12 col-sm-6">
+                      <div class="wysiwyg">
+                        <span trans-key="formular_ausfüllen">Bitte füllen Sie das folgende Formular aus. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Congue eu consequat ac felis donec et odio pellentesque diam.</span>
+                      </div>
+                    </div>
+                    <div id="shippingOverview" class="col-12 col-sm-6">
+                      <div id="__shippingItemList"></div>
+                      <form class="std-form mb-0" accept-charset="UTF-8" method="post" enctype="application/x-www-form-urlencoded" action="https://go.soprema.ch/l/978613/2023-09-14/59fsvg" novalidate="" onsubmit="formSubmit()">
+                        <input type="hidden" name="order" id="order" value="" />
+                        <div class="form-display-column">
+                          <h2 class="form-display-column-title" trans-key="kontaktdaten">Kontaktdaten</h2>
+                          <div class="form-display-column-wrapper">
+                            <div class="form-group form-group--type-text">
+                              <div class="form-label-container">
+                                <label class="control-label required" for="form-course-order_firstname" trans-key="name">Name</label>
+                              </div>
+                              <input type="text" id="form-course-order_firstname" name="firstname" required="" class="form-control" value="" />
+                            </div>
+                            <div class="form-group form-group--type-text">
+                              <div class="form-label-container">
+                                <label class="control-label required" for="form-course-order_lastname" trans-key="vorname">Vorname</label>
+                              </div>
+                              <input type="text" id="form-course-order_lastname" name="lastname" required="" class="form-control" value="" />
+                            </div>
+                            <div class="form-group form-group--type-text">
+                              <div class="form-label-container">
+                                <label class="control-label required" for="form-course-order_company" trans-key="firma">Firma</label>
+                              </div>
+                              <input type="text" id="form-course-order_company" name="company" required="" class="form-control" value="" />
+                            </div>
+                            <div class="form-group form-group--type-text">
+                              <div class="form-label-container">
+                                <label class="control-label required" for="form-course-order_email" trans-key="email">E-Mail</label>
+                              </div>
+                              <input type="email" id="form-course-order_email" name="email" required="" class="form-control" value="" />
+                            </div>
+                            <div class="form-group form-group--type-text">
+                              <div class="form-label-container">
+                                <label class="control-label required" for="form-course-order_phone" trans-key="telefon">Telefon</label>
+                              </div>
+                              <input type="text" id="form-course-order_phone" name="phone" required="" class="form-control" value="" />
+                            </div>
+                            <div class="form-group form-group--type-text">
+                              <div class="form-label-container">
+                                <label class="control-label" for="form-course-order_fax" trans-key="fax">Fax</label>
+                              </div>
+                              <input type="text" id="form-course-order_fax" name="fax" class="form-control" value="" />
+                            </div>
+                            <div class="form-group form-group--type-text">
+                              <div class="form-label-container">
+                                <label class="control-label required" for="form-course-order_address" trans-key="strasse">Strasse/Nr</label>
+                              </div>
+                              <input type="text" id="form-course-order_address" name="address" required="" class="form-control" value="" />
+                            </div>
+                            <div class="form-group form-group--type-text">
+                              <div class="form-label-container">
+                                <label class="control-label required" for="form-course-order_city" trans-key="ort">Ort</label>
+                              </div>
+                              <input type="text" id="form-course-order_city" name="city" required="" class="form-control" value="" />
+                            </div>
+                            <div class="form-group form-group--type-text">
+                              <div class="form-label-container">
+                                <label class="control-label required" for="form-course-order_zip" trans-key="plz">PLZ</label>
+                              </div>
+                              <input type="text" id="form-course-order_zip" name="zip" required="" class="form-control" value="" />
+                            </div>
+                          </div>
+                        </div>
+
+                        <p class="form-submit-group">
+                          <button id="__toConfirm" type="submit" class="form-button btn btn-primary btn"><span trans-key="senden">Senden</span></button>
+                        </p>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div id="slide_Confirm" class="swiper-slide" aria-label="Confirmation Slide" style="block-size: max-content">
+              <div class="breadcrumb">
+                <div class="breadcrumb-wrapper">
+                  <p class="breadcrumb-element">
+                    <a href="#/" class="slideToHome">Home</a>
+                    <span>&nbsp;&gt;&nbsp;</span>
+                    <span class="active"><span>Bestellbestätigung</span></span>
+                  </p>
+                </div>
+              </div>
+              <div class="mega-row cms-row bg-grey-full vertical-spacing-bottom">
+                <div class="container">
+                  <div class="row">
+                    <div class="col col-sm-12">
+                      <div class="text-element noresize">
+                        <h1 class="title-lvl-1"><span>Bestellbestätigung</span></h1>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mega-row cms-row vertical-spacing-bottom">
+                <div class="container">
+                  <div class="row">
+                    <div class="col-12">
+                      <div class="wysiwyg">
+                        <span>Wir haben Ihre Bestellung erhalten und werden sie in Kürze bearbeiten.</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer" id="footer">
+        <div class="footer-wrapper">
+          <ul class="footer-menu">
+            <li data-header-menu class="footer-menu-element">
+              <button type="button" class="footer-menu-link" data-header-hassubmenu trans-key="produkte">Produkte</button>
+              <ul data-header-submenu>
+                <li class="footer-menu-element" data-header-menu data-header-noevents>
+                  <a href="https://www.soprema.ch/de/abdichtungssysteme-bitumen" class="footer-menu-link" target="_self"><span trans-key="bitumendichtungsbahnen">Bitumendichtungsbahnen</span></a>
+                </li>
+                <li class="footer-menu-element" data-header-menu data-header-noevents>
+                  <a href="https://www.soprema.ch/de/fluessigkunststoff" class="footer-menu-link" target="_self"><span trans-key="flüssigkunststoffe">Flüssigkunststoffe</span></a>
+                </li>
+                <li class="footer-menu-element" data-header-menu data-header-noevents>
+                  <a href="https://www.soprema.ch/de/kunststoffdichtungsbahnen" class="footer-menu-link" target="_self"><span trans-key="kunststoffdichtungsbahnen">Kunststoffdichtungsbahnen</span></a>
+                </li>
+                <li class="footer-menu-element" data-header-menu data-header-noevents>
+                  <a href="https://www.soprema.ch/de/waermedaemmung-soprema" class="footer-menu-link" target="_self"><span trans-key="wärmedämmung">Wärmedämmung</span></a>
+                </li>
+                <li class="footer-menu-element" data-header-menu data-header-noevents>
+                  <a href="https://www.soprema.ch/de/gamme/dachbegruenung" class="footer-menu-link" target="_self"><span trans-key="begrünung">Begrünung</span></a>
+                </li>
+                <li class="footer-menu-element" data-header-menu data-header-noevents>
+                  <a href="https://www.soprema.ch/de/gamme/ingenieurbau" class="footer-menu-link" target="_self"><span trans-key="ingenieurbau">Ingenieurbau</span></a>
+                </li>
+                <li class="footer-menu-element" data-header-menu data-header-noevents>
+                  <a href="https://www.soprema.ch/de/gamme/produkte-hoehensicherungssysteme" class="footer-menu-link" target="_self"><span trans-key="höhensicherungssysteme">Höhensicherungssysteme</span></a>
+                </li>
+                <li class="footer-menu-element" data-header-menu data-header-noevents>
+                  <a href="https://www.soprema.ch/de/gamme/eco-produkte" class="footer-menu-link" target="_self"><span trans-key="eco_produkte">ECO Produkte</span></a>
+                </li>
+              </ul>
+            </li>
+            <li data-header-menu class="footer-menu-element">
+              <button type="button" class="footer-menu-link" data-header-hassubmenu trans-key="service">Service</button>
+              <ul data-header-submenu>
+                <li class="footer-menu-element" data-header-menu data-header-noevents>
+                  <a href="https://www.soprema.ch/de/architektenservice" class="footer-menu-link" target="_self"><span trans-key="architektenservice">Architektenservice</span></a>
+                </li>
+                <li class="footer-menu-element" data-header-menu data-header-noevents>
+                  <a href="https://www.soprema.ch/de/garantieleistungen" class="footer-menu-link" target="_self"><span trans-key="garantien">Garantien</span></a>
+                </li>
+                <li class="footer-menu-element" data-header-menu data-header-noevents>
+                  <a href="https://www.soprema.ch/de/serviceleistungen" class="footer-menu-link" target="_self"><span trans-key="serviceleistungen">Serviceleistungen</span></a>
+                </li>
+                <li class="footer-menu-element" data-header-menu data-header-noevents>
+                  <a href="https://www.soprema.ch/de/soprema-videos" class="footer-menu-link" target="_self"><span trans-key="soprema_videos">Soprema Videos</span></a>
+                </li>
+                <li class="footer-menu-element" data-header-menu data-header-noevents>
+                  <a href="https://www.soprema.ch/de/soprema-webinar-on-demand" class="footer-menu-link" target="_self"><span trans-key="webinar_on_demand">Webinar-On-Demand</span></a>
+                </li>
+              </ul>
+            </li>
+            <li data-header-menu class="footer-menu-element">
+              <button type="button" class="footer-menu-link" data-header-hassubmenu trans-key="über_soprema">Über Soprema</button>
+              <ul data-header-submenu>
+                <li class="footer-menu-element" data-header-menu data-header-noevents>
+                  <a href="https://www.soprema.ch/de/ueber-soprema" class="footer-menu-link" target="_self"><span trans-key="über_soprema">Über Soprema</span></a>
+                </li>
+                <li class="footer-menu-element" data-header-menu data-header-noevents>
+                  <a href="https://www.soprema.ch/de/soprema-weltweit" class="footer-menu-link" target="_self"><span trans-key="soprema_weltweit">Soprema Weltweit</span></a>
+                </li>
+                <li class="footer-menu-element" data-header-menu data-header-noevents>
+                  <a href="https://www.soprema.ch/de/geschichte" class="footer-menu-link" target="_self"><span trans-key="geschichte_soprema">Geschichte Soprema</span></a>
+                </li>
+                <li class="footer-menu-element" data-header-menu data-header-noevents>
+                  <a href="https://www.soprema.ch/de/unternehmen/unser-team" class="footer-menu-link" target="_self"><span trans-key="unser_team">Unser Team</span></a>
+                </li>
+                <li class="footer-menu-element" data-header-menu data-header-noevents>
+                  <a href="https://www.soprema.ch/de/unternehmen/sponsoring" class="footer-menu-link" target="_self"><span trans-key="sponsoring">Sponsoring</span></a>
+                </li>
+                <li class="footer-menu-element" data-header-menu data-header-noevents>
+                  <a href="https://www.soprema.ch/de/jobsiere" class="footer-menu-link" target="_self"><span trans-key="jobs_karriere">Jobs &amp; Karriere</span></a>
+                </li>
+              </ul>
+            </li>
+            <li data-header-menu class="footer-menu-element">
+              <button type="button" class="footer-menu-link" data-header-hassubmenu trans-key="nützliche_informationen">Nützliche Informationen</button>
+              <ul data-header-submenu>
+                <li class="footer-menu-element" data-header-menu data-header-noevents>
+                  <a href="https://www.soprema.ch/de/agb" class="footer-menu-link" target="_self"><span trans-key="agb">AGB</span></a>
+                </li>
+                <li class="footer-menu-element" data-header-menu data-header-noevents>
+                  <a href="https://www.soprema.ch/de/datenschutz-soprema" class="footer-menu-link" target="_self"><span trans-key="datenschutz">Datenschutz</span></a>
+                </li>
+                <li class="footer-menu-element" data-header-menu data-header-noevents>
+                  <a href="https://www.soprema.ch/de/garantie-haftungsbedingungen" class="footer-menu-link" target="_self"><span trans-key="garantie_haftungsbedingungen">Garantie-Haftungsbedingungen</span></a>
+                </li>
+                <li class="footer-menu-element" data-header-menu data-header-noevents>
+                  <a href="https://www.soprema.ch/de/news-events/newsletter-archiv" class="footer-menu-link" target="_self"><span trans-key="newsletter_archiv">Newsletter Archiv</span></a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+          <div class="footer-container">
+            <div class="footer-logo"><img loading="lazy" src="https://www.soprema.ch/assets/sopremav4/images/logo-group.svg" alt="Soprema Group" /></div>
+            <div class="footer-copyright">Soprema 2023</div>
+            <div class="footer-socials">
+              <ul class="social-links">
+                <li class="social-links-element">
+                  <a class="social-links-link" href="https://www.linkedin.com/company/soprema-switzerland/" target="_blank" rel="noopener noreferrer" title="LinkedIn"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                </li>
+                <li class="social-links-element">
+                  <a class="social-links-link" href="https://www.instagram.com/sopremaag/" target="_blank" rel="noopener noreferrer" title="Instagram"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                </li>
+                <li class="social-links-element">
+                  <a class="social-links-link" href="https://www.facebook.com/SopremaAG/" target="_blank" rel="noopener noreferrer" title="Facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                </li>
+                <li class="social-links-element">
+                  <a class="social-links-link" href="https://www.youtube.com/user/SopremaAG" target="_blank" rel="noopener noreferrer" title="YouTube"><i class="fa fa-youtube" aria-hidden="true"></i></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </footer>
     </div>
+
     <div class="push-component push-component--item-2" data-name="Push" data-push-component>
       <ul class="push-component-list">
         <li class="push-component-element">
-          <a class="push-component-link" href="https://www.soprema.ch/de/documentation/search-strict-product?language=de" style="color: #fff"
-            ><p class="push-component-element-title" style="background-color: #027bc2">Downloads <span style="border-top-color: #027bc2"></span></p>
-            <div class="push-component-image-container" style="background-color: #027bc2"><img class="push-component-image" src="https://www.soprema.ch/files/text-documents-ok_5dea7a19a1703.webp" loading="lazy" /></div
-          ></a>
+          <a class="push-component-link" href="https://www.soprema.ch/de/documentation/search-strict-product?language=de" style="color: #ffffff">
+            <p class="push-component-element-title" style="background-color: #027bc2">
+              Downloads
+              <span style="border-top-color: #027bc2"></span>
+            </p>
+            <div class="push-component-image-container" style="background-color: #027bc2">
+              <img class="push-component-image" src="https://www.soprema.ch/files/text-documents-ok_5dea7a19a1703.webp" loading="lazy" />
+            </div>
+          </a>
         </li>
         <li class="push-component-element">
-          <a class="push-component-link" href="https://www.soprema.ch/de/newsletter-subscription" style="color: #fff"
-            ><p class="push-component-element-title" style="background-color: #027bc2">Newsletter <span style="border-top-color: #027bc2"></span></p>
-            <div class="push-component-image-container" style="background-color: #027bc2"><img class="push-component-image" src="https://www.soprema.ch/files/email_ad7d7d4c83af31284cd5366cb07b5795.webp" loading="lazy" /></div
-          ></a>
+          <a class="push-component-link" href="https://www.soprema.ch/de/newsletter-subscription" style="color: #ffffff">
+            <p class="push-component-element-title" style="background-color: #027bc2">
+              Newsletter
+              <span style="border-top-color: #027bc2"></span>
+            </p>
+            <div class="push-component-image-container" style="background-color: #027bc2">
+              <img class="push-component-image" src="https://www.soprema.ch/files/email_ad7d7d4c83af31284cd5366cb07b5795.webp" loading="lazy" />
+            </div>
+          </a>
         </li>
       </ul>
       <button class="push-component-button" data-push-button type="button">
@@ -792,9 +1406,50 @@
         <p class="hide-access">website.macaron.button.open</p>
       </button>
     </div>
+
+    <!-- <script src="https://www.soprema.ch/bundles/fosjsrouting/js/router.js?asset_version=1687944306"></script> -->
     <script src="https://www.soprema.ch/bundles/bazingajstranslation/js/translator.min.js?asset_version=1687944306"></script>
+    <!-- <script src="https://www.soprema.ch/assets/javascripts/translations/messages/de.js?asset_version=1687944306"></script> -->
+    <!-- <script src="https://www.soprema.ch/assets/javascripts/fos_js_routes_de.js?asset_version=1687944306"></script> -->
     <script src="https://www.soprema.ch/bundles/awcms/compiled/js/app.js?asset_version=1687944306"></script>
     <script src="https://www.soprema.ch/assets/sopremav4/javascripts/front.js?asset_version=1687944306"></script>
     <script src="https://www.soprema.ch/assets/sopremav4/javascripts/app.js?asset_version=1687944306"></script>
+
+    <aside class="modal fade" id="productModal" tabindex="-1" role="dialog" aria-labelledby="productModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-body">
+            <div class="row __overviewItem">
+              <div class="col-6 col-sm-4" id="product-image-holder"></div>
+              <div class="col-6 col-sm-8" id="product-title-holder">
+                <div class="std-form mb-0">
+                  <div style="padding: 1em">
+                    <h3 class="modal-title" id="modal-title" style="margin-bottom: 0.5em"></h3>
+
+                    <p id="product-description-holder" style="margin-bottom: 0.5em"></p>
+
+                    <div style="display: flex; align-items: stretch; gap: 1em">
+                      <div class="__amount btn-group btn-group-vertical" role="group" style="margin: unset">
+                        <button type="button" class="btn btn-secondary" id="btn-plus" style="aspect-ratio: 1; block-size: 3em">+</button>
+                        <span class="btn btn-text"><span id="order-amount">0</span></span>
+                        <button type="button" class="btn btn-secondary" id="btn-minus" style="aspect-ratio: 1; block-size: 3em">-</button>
+                      </div>
+
+                      <div class="form-group" style="margin: unset; flex: 1">
+                        <textarea class="form-control" placeholder="Kommentar / Farbe" trans-key="kommentar_farbe" trans-attr="placeholder" id="comment" style="height: 100%"></textarea>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button id="modal-cancel-btn" type="button" class="btn btn-secondary" data-dismiss="modal" trans-key="abbrechen">Abbrechen</button>
+            <button id="modal-ok-btn" type="button" class="btn btn-primary" trans-key="bestellen">Bestellen</button>
+          </div>
+        </div>
+      </div>
+    </aside>
   </body>
 </html>
