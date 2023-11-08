@@ -64,7 +64,7 @@ const formSubmit = () => {
 };
 
 const fetchProducts = () => {
-  fetch("https://cdn.jsdelivr.net/gh/Demodia/Soprema@main/projects/produktmusterkatalog/all_products.js")
+  fetch("https://cdn.jsdelivr.net/gh/Demodia/Soprema@main/projects/produktmusterkatalog/all_products.json")
     .then((response) => response.json())
     .then((r) => {
       products = r;
