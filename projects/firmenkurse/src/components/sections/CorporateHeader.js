@@ -38,12 +38,6 @@ export default () => {
               <ul className="header-menu-list" data-header-nav=""></ul>
             </nav>
           </div>
-          <button className="header-burger" data-header-burger="" type="button" aria-label="accessibility.menu.open">
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-          </button>
         </div>
       </div>
       <HeaderSearch />

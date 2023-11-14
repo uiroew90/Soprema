@@ -233,9 +233,9 @@ const headerSearch = {
 };
 
 const breadcrumbs = {
-  home: "Home",
-  packs: "Firmenkurse",
-  courses: "Kursliste",
+  home: "Firmenkurse",
+  packs: "Vorgefertigte Firmenkurse",
+  courses: "Firmenkurse auswählen",
   overview: "Übersicht",
   checkout: "Formular",
   thanks: "Bestätigung",
@@ -243,24 +243,23 @@ const breadcrumbs = {
 
 const callout = {
   title: "Kursangebote",
-  content:
-    "Sie sind interessiert an einem Kurs für Ihre Mitarbeitenden?\n\nWählen Sie mit wenigen Klicks aus, welche Kombination aus Kursen für Sie und Ihr Unternehmen am Meisten Sinn machen.",
+  content: "Sie sind interessiert an einem Kurs für Ihre Mitarbeitenden?\n\nWählen Sie mit wenigen Klicks aus, welche Kombination aus Kursen für Sie und Ihr Unternehmen am Meisten Sinn machen.",
   assetName: "KURSBROSCHÜRE 2023",
   buttonLink: "https://www.soprema.ch/files/2023-schulungsbroschuere-de_d71c998ecd7145324fe1b919058924d0.pdf",
   buttonText: "Herunterladen",
 };
 
 const routeHome = {
-  title: "Home",
+  title: "Firmenkurse",
 
   individual_courses: "Erstellen Sie Ihren eigenen Kurs von Grund auf",
   prebuilt_packs: "Beginnen Sie mit einem unserer vorgefertigten Kurse",
 };
 const routePacks = {
-  title: "Firmenkurse",
+  title: "Vorgefertigte Firmenkurse",
 };
 const routeCourses = {
-  title: "Kursliste",
+  title: "Firmenkurse auswählen",
 
   buttonText: "Kurse hinzufügen",
 };
@@ -270,8 +269,7 @@ const routeOverview = {
   delete: "Löschen",
 
   fallbackHeader: "Es sind keine Kurse ausgewählt.",
-  fallbackMessage:
-    "Bitte gehen Sie zurück zu den <1>Firmenkurse</1> oder <3>Kursliste</3>, bevor Sie mit dem Auschecken fortfahren.",
+  fallbackMessage: "Bitte gehen Sie zurück zu den <1>Vorgefertigte Firmenkurse</1> oder <3>Firmenkurse auswählen</3>, bevor Sie mit dem Auschecken fortfahren.",
 
   buttonText: "Bestätigen",
 };

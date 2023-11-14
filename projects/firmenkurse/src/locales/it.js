@@ -221,9 +221,9 @@ const headerSearch = {
 };
 
 const breadcrumbs = {
-  home: "Home",
-  packs: "Corsi aziendali",
-  courses: "Lista dei corsi",
+  home: "Corsi aziendali",
+  packs: "Corsi aziendali precostituiti",
+  courses: "compilare corsi",
   overview: "Panoramica",
   checkout: "Modulo",
   thanks: "Conferma",
@@ -231,31 +231,29 @@ const breadcrumbs = {
 
 const callout = {
   title: "Offerte di corsi",
-  content:
-    "Sei interessato a un corso per i tuoi dipendenti?\n\nScegli con pochi clic quale combinazione di corsi ha più senso per te e la tua azienda.",
+  content: "Sei interessato a un corso per i tuoi dipendenti?\n\nScegli con pochi clic quale combinazione di corsi ha più senso per te e la tua azienda.",
   assetName: "BROCHURE DEI CORSI 2023",
   buttonLink: "https://www.soprema.ch/files/2023-schulungsbroschuere-de_d71c998ecd7145324fe1b919058924d0.pdf",
   buttonText: "Scaricare",
 };
 
 const routeHome = {
-  title: "Home",
+  title: "Corsi aziendali",
   individual_courses: "Crea il tuo corso da zero",
   prebuilt_packs: "Inizia con uno dei nostri corsi preconfezionati",
 };
 const routePacks = {
-  title: "Corsi aziendali",
+  title: "Corsi aziendali precostituiti",
 };
 const routeCourses = {
-  title: "Lista dei corsi",
+  title: "compilare corsi",
   buttonText: "Aggiungi corsi",
 };
 const routeOverview = {
   title: "Panoramica",
   delete: "Elimina",
   fallbackHeader: "Nessun corso selezionato.",
-  fallbackMessage:
-    "Si prega di tornare ai <1>Corsi aziendali</1> o alla <3>Lista dei corsi</3> prima di procedere al checkout.",
+  fallbackMessage: "Si prega di tornare ai <1>Corsi aziendali precostituiti</1> o alla <3>compilare corsi</3> prima di procedere al checkout.",
   buttonText: "Conferma",
 };
 const routeCheckout = {
