@@ -1,362 +1,362 @@
 {
-  "produktmusterkatalog": {
-    "de": "Produktmusterkatalog",
-    "fr": "Catalogue de produits",
-    "it": "Catalogo prodotti"
-  },
-  "produktmuster": {
-    "de": "Produktmuster",
-    "fr": "Ã‰chantillons de produits",
-    "it": "Campione di prodotto"
-  },
-  "bestellÃ¼bersicht": {
-    "de": "BestellÃ¼bersicht",
-    "fr": "AperÃ§u des commandes",
-    "it": "Panoramica dell'ordine"
-  },
-  "kontaktdaten": {
-    "de": "Kontaktdaten",
-    "fr": "CoordonnÃ©es",
-    "it": "Dettagli di contatto"
-  },
-  "bestellen": {
-    "de": "Bestellen",
-    "fr": "Commander",
-    "it": "Ordine"
-  },
-  "lÃ¶schen": {
-    "de": "LÃ¶schen",
-    "fr": "Supprimer",
-    "it": "Cancellare"
-  },
-  "abbrechen": {
-    "de": "Abbrechen",
-    "fr": "Annuler",
-    "it": "Annullare"
-  },
-  "suche": {
-    "de": "Suche",
-    "fr": "Recherche",
-    "it": "Cerca"
-  },
-  "aktuelles": {
-    "de": "Aktuelles",
-    "fr": "Actuel",
-    "it": "Attuale"
-  },
-  "kontakt": {
-    "de": "Kontakt",
-    "fr": "Contacts",
-    "it": "Contatti"
-  },
-  "architektenservice": {
-    "de": "Architektenservice",
-    "fr": "Service destinÃ© aux architectes",
-    "it": "Servizio architetti"
-  },
-  "schulungen": {
-    "de": "Schulungen",
-    "fr": "Formations",
-    "it": "Corsi di formazione"
-  },
-  "garantien": {
-    "de": "Garantien",
-    "fr": "Les garanties",
-    "it": "Garanzie"
-  },
-  "download": {
-    "de": "Download",
-    "fr": "Download",
-    "it": "Download"
-  },
-  "systemfinder": {
-    "de": "Systemfinder",
-    "fr": "Guide solution",
-    "it": "Guida alla selezione"
-  },
-  "serviceleistungen": {
-    "de": "Serviceleistungen",
-    "fr": "Service",
-    "it": "Servizi"
-  },
-  "systemfinder": {
-    "de": "Systemfinder",
-    "fr": "Guide solution",
-    "it": "Guida alla selezione"
-  },
-  "systemfinder_Ã¼bersicht": {
-    "de": "Systemfinder-Ãœbersicht",
-    "fr": "DÃ©couvrez nos Guides solutions",
-    "it": "Scopri la nostra Guida alla selezione"
-  },
-  "systemfinder_bitumenbahnen": {
-    "de": "Systemfinder Bitumenbahnen",
-    "fr": "SystÃ¨mes d'Ã©tanchÃ©itÃ© bitumineuse",
-    "it": "Systemi bituminosi"
-  },
-  "systemfinder_kunststoffbahnen": {
-    "de": "Systemfinder Kunststoffbahnen",
-    "fr": "SystÃ¨mes d'Ã©tanchÃ©itÃ© synthÃ¨tique",
-    "it": "Sistemi impermeabilizzazioni sintetiche"
-  },
-  "systemfinder_flÃ¼ssigkunststoffe": {
-    "de": "Systemfinder FlÃ¼ssigkunststoffe",
-    "fr": "SystÃ¨mes d'Ã©tanchÃ©itÃ© liquide",
-    "it": "Sistemi impermeabilizzanti liquidi"
-  },
-  "service": {
-    "de": "Service",
-    "fr": "Prestations",
-    "it": "Servizi"
-  },
-  "download_support": {
-    "de": "Download-Support",
-    "fr": "Download-Support",
-    "it": "Download-Support"
-  },
-  "produkte": {
-    "de": "Produkte",
-    "fr": "Produits",
-    "it": "Prodotti"
-  },
-  "wÃ¤rmedÃ¤mmungen": {
-    "de": "WÃ¤rmedÃ¤mmungen",
-    "fr": "Isolation thermiques",
-    "it": "Isolamenti termici"
-  },
-  "hÃ¶hensicherungssysteme": {
-    "de": "HÃ¶hensicherungssysteme",
-    "fr": "SÃ©curitÃ©s antichute",
-    "it": "Sistemi di protezione anticaduta"
-  },
-  "ingenieurbau": {
-    "de": "Ingenieurbau",
-    "fr": "GÃ©nie civil",
-    "it": "Strutture ingegneristiche"
-  },
-  "eco_produkte": {
-    "de": "ECO Produkte",
-    "fr": "Produits ECO",
-    "it": "Prodotti ECO"
-  },
-  "begrÃ¼nung": {
-    "de": "BegrÃ¼nung",
-    "fr": "VÃ©gÃ©talisation",
-    "it": "Inverdimento"
-  },
-  "premium_class_systeme": {
-    "de": "PREMIUM-CLASS Systeme",
-    "fr": "SystÃ¨me PREMIUM-CLASS",
-    "it": "Sistema PREMIUM CLASS"
-  },
-  "Ã¼ber_soprema": {
-    "de": "Ãœber Soprema",
-    "fr": "La sociÃ©tÃ©",
-    "it": "Sulla compagnia"
-  },
-  "nÃ¼tzliche_informationen": {
-    "de": "NÃ¼tzliche Informationen",
-    "fr": "Informations Utiles",
-    "it": "Informazioni utili"
-  },
-  "kommentar_farbe": {
-    "de": "Kommentar / Farbe",
-    "fr": "Commentaire / Couleur",
-    "it": "Commento / Colore"
-  },
-  "bitumendichtungsbahnen": {
-    "de": "Bitumendichtungsbahnen",
-    "fr": "Les bitumineux",
-    "it": "Membrane bituminose"
-  },
-  "flÃ¼ssigkunststoffe": {
-    "de": "FlÃ¼ssigkunststoffe",
-    "fr": "Ã‰tanchÃ©itÃ©s liquides",
-    "it": "Resine Liquide"
-  },
-  "kunststoffdichtungsbahnen": {
-    "de": "Kunststoffdichtungsbahnen",
-    "fr": "Ã‰tanchÃ©itÃ© synthÃ©tique",
-    "it": "Impermeabilizzazioni sintetiche"
-  },
-  "unternehmen": {
-    "de": "Unternehmen",
-    "fr": "Entreprise",
-    "it": "Impresa"
-  },
-  "Ã¼ber_soprema": {
-    "de": "Ãœber SOPREMA",
-    "fr": "A propos de Soprema",
-    "it": "Sul Soprema"
-  },
-  "soprema_weltweit": {
-    "de": "SOPREMA Weltweit",
-    "fr": "Soprema dans le monde",
-    "it": "Soprema nel mondo"
-  },
-  "geschichte_soprema": {
-    "de": "Geschichte SOPREMA",
-    "fr": "Historique",
-    "it": "Storia"
-  },
-  "unser_team": {
-    "de": "Unser Team",
-    "fr": "Notre Team",
-    "it": "Il nostro Team"
-  },
-  "sponsoring": {
-    "de": "Sponsoring",
-    "fr": "Sponsoring",
-    "it": "Sponsoring"
-  },
-  "jobs_karriere": {
-    "de": "Jobs &amp; Karriere",
-    "fr": "Offres d'emploi",
-    "it": "Posti d'Impiego"
-  },
-  "standort_bauarena_volketswil": {
-    "de": "Standort Bauarena Volketswil",
-    "fr": "Site Bauarena Volketswil",
-    "it": "Posizione Bauarena Volketswil"
-  },
-  "soprema_videos": {
-    "de": "Soprema Videos",
-    "fr": "Soprema Videos",
-    "it": "Soprema Videos"
-  },
-  "referenzen": {
-    "de": "Referenzen",
-    "fr": "RÃ©fÃ©rences",
-    "it": "Referenze"
-  },
-  "alle_referenzen": {
-    "de": "alle Referenzen",
-    "fr": "Toutes les rÃ©fÃ©rences",
-    "it": "Tutti i Referenzi"
-  },
-  "absturzsicherheit": {
-    "de": "Absturzsicherheit",
-    "fr": "Protection contre les chutes",
-    "it": "Protezione anticaduta"
-  },
-  "flÃ¼ssigkunststoff": {
-    "de": "FlÃ¼ssigkunststoff",
-    "fr": "Ã‰tanchÃ©itÃ© Liquide",
-    "it": "Resine Liquide"
-  },
-  "wÃ¤rmedÃ¤mmung": {
-    "de": "WÃ¤rmedÃ¤mmung",
-    "fr": "Isolants Thermiques",
-    "it": "Isolamento Termico"
-  },
-  "home": {
-    "de": "Home",
-    "fr": "Home",
-    "it": "Home"
-  },
-  "architektenservice": {
-    "de": "Architektenservice",
-    "fr": "Service destinÃ© aux architectes",
-    "it": "Servizio architetti"
-  },
-  "garantien": {
-    "de": "Garantien",
-    "fr": "Les garanties",
-    "it": "Garanzie"
-  },
-  "serviceleistungen": {
-    "de": "Serviceleistungen",
-    "fr": "Service",
-    "it": "Servizi"
-  },
-  "webinar_on_demand": {
-    "de": "Webinar-On-Demand",
-    "fr": "Webinar-On-Demand",
-    "it": "Webinar-On-Demand"
-  },
-  "agb": {
-    "de": "AGB",
-    "fr": "CGV",
-    "it": "CG"
-  },
-  "datenschutz": {
-    "de": "Datenschutz",
-    "fr": "Protection des donnÃ©es",
-    "it": "Protezione dei dati"
-  },
-  "garantie_haftungsbedingungen": {
-    "de": "Garantie-Haftungsbedingungen",
-    "fr": "Conditions de garantie",
-    "it": "Condizioni di garanzia"
-  },
-  "newsletter_archiv": {
-    "de": "Newsletter Archiv",
-    "fr": "Archives des newsletters",
-    "it": "Archivio Newsletter"
-  },
-  "filter": {
-    "de": "Filter",
-    "fr": "Filtre",
-    "it": "Filtro"
-  },
-  "senden": {
-    "de": "Senden",
-    "fr": "Envoyer",
-    "it": "Inviare"
-  },
-  "name": {
-    "de": "Name",
-    "fr": "Nom",
-    "it": "Cognome"
-  },
-  "vorname": {
-    "de": "Vorname",
-    "fr": "PrÃ©nom",
-    "it": "Nome"
-  },
-  "firma": {
-    "de": "Firma",
-    "fr": "SociÃ©tÃ©",
-    "it": "Azienda"
-  },
-  "email": {
-    "de": "E-Mail",
-    "fr": "E-mail",
-    "it": "E-mail"
-  },
-  "telefon": {
-    "de": "Telefon",
-    "fr": "TÃ©lÃ©phone",
-    "it": "Telefono"
-  },
-  "fax": {
-    "de": "Fax",
-    "fr": "Fax",
-    "it": "Fax"
-  },
-  "strasse": {
-    "de": "Strasse/Nr.",
-    "fr": "Rue/numÃ©ro",
-    "it": "Via/No."
-  },
-  "ort": {
-    "de": "Ort",
-    "fr": "Lieu",
-    "it": "Luogo"
-  },
-  "plz": {
-    "de": "PLZ",
-    "fr": "Code postal",
-    "it": "CAP"
-  },
-  "formular_ausfÃ¼llen": {
-    "de": "Bitte fÃ¼llen Sie das folgende Formular aus.",
-    "fr": "Veuillez remplir le formulaire suivant.",
-    "it": "Compilare il seguente modulo."
-  },
-  "versanddetails": {
-    "de": "Versanddetails",
-    "fr": "DÃ©tails de l'envoi",
-    "it": "Dettagli di spedizione"
+  "produktmusterkatalog":{
+    "de":"Produktmusterkatalog",
+    "fr":"Catalogue de produits",
+    "it":"Catalogo prodotti"
+  },
+  "produktmuster":{
+    "de":"Produktmuster",
+    "fr":"Échantillons de produits",
+    "it":"Campione di prodotto"
+  },
+  "bestellübersicht":{
+    "de":"Bestellübersicht",
+    "fr":"Aperçu des commandes",
+    "it":"Panoramica dell'ordine"
+  },
+  "kontaktdaten":{
+    "de":"Kontaktdaten",
+    "fr":"Coordonnées",
+    "it":"Dettagli di contatto"
+  },
+  "bestellen":{
+    "de":"Bestellen",
+    "fr":"Commander",
+    "it":"Ordine"
+  },
+  "löschen":{
+    "de":"Löschen",
+    "fr":"Supprimer",
+    "it":"Cancellare"
+  },
+  "abbrechen":{
+    "de":"Abbrechen",
+    "fr":"Annuler",
+    "it":"Annullare"
+  },
+  "suche":{
+    "de":"Suche",
+    "fr":"Recherche",
+    "it":"Cerca"
+  },
+  "aktuelles":{
+    "de":"Aktuelles",
+    "fr":"Actuel",
+    "it":"Attuale"
+  },
+  "kontakt":{
+    "de":"Kontakt",
+    "fr":"Contacts",
+    "it":"Contatti"
+  },
+  "architektenservice":{
+    "de":"Architektenservice",
+    "fr":"Service destiné aux architectes",
+    "it":"Servizio architetti"
+  },
+  "schulungen":{
+    "de":"Schulungen",
+    "fr":"Formations",
+    "it":"Corsi di formazione"
+  },
+  "garantien":{
+    "de":"Garantien",
+    "fr":"Les garanties",
+    "it":"Garanzie"
+  },
+  "download":{
+    "de":"Download",
+    "fr":"Download",
+    "it":"Download"
+  },
+  "systemfinder":{
+    "de":"Systemfinder",
+    "fr":"Guide solution",
+    "it":"Guida alla selezione"
+  },
+  "serviceleistungen":{
+    "de":"Serviceleistungen",
+    "fr":"Service",
+    "it":"Servizi"
+  },
+  "systemfinder":{
+    "de":"Systemfinder",
+    "fr":"Guide solution",
+    "it":"Guida alla selezione"
+  },
+  "systemfinder_übersicht":{
+    "de":"Systemfinder-Übersicht",
+    "fr":"Découvrez nos Guides solutions",
+    "it":"Scopri la nostra Guida alla selezione"
+  },
+  "systemfinder_bitumenbahnen":{
+    "de":"Systemfinder Bitumenbahnen",
+    "fr":"Systèmes d'étanchéité bitumineuse",
+    "it":"Systemi bituminosi"
+  },
+  "systemfinder_kunststoffbahnen":{
+    "de":"Systemfinder Kunststoffbahnen",
+    "fr":"Systèmes d'étanchéité synthètique",
+    "it":"Sistemi impermeabilizzazioni sintetiche"
+  },
+  "systemfinder_flüssigkunststoffe":{
+    "de":"Systemfinder Flüssigkunststoffe",
+    "fr":"Systèmes d'étanchéité liquide",
+    "it":"Sistemi impermeabilizzanti liquidi"
+  },
+  "service":{
+    "de":"Service",
+    "fr":"Prestations",
+    "it":"Servizi"
+  },
+  "download_support":{
+    "de":"Download-Support",
+    "fr":"Download-Support",
+    "it":"Download-Support"
+  },
+  "produkte":{
+    "de":"Produkte",
+    "fr":"Produits",
+    "it":"Prodotti"
+  },
+  "wärmedämmungen":{
+    "de":"Wärmedämmungen",
+    "fr":"Isolation thermiques",
+    "it":"Isolamenti termici"
+  },
+  "höhensicherungssysteme":{
+    "de":"Höhensicherungssysteme",
+    "fr":"Sécurités antichute",
+    "it":"Sistemi di protezione anticaduta"
+  },
+  "ingenieurbau":{
+    "de":"Ingenieurbau",
+    "fr":"Génie civil",
+    "it":"Strutture ingegneristiche"
+  },
+  "eco_produkte":{
+    "de":"ECO Produkte",
+    "fr":"Produits ECO",
+    "it":"Prodotti ECO"
+  },
+  "begrünung":{
+    "de":"Begrünung",
+    "fr":"Végétalisation",
+    "it":"Inverdimento"
+  },
+  "premium_class_systeme":{
+    "de":"PREMIUM-CLASS Systeme",
+    "fr":"Système PREMIUM-CLASS",
+    "it":"Sistema PREMIUM CLASS"
+  },
+  "über_soprema":{
+    "de":"Über Soprema",
+    "fr":"La société",
+    "it":"Sulla compagnia"
+  },
+  "nützliche_informationen":{
+    "de":"Nützliche Informationen",
+    "fr":"Informations Utiles",
+    "it":"Informazioni utili"
+  },
+  "kommentar_farbe":{
+    "de":"Kommentar / Farbe",
+    "fr":"Commentaire / Couleur",
+    "it":"Commento / Colore"
+  },
+  "bitumendichtungsbahnen":{
+    "de":"Bitumendichtungsbahnen",
+    "fr":"Les bitumineux",
+    "it":"Membrane bituminose"
+  },
+  "flüssigkunststoffe":{
+    "de":"Flüssigkunststoffe",
+    "fr":"Étanchéités liquides",
+    "it":"Resine Liquide"
+  },
+  "kunststoffdichtungsbahnen":{
+    "de":"Kunststoffdichtungsbahnen",
+    "fr":"Étanchéité synthétique",
+    "it":"Impermeabilizzazioni sintetiche"
+  },
+  "unternehmen":{
+    "de":"Unternehmen",
+    "fr":"Entreprise",
+    "it":"Impresa"
+  },
+  "über_soprema":{
+    "de":"Über SOPREMA",
+    "fr":"A propos de Soprema",
+    "it":"Sul Soprema"
+  },
+  "soprema_weltweit":{
+    "de":"SOPREMA Weltweit",
+    "fr":"Soprema dans le monde",
+    "it":"Soprema nel mondo"
+  },
+  "geschichte_soprema":{
+    "de":"Geschichte SOPREMA",
+    "fr":"Historique",
+    "it":"Storia"
+  },
+  "unser_team":{
+    "de":"Unser Team",
+    "fr":"Notre Team",
+    "it":"Il nostro Team"
+  },
+  "sponsoring":{
+    "de":"Sponsoring",
+    "fr":"Sponsoring",
+    "it":"Sponsoring"
+  },
+  "jobs_karriere":{
+    "de":"Jobs &amp; Karriere",
+    "fr":"Offres d'emploi",
+    "it":"Posti d'Impiego"
+  },
+  "standort_bauarena_volketswil":{
+    "de":"Standort Bauarena Volketswil",
+    "fr":"Site Bauarena Volketswil",
+    "it":"Posizione Bauarena Volketswil"
+  },
+  "soprema_videos":{
+    "de":"Soprema Videos",
+    "fr":"Soprema Videos",
+    "it":"Soprema Videos"
+  },
+  "referenzen":{
+    "de":"Referenzen",
+    "fr":"Références",
+    "it":"Referenze"
+  },
+  "alle_referenzen":{
+    "de":"alle Referenzen",
+    "fr":"Toutes les références",
+    "it":"Tutti i Referenzi"
+  },
+  "absturzsicherheit":{
+    "de":"Absturzsicherheit",
+    "fr":"Protection contre les chutes",
+    "it":"Protezione anticaduta"
+  },
+  "flüssigkunststoff":{
+    "de":"Flüssigkunststoff",
+    "fr":"Étanchéité Liquide",
+    "it":"Resine Liquide"
+  },
+  "wärmedämmung":{
+    "de":"Wärmedämmung",
+    "fr":"Isolants Thermiques",
+    "it":"Isolamento Termico"
+  },
+  "home":{
+    "de":"Home",
+    "fr":"Home",
+    "it":"Home"
+  },
+  "architektenservice":{
+    "de":"Architektenservice",
+    "fr":"Service destiné aux architectes",
+    "it":"Servizio architetti"
+  },
+  "garantien":{
+    "de":"Garantien",
+    "fr":"Les garanties",
+    "it":"Garanzie"
+  },
+  "serviceleistungen":{
+    "de":"Serviceleistungen",
+    "fr":"Service",
+    "it":"Servizi"
+  },
+  "webinar_on_demand":{
+    "de":"Webinar-On-Demand",
+    "fr":"Webinar-On-Demand",
+    "it":"Webinar-On-Demand"
+  },
+  "agb":{
+    "de":"AGB",
+    "fr":"CGV",
+    "it":"CG"
+  },
+  "datenschutz":{
+    "de":"Datenschutz",
+    "fr":"Protection des données",
+    "it":"Protezione dei dati"
+  },
+  "garantie_haftungsbedingungen":{
+    "de":"Garantie-Haftungsbedingungen",
+    "fr":"Conditions de garantie",
+    "it":"Condizioni di garanzia"
+  },
+  "newsletter_archiv":{
+    "de":"Newsletter Archiv",
+    "fr":"Archives des newsletters",
+    "it":"Archivio Newsletter"
+  },
+  "filter":{
+    "de":"Filter",
+    "fr":"Filtre",
+    "it":"Filtro"
+  },
+  "senden":{
+    "de":"Senden",
+    "fr":"Envoyer",
+    "it":"Inviare"
+  },
+  "name":{
+    "de":"Name",
+    "fr":"Nom",
+    "it":"Cognome"
+  },
+  "vorname":{
+    "de":"Vorname",
+    "fr":"Prénom",
+    "it":"Nome"
+  },
+  "firma":{
+    "de":"Firma",
+    "fr":"Société",
+    "it":"Azienda"
+  },
+  "email":{
+    "de":"E-Mail",
+    "fr":"E-mail",
+    "it":"E-mail"
+  },
+  "telefon":{
+    "de":"Telefon",
+    "fr":"Téléphone",
+    "it":"Telefono"
+  },
+  "fax":{
+    "de":"Fax",
+    "fr":"Fax",
+    "it":"Fax"
+  },
+  "strasse":{
+    "de":"Strasse/Nr.",
+    "fr":"Rue/numéro",
+    "it":"Via/No."
+  },
+  "ort":{
+    "de":"Ort",
+    "fr":"Lieu",
+    "it":"Luogo"
+  },
+  "plz":{
+    "de":"PLZ",
+    "fr":"Code postal",
+    "it":"CAP"
+  },
+  "formular_ausfüllen":{
+    "de":"Bitte füllen Sie das folgende Formular aus.",
+    "fr":"Veuillez remplir le formulaire suivant.",
+    "it":"Compilare il seguente modulo."
+  },
+  "versanddetails":{
+    "de":"Versanddetails",
+    "fr":"Détails de l'envoi",
+    "it":"Dettagli di spedizione"
   }
 }
