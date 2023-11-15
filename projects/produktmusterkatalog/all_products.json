@@ -1,12 +1,12 @@
 [
-	{
+  {
     "key": "EVA35",
-		"name":"SOPRAVAP EVA35 TS - 10 m x 1 m",
-		"image":"https://www.soprema.ch/files/resize/outside/350-350-41163-eva-2035-20ts_f2aa6e1f3603f45744b02bc7022e959d.webp",
-		"description_de": "Die SOPRAVAP EVA35 TS - 10 m x 1 m ist eine hochwertige Elastomerbitumen-Dampfbremsbahn mit Aluminium-Verbundträger und Glasvlies und wird vorwiegend auf mineralischen Unterlagen eingesetzt.",
+    "name":"SOPRAVAP EVA35 TS - 10 m x 1 m",
+    "image":"https://www.soprema.ch/files/resize/outside/350-350-41163-eva-2035-20ts_f2aa6e1f3603f45744b02bc7022e959d.webp",
+     "description_de": "Die SOPRAVAP EVA35 TS - 10 m x 1 m ist eine hochwertige Elastomerbitumen-Dampfbremsbahn mit Aluminium-Verbundträger und Glasvlies und wird vorwiegend auf mineralischen Unterlagen eingesetzt.",
     "description_it": "ITALIAN Die SOPRAVAP EVA35 TS - 10 m x 1 m ist eine hochwertige Elastomerbitumen-Dampfbremsbahn mit Aluminium-Verbundträger und Glasvlies und wird vorwiegend auf mineralischen Unterlagen eingesetzt.",
     "description_fr": "FRENCH Die SOPRAVAP EVA35 TS - 10 m x 1 m ist eine hochwertige Elastomerbitumen-Dampfbremsbahn mit Aluminium-Verbundträger und Glasvlies und wird vorwiegend auf mineralischen Unterlagen eingesetzt."
-	},
+  },
   {
     "key": "VAPRO",
     "name":"SOPREMA VAPRO VAP - 8.5 m x 1.08 m",
